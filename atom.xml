@@ -5,9 +5,9 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jpaiblog.github.io/"/>
   <updated>2020-01-05T14:25:42.311Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jpaiblog.github.io/</id>
   
   <author>
     <name>jpaiblog</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>jpaiblog について</title>
-    <link href="http://yoursite.com/2020/01/01/about-jpaiblog/"/>
-    <id>http://yoursite.com/2020/01/01/about-jpaiblog/</id>
+    <link href="https://jpaiblog.github.io/2020/01/01/about-jpaiblog/"/>
+    <id>https://jpaiblog.github.io/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
     <updated>2020-01-05T14:25:42.311Z</updated>
     
