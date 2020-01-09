@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/"/>
-  <updated>2020-01-09T01:59:35.840Z</updated>
+  <updated>2020-01-09T02:00:33.275Z</updated>
   <id>https://jpaiblog.github.io/</id>
   
   <author>
@@ -21,13 +21,26 @@
     <link href="https://jpaiblog.github.io/2020/01/09/testpage/"/>
     <id>https://jpaiblog.github.io/2020/01/09/testpage/</id>
     <published>2020-01-09T01:59:35.000Z</published>
-    <updated>2020-01-09T01:59:35.840Z</updated>
+    <updated>2020-01-09T02:00:33.275Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="testpage"><a href="#testpage" class="headerlink" title="testpage"></a>testpage</h1>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;testpage&quot;&gt;&lt;a href=&quot;#testpage&quot; class=&quot;headerlink&quot; title=&quot;testpage&quot;&gt;&lt;/a&gt;testpage&lt;/h1&gt;
+      
     
     </summary>
     
     
+      <category term="Cognitive Service" scheme="https://jpaiblog.github.io/categories/Cognitive-Service/"/>
+    
+      <category term="Text to Speech" scheme="https://jpaiblog.github.io/categories/Cognitive-Service/Text-to-Speech/"/>
+    
+    
+      <category term="information" scheme="https://jpaiblog.github.io/tags/information/"/>
     
   </entry>
   

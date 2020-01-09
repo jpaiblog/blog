@@ -8,9 +8,23 @@
       <link href="/blog/2020/01/09/testpage/"/>
       <url>/blog/2020/01/09/testpage/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="testpage"><a href="#testpage" class="headerlink" title="testpage"></a>testpage</h1>]]></content>
       
       
+      <categories>
+          
+          <category> Cognitive Service </category>
+          
+          <category> Text to Speech </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> information </tag>
+            
+        </tags>
       
     </entry>
     
