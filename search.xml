@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>過去ブログについて</title>
+      <link href="/blog/2020/01/12/past-blog/"/>
+      <url>/blog/2020/01/12/past-blog/</url>
+      
+        <content type="html"><![CDATA[<p>過去のブログ情報を紹介いたします。</p><p>[Translator Text API の翻訳文字数の確認方法]<a href="https://social.msdn.microsoft.com/Forums/ja-JP/255a225d-24e5-4e21-ad28-7fab33088131/translator-text-api-?forum=cognitivesupportteamja" target="_blank" rel="noopener">https://social.msdn.microsoft.com/Forums/ja-JP/255a225d-24e5-4e21-ad28-7fab33088131/translator-text-api-?forum=cognitivesupportteamja</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cognitive Services 全般 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 過去ブログ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jpaiblog について</title>
       <link href="/blog/2020/01/01/about-jpaiblog/"/>
       <url>/blog/2020/01/01/about-jpaiblog/</url>
