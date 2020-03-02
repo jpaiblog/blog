@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/"/>
-  <updated>2020-03-02T07:20:57.079Z</updated>
+  <updated>2020-03-02T07:26:27.550Z</updated>
   <id>https://jpaiblog.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://jpaiblog.github.io/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-03-02T07:20:57.079Z</updated>
+    <updated>2020-03-02T07:26:27.550Z</updated>
     
-    <content type="html"><![CDATA[<p>QNA Maker の管理サービスについてご説明いたします。</p><a id="more"></a><br><hr><p>QnA Maker サービスの全体構成につきましては下記ドキュメントの図をご参照ください。  </p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure" target="_blank" rel="noopener">QnA Maker のリソースを管理する</a>  </p><p> <img src="https://jpaiblog.github.io/images/key-management.png" alt="QNA Maker">  </p></li></ul><p>この図の中で、Cognitive Services としてのリソースは、QnA Maker Subscription に相当いたします。「5. Manage KB in portal or via APIs」においてポータルを操作して KB を編集した場合には、米国西部リージョンにおいてホストされている API 群が呼び出されます。  </p><p>米国西部リージョンにある API のバックエンドから、Web Apps 上でホストされた QnA Maker ランタイムに対してアクセスし、Q&amp;A の追加や削除といった操作が実現されております。  </p><p>なお、実際の KB のコンテンツ (Q&amp;A、メタデータ等) は Azure Search に保存されており、ユーザーのチャットログは Application Insights に保存されておりますので、顧客データは米国西部リージョンには保存されません。  </p><p>※ 管理サービスで使用する API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">QnA Maker V4.0</a>  </li></ul><p>KB を公開した後の、ボット等のアプリケーションからの問い合わせ (4. User QnA endpoint in Bot) は GenerateAnswer API が使用されます。これは QnA Maker ランタイム (Web Apps) に対して実行されます。そのため、ユーザーからの問い合わせに応答する場合には、米国西部リージョンを経由することはございません。</p><p>※ GenerateAnswer API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">GenerateAnswer API およびメタデータを使って回答を取得する</a>  </li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<p>QNA Maker の管理サービスについてご説明いたします。</p><a id="more"></a><br><hr><p>QnA Maker サービスの全体構成につきましては下記ドキュメントの図をご参照ください。  </p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure" target="_blank" rel="noopener">QnA Maker のリソースを管理する</a>  </p><p> <img src="https://jpaiblog.github.io/images/key-management.png" alt="QNA Maker">  </p></li></ul><p>この図の中で、Cognitive Services としてのリソースは、QnA Maker Subscription に相当いたします。「5. Manage KB in portal or via APIs」においてポータルを操作して KB を編集した場合には、米国西部リージョンにおいてホストされている API 群が呼び出されます。この API 群を別リージョンに移行することができないため、<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure#management-service-region" target="_blank" rel="noopener">こちら</a> に記載されております通り、米国西部リージョン固定となっております。  </p><p>米国西部リージョンにある API のバックエンドから、Web Apps 上でホストされた QnA Maker ランタイムに対してアクセスし、Q&amp;A の追加や削除といった操作が実現されております。  </p><p>なお、実際の KB のコンテンツ (Q&amp;A、メタデータ等) は Azure Search に保存されており、ユーザーのチャットログは Application Insights に保存されておりますので、顧客データは米国西部リージョンには保存されません。  </p><p>※ 管理サービスで使用する API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">QnA Maker V4.0</a>  </li></ul><p>KB を公開した後の、ボット等のアプリケーションからの問い合わせ (4. User QnA endpoint in Bot) は GenerateAnswer API が使用されます。これは QnA Maker ランタイム (Web Apps) に対して実行されます。そのため、ユーザーからの問い合わせに応答する場合には、米国西部リージョンを経由することはございません。</p><p>※ GenerateAnswer API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">GenerateAnswer API およびメタデータを使って回答を取得する</a>  </li></ul><hr>]]></content>
     
     <summary type="html">
     
