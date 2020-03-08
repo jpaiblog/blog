@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="エラー コード AADSTS650051 が記録され、製品ポータル (www.luis.ai や customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
+  <meta name="description" content="エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (www.luis.ai や www.customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ポータルにサインインできない (AADSTS650051)">
 <meta property="og:url" content="https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="エラー コード AADSTS650051 が記録され、製品ポータル (www.luis.ai や customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
+<meta property="og:description" content="エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (www.luis.ai や www.customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2020-03-06T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-08T16:59:51.871Z">
+<meta property="article:modified_time" content="2020-03-08T17:04:52.559Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="AADSTS650051">
 <meta name="twitter:card" content="summary">
@@ -148,14 +148,14 @@
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>エラー コード AADSTS650051 が記録され、製品ポータル (<a href="http://www.luis.ai" target="_blank" rel="noopener">www.luis.ai</a> や customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。</p>
+    	<p>エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (<a href="http://www.luis.ai" target="_blank" rel="noopener">www.luis.ai</a> や <a href="http://www.customvision.ai" target="_blank" rel="noopener">www.customvision.ai</a> など) へのサインインが失敗する場合の対処方法を紹介します。</p>
 <a id="more"></a>
 <br>
 
 <hr>
 <p>このエラーメッセージは (ドメイン名) の DNS 名に紐づく Azure AD のテナントが、管理者不在のバイラル (非管理) テナントと呼ばれる状態 (unmanaged state) であり、それが原因でポータルへサインインできないことを意味します。  </p>
 <blockquote>
-<p>ErrorDescription’: ‘AADSTS650051: Using application ‘&lt;ポータル FQDN&gt;’ is currently not supported for your organization &lt;ドメイン名&gt; because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of freee.co.jp before the application &lt;ポータル FQDN&gt;’ can be provisioned.`</p>
+<p>ErrorDescription’: ‘AADSTS650051: Using application ‘&lt;ポータル FQDN&gt;’ is currently not supported for your organization &lt;ドメイン名&gt; because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of &lt;ドメイン名&gt; before the application &lt;ポータル FQDN&gt;’ can be provisioned.`</p>
 </blockquote>
 <p>類似のサービスに関する記事とはなりますが、詳細と対処方法は以下をご参照ください。  </p>
 <ul>
