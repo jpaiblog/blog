@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/azure-portal-dir-switch-1.png">
 <meta property="og:image" content="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/azure-portal-dir-switch-2.png">
 <meta property="article:published_time" content="2020-05-13T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-14T06:50:37.343Z">
+<meta property="article:modified_time" content="2020-05-28T00:23:59.855Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="QnA Maker">
 <meta property="article:tag" content="LUIS">
@@ -172,7 +172,7 @@
 <p>しかしながら、例えば、以下のように複数の Azure AD ディレクトリ (contoso.onmicrosoft.com と fabrikam.onmicrosoft.com) に関連付けられているユーザー アカウント (user@contoso.onmicrosoft.com) があるとします。この場合、ロールベースのアクセス制御 (RBAC) の設定が適切でも、上記のポータル サイトでサブスクリプションやリソースが表示されないことがあります。</p>
 <p><img src="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/cognitive-portal-AAD-tenant.png" alt="Cognitive Portal Sign-in"></p>
 <h3 id="■原因"><a href="#■原因" class="headerlink" title="■原因"></a>■原因</h3><p>これらのポータルサイトへ Azure AD の組織アカウントでアカウントサインインする場合、特定の Azure AD ディレクトリに依存しない common エンドポイント (login.microsoftonline.com/<strong>common</strong>/…) が使用されます。この時、サインイン先となるのは、ホーム ディレクトリ  (上記の図では ディレクトリ A の contoso.onmicrosoft.com) となります。通常はこの挙動で問題になることはありません。</p>
-<p>しかし、別のディレクトリにゲスト ユーザーとして招待されることで、複数のディレクトリと関連付けらえれている場合、ホーム ディレクトリ以外のディレクトリ (上記の図では Bの fabrikam.onmicrosoft.com) に対するサインインは行われないため、そのディレクトリに対するアクセス トークンは取得されません。それにより、ポータルサイト上ではディレクトリ B  に紐づいたサブスクリプションやリソースが表示されない事象が発生します。これは Azure AD ディレクトリへのサインインを伴うアクセス権の管理上想定される動作です。</p>
+<p>しかし、別のディレクトリにゲスト ユーザーとして招待されることで、複数のディレクトリと関連付けられている場合、ホーム ディレクトリ以外のディレクトリ (上記の図では Bの fabrikam.onmicrosoft.com) に対するサインインは行われないため、そのディレクトリに対するアクセス トークンは取得されません。それにより、ポータルサイト上ではディレクトリ B に紐づいたサブスクリプションやリソースが表示されない事象が発生します。これは Azure AD ディレクトリへのサインインを伴うアクセス権の管理上想定される動作です。</p>
 <h3 id="■対処策"><a href="#■対処策" class="headerlink" title="■対処策"></a>■対処策</h3><p>ディレクトリ B に関連付けられた Azure サブスクリプションに対するアクセス トークンを取得するには、ディレクトリ B へのサインインを明示的に完了する必要があります。</p>
 <h4 id="方法-1-ポータル-サイト内でディレクトリを変更する"><a href="#方法-1-ポータル-サイト内でディレクトリを変更する" class="headerlink" title="方法 1. ポータル サイト内でディレクトリを変更する"></a>方法 1. ポータル サイト内でディレクトリを変更する</h4><p>ポータル サイトによっては、サイト内でディレクトリを切り替える機能が用意されています。この機能を利用してディレクトリ B に切り替えます。</p>
 <p>例. <a href="https://www.customvision.ai/" target="_blank" rel="noopener">Custom Vision ポータル</a>:</p>
