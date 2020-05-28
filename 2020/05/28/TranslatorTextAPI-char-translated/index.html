@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>jpaiblog について | Japan Cognitive Services Support Blog</title>
+  <title>Translator Text API の翻訳文字数の確認方法 | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,18 +19,25 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフトの Cognitive Serivce に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新す">
+  <meta name="description" content="Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。  翻訳文字数データの確認手順 翻訳文字数データをファイルとしてダウンロードする手順 （参考情報）文字数カウント方法に関する公開ドキュメント  （2020年5月28日公開時点の情報です）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jpaiblog について">
-<meta property="og:url" content="https://jpaiblog.github.io/2020/01/01/about-jpaiblog/index.html">
+<meta property="og:title" content="Translator Text API の翻訳文字数の確認方法">
+<meta property="og:url" content="https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="日本マイクロソフトの Cognitive Serivce に関するサポート情報のブログです。 公開日2020 年 1 月 1 日より公開いたしました。 活動について製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。 留意事項サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新す">
+<meta property="og:description" content="Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。  翻訳文字数データの確認手順 翻訳文字数データをファイルとしてダウンロードする手順 （参考情報）文字数カウント方法に関する公開ドキュメント  （2020年5月28日公開時点の情報です）">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2019-12-31T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-28T01:19:48.000Z">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-4.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-5.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-6.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-2.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-3.jpg">
+<meta property="article:published_time" content="2020-05-27T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-28T01:19:48.047Z">
 <meta property="article:author" content="jpaiblog">
-<meta property="article:tag" content="はじめに">
+<meta property="article:tag" content="Translator Text API">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -124,40 +131,75 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-about-jpaiblog"
+        <article id="post-TranslatorTextAPI-char-translated"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/01/01/about-jpaiblog/">
-    	jpaiblog について
+  	<a href="/blog/2020/05/28/TranslatorTextAPI-char-translated/">
+    	Translator Text API の翻訳文字数の確認方法
     </a>
   </h2>
 	<time>
-	  1月 1, 2020
+	  5月 28, 2020
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/Cognitive-Services/">Cognitive Services</a>
+        <a href="/blog/categories/Translator-Text-API/">Translator Text API</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#公開日"><span class="toc-number">1.</span> <span class="toc-text">公開日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#活動について"><span class="toc-number">2.</span> <span class="toc-text">活動について</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留意事項"><span class="toc-number">3.</span> <span class="toc-text">留意事項</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#１-翻訳文字数データの確認手順"><span class="toc-number">1.</span> <span class="toc-text">１.翻訳文字数データの確認手順</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#２-翻訳文字数データをファイルとしてダウンロードする手順"><span class="toc-number">2.</span> <span class="toc-text">２.翻訳文字数データをファイルとしてダウンロードする手順</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#３-（参考情報）文字数カウント方法に関する公開ドキュメント"><span class="toc-number">3.</span> <span class="toc-text">３.（参考情報）文字数カウント方法に関する公開ドキュメント</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>日本マイクロソフトの Cognitive Serivce に関するサポート情報のブログです。</p>
-<h3 id="公開日"><a href="#公開日" class="headerlink" title="公開日"></a>公開日</h3><p>2020 年 1 月 1 日より公開いたしました。</p>
-<h3 id="活動について"><a href="#活動について" class="headerlink" title="活動について"></a>活動について</h3><p>製品のサポート メンバーによって運用されております。仕様に関する情報やトラブル シューティングの手順、実装におけるワンポイント アドバイスを公開いたします。</p>
-<h3 id="留意事項"><a href="#留意事項" class="headerlink" title="留意事項"></a>留意事項</h3><p>サイトのコンテンツや情報において、可能な限り正確な情報を掲載し、更新するよう努めております。しかしながら、状況の変化や情報が古くなることにより、必ずしもお客様環境に適用できない情報となる場合がございます。恐れ入りますが、予めご留意くださいますようお願い申し上げます。</p>
+    	<p>Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。</p>
+<ol>
+<li><a href="#１.翻訳文字数データの確認手順">翻訳文字数データの確認手順</a></li>
+<li><a href="#２.翻訳文字数データをファイルとしてダウンロードする手順">翻訳文字数データをファイルとしてダウンロードする手順</a></li>
+<li><a href="#３.（参考情報）文字数カウント方法に関する公開ドキュメント">（参考情報）文字数カウント方法に関する公開ドキュメント</a></li>
+</ol>
+<p>（2020年5月28日公開時点の情報です） </p>
+<a id="more"></a>
+<br>
+
+<hr>
+<h1 id="１-翻訳文字数データの確認手順"><a href="#１-翻訳文字数データの確認手順" class="headerlink" title="１.翻訳文字数データの確認手順"></a>１.翻訳文字数データの確認手順</h1><ol>
+<li>Azure Portal 上で、対象のTranslator Text API のリソースを選択します。</li>
+<li>[監視] ブレードの [メトリック] をクリックします。</li>
+<li>表示された、画面中央の [メトリック] から [Characters Translated] を選択します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg" alt="char-translated-1-3" title="char-translated-1-3"></li>
+<li>画面右上にある [現地時刻: 過去 24 時間 (自動)] をクリックし、表示されたポップアップから希望の時間範囲と粒度を設定します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-4.jpg" alt="char-translated-1-4" title="char-translated-1-4"></li>
+<li>グラフ上に指定した期間の翻訳文字数が表示されます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-5.jpg" alt="char-translated-1-5" title="char-translated-1-5"></li>
+<li>なお、グラフの中で確認したい時点にカーソルをあてると、その時間帯（指定した時間の粒度単位）に絞って、翻訳文字数を表示することができます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-6.jpg" alt="char-translated-1-6" title="char-translated-1-6"></li>
+</ol>
+<p>また、翻訳文字数のグラフを表示する際に設定したメトリック [Characters Translated] の説明は、下記の公開ドキュメントでご案内しております。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/azure-monitor/platform/metrics-supported#microsoftcognitiveservicesaccounts" target="_blank" rel="noopener">Supported metrics with Azure Monitor：Microsoft.CognitiveServices/accounts</a><blockquote>
+<p>Characters Translated</p>
+<blockquote>
+<p>Total number of characters in incoming text request.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h1 id="２-翻訳文字数データをファイルとしてダウンロードする手順"><a href="#２-翻訳文字数データをファイルとしてダウンロードする手順" class="headerlink" title="２.翻訳文字数データをファイルとしてダウンロードする手順"></a>２.翻訳文字数データをファイルとしてダウンロードする手順</h1><ol>
+<li>“１．翻訳文字数データの確認手順” に沿って、翻訳文字数のグラフを表示します。</li>
+<li>表示された翻訳文字数のグラフ上部の　[共有] プルダウンから [Excelへのダウンロード] を選択します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-2.jpg" alt="char-translated-2-2" title="char-translated-2-2"></li>
+<li>翻訳文字数のグラフを表示する際に設定した “メトリック”, “時間の範囲および粒度” のデータのExcelファイルがダウンロードされます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-3.jpg" alt="char-translated-2-3" title="char-translated-2-3"></li>
+</ol>
+<h1 id="３-（参考情報）文字数カウント方法に関する公開ドキュメント"><a href="#３-（参考情報）文字数カウント方法に関する公開ドキュメント" class="headerlink" title="３.（参考情報）文字数カウント方法に関する公開ドキュメント"></a>３.（参考情報）文字数カウント方法に関する公開ドキュメント</h1><p>どのようにAPIが呼び出されるかによって、カウントされる文字数は変わります。<br>例えば、1文字入力の場合でも、その後ろに空白が付与されたままの状態のテキストがAPIに渡された場合、空白も含めた文字数がカウントされます。<br>‘A’ のような状態では、1文字とカウントされますが、後ろに3つ空白を付与した ‘A   ’ のような状態の場合は、4文字とカウントされます。<br>空白の他にも、カウントされる対象がございますので、文字数カウント方法に関する詳細は、下記の公開ドキュメントをご確認ください。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/translator/character-counts" target="_blank" rel="noopener">Translator Text API の文字数のカウント方法</a></li>
+</ul>
+<hr>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/">はじめに</a>
+        <a href="/blog/tags/Translator-Text-API/">Translator Text API</a>
       
 	  </div>
     
@@ -165,10 +207,10 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/01/12/past-blog/" rel="prev"  title="過去ブログについて">
-						過去ブログについて 
-					</a></span>
 				
+					<span class="art-item-right">next：<a href="/blog/2020/05/14/cognitive-portal-sub-not-found/" rel="next"  title="Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策">
+						Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策
+					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
 	
@@ -177,7 +219,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'jpaiblog について',
+		title: 'Translator Text API の翻訳文字数の確認方法',
 		tools: true
 	}
 </script>
