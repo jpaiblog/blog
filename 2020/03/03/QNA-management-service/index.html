@@ -28,7 +28,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpaiblog.github.io/images/QNA-management-service/key-management.png">
 <meta property="article:published_time" content="2020-03-02T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-18T07:37:50.266Z">
+<meta property="article:modified_time" content="2020-08-04T06:51:21.587Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="QNA Maker 管理サービス">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
 <p> <img src="https://jpaiblog.github.io/images/QNA-management-service/key-management.png" alt="QNA Maker">  </p>
 </li>
 </ul>
-<p>この図の中で、Cognitive Services としてのリソースは QnA Maker Subscription に相当します。例えば、ポータルを操作して KB を編集した場合、米国西部リージョンにおいてホストされている API 群が呼び出されます (5. Manage KB in portal or via APIs)。この API 群を別リージョンに移行することができないため、<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure#management-service-region" target="_blank" rel="noopener">こちら</a> の記載の通り、Cognitive Services リソースは米国西部リージョン固定になります。  </p>
+<p>この図の中で、Cognitive Services としてのリソースは QnA Maker Subscription に相当します。例えば、ポータルを操作して KB を編集した場合、米国西部リージョンにおいてホストされている API 群が呼び出されます (5. Manage KB in portal or via APIs)。この API 群を別リージョンに移行することができないため、<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/concepts/azure-resources" target="_blank" rel="noopener">こちら</a> の記載の通り、Cognitive Services リソースは米国西部リージョン固定になります。  </p>
 <p>米国西部リージョンにある API のバックエンドから、Web Apps 上でホストされた QnA Maker ランタイムに対してアクセスし、Q&amp;A の追加や削除といった操作が行われます。なお、実際の KB のコンテンツ (Q&amp;A、メタデータ等) は Azure Search に保存されており、ユーザーのチャットログは Application Insights に保存されているため、顧客データは米国西部リージョンには保存されません。  </p>
 <p>※ 管理サービスで使用する API の詳細は以下サイトを参照ください。  </p>
 <ul>
