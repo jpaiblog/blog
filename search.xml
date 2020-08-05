@@ -135,11 +135,11 @@
     
     
     <entry>
-      <title>管理サービスのリージョンについて</title>
+      <title>QNA Maker の管理サービス (Cognitive Service リソース) のリージョンについて</title>
       <link href="/blog/2020/03/03/QNA-management-service/"/>
       <url>/blog/2020/03/03/QNA-management-service/</url>
       
-        <content type="html"><![CDATA[<p>QNA Maker の管理サービスについて説明します。</p><a id="more"></a><br><hr><p>QnA Maker サービスの全体構成は下記ドキュメントの図を参照ください。  </p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure" target="_blank" rel="noopener">QnA Maker のリソースを管理する</a>  </p><p> <img src="https://jpaiblog.github.io/images/QNA-management-service/key-management.png" alt="QNA Maker">  </p></li></ul><p>Cognitive Services としてのリソースは、図中の右上の QnA Maker Subscription に相当します。例えば、ポータルを操作して KB を編集した場合、米国西部リージョンにおいてホストされている API 群が呼び出されます (5. Manage KB in portal or via APIs)。この API 群を別リージョンに移行することができないため、<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/concepts/azure-resources#management-service-region" target="_blank" rel="noopener">こちらのサイト</a> の記載の通り、Cognitive Services リソースは米国西部リージョン固定になります。  </p><p>米国西部リージョンにある API のバックエンドから、Web Apps 上でホストされた QnA Maker ランタイムに対してアクセスし、Q&amp;A の追加や削除といった操作が行われます。なお、実際の KB のコンテンツ (Q&amp;A、メタデータ等) は Azure Search に保存されており、ユーザーのチャットログは Application Insights に保存されているため、顧客データは米国西部リージョンには保存されません。  </p><p>※ 管理サービスで使用する API の詳細は以下サイトを参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">QnA Maker V4.0</a>  </li></ul><p>KB を公開した後の、ボット等のアプリケーションからの問い合わせ (4. User QnA endpoint in Bot) は GenerateAnswer API が使用されます。これは QnA Maker ランタイム (Web Apps) に対して直接アクセスするため、米国西部リージョンを経由することはありません。</p><p>※ GenerateAnswer API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">GenerateAnswer API およびメタデータを使って回答を取得する</a>  </li></ul><hr><p><code>変更履歴</code><br><code>2020/03/03 created by Mochizuki</code>  </p>]]></content>
+        <content type="html"><![CDATA[<p>QNA Maker の管理サービス (Cognitive Service リソース) についてご紹介します。</p><a id="more"></a><br><hr><p>QnA Maker サービスの全体構成は下記ドキュメントの図を参照ください。  </p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure" target="_blank" rel="noopener">QnA Maker のリソースを管理する</a>  </p><p> <img src="https://jpaiblog.github.io/images/QNA-management-service/key-management.png" alt="QNA Maker">  </p></li></ul><p>Cognitive Services としてのリソースは、図中の右上の QnA Maker Subscription に相当します。例えば、ポータルを操作して KB を編集した場合、米国西部リージョンにおいてホストされている API 群が呼び出されます (5. Manage KB in portal or via APIs)。この API 群を別リージョンに移行することができないため、<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/concepts/azure-resources#management-service-region" target="_blank" rel="noopener">こちらのサイト</a> の記載の通り、Cognitive Services リソースは米国西部リージョン固定になります。  </p><p>米国西部リージョンにある API のバックエンドから、Web Apps 上でホストされた QnA Maker ランタイムに対してアクセスし、Q&amp;A の追加や削除といった操作が行われます。なお、実際の KB のコンテンツ (Q&amp;A、メタデータ等) は Azure Search に保存されており、ユーザーのチャットログは Application Insights に保存されているため、顧客データは米国西部リージョンには保存されません。  </p><p>※ 管理サービスで使用する API の詳細は以下サイトを参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">QnA Maker V4.0</a>  </li></ul><p>KB を公開した後の、ボット等のアプリケーションからの問い合わせ (4. User QnA endpoint in Bot) は GenerateAnswer API が使用されます。これは QnA Maker ランタイム (Web Apps) に対して直接アクセスするため、米国西部リージョンを経由することはありません。</p><p>※ GenerateAnswer API の詳細は以下サイトをご参照ください。  </p><ul><li><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff" target="_blank" rel="noopener">GenerateAnswer API およびメタデータを使って回答を取得する</a>  </li></ul><hr><p><code>変更履歴</code><br><code>2020/03/03 created by Mochizuki</code>  </p>]]></content>
       
       
       <categories>
@@ -151,7 +151,7 @@
       
         <tags>
             
-            <tag> QNA Maker 管理サービス </tag>
+            <tag> 管理サービス </tag>
             
         </tags>
       
