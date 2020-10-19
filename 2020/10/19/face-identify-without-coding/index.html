@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face18.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face19.jpg">
 <meta property="article:published_time" content="2020-10-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-19T04:26:39.255Z">
+<meta property="article:modified_time" content="2020-10-19T04:30:54.209Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Face API Recognition Identify">
 <meta name="twitter:card" content="summary">
@@ -187,20 +187,18 @@
 </li>
 </ul>
 <hr>
-<h1 id="利用にあたり推奨するサンプル画像について"><a href="#利用にあたり推奨するサンプル画像について" class="headerlink" title="利用にあたり推奨するサンプル画像について"></a>利用にあたり推奨するサンプル画像について</h1><p>利用にあたっては、<a href="https://github.com/MicrosoftDocs/ai-fundamentals/blob/master/01d%20-%20Face%20Analysis.ipynb" target="_blank" rel="noopener">チュートリアル</a>で利用されているサンプル画像の利用を推奨します。<br/><br>顔認識には<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/face/concepts/face-recognition#input-data" target="_blank" rel="noopener">一定以上の品質の画像</a>が必要となるため、まずは以下のサンプル画像でお試しをいただければスムーズに確認が進みます。</p>
+<h1 id="利用にあたり推奨するサンプル画像について"><a href="#利用にあたり推奨するサンプル画像について" class="headerlink" title="利用にあたり推奨するサンプル画像について"></a>利用にあたり推奨するサンプル画像について</h1><p>利用にあたっては、<a href="https://github.com/MicrosoftDocs/ai-fundamentals/blob/master/01d%20-%20Face%20Analysis.ipynb" target="_blank" rel="noopener">チュートリアル</a>で利用されているサンプル画像の利用を推奨します。<br>顔認識には<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/face/concepts/face-recognition#input-data" target="_blank" rel="noopener">一定以上の品質の画像</a>が必要となるため、まずは以下のサンプル画像でお試しをいただければスムーズに確認が進みます。</p>
 <h4 id="ai-fundamentals-data-face-wendell-（学習する人物画像として利用）"><a href="#ai-fundamentals-data-face-wendell-（学習する人物画像として利用）" class="headerlink" title="ai-fundamentals/data/face/wendell　（学習する人物画像として利用）"></a>ai-fundamentals/data/face/wendell　（学習する人物画像として利用）</h4><ul>
 <li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg</a></li>
 <li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg</a></li>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg</a><br/><br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face01.jpg" alt="face01" title="face01">  </li>
+<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg</a><br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face01.jpg" alt="face01" title="face01">  </li>
 </ul>
 <h4 id="ai-fundamentals-data-face-employees-jpg-（顔認識対象の画像として利用）"><a href="#ai-fundamentals-data-face-employees-jpg-（顔認識対象の画像として利用）" class="headerlink" title="ai-fundamentals/data/face/employees.jpg　（顔認識対象の画像として利用）"></a>ai-fundamentals/data/face/employees.jpg　（顔認識対象の画像として利用）</h4><ul>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg</a><br/>
-
-</li>
+<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg</a></li>
 </ul>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face02.jpg" alt="face02" title="face02"> </p>
 <hr>
-<h1 id="手順概要"><a href="#手順概要" class="headerlink" title="手順概要"></a>手順概要</h1><p>手順の概要は、以下の表のとおりです。<br>Ⅰ-1 から、Ⅱ-2に至るまで、順に、[API] 列のリンクをクリックして開く リファレンスAPIページ（一部について製品デモページ）での処理実行をお試しください。<br/><br>なお、「Ⅰ-4 学習用画像の登録」（および「Ⅰ-3 学習用画像の準備」）については一括登録が行えないため、学習画像の枚数分、複数回の実行が必要です。  </p>
+<h1 id="手順概要"><a href="#手順概要" class="headerlink" title="手順概要"></a>手順概要</h1><p>手順の概要は、以下の表のとおりです。<br>Ⅰ-1 から、Ⅱ-2に至るまで、順に、[API] 列のリンクをクリックして開く リファレンスAPIページ（一部について製品デモページ）での処理実行をお試しください。<br>なお、「Ⅰ-4 学習用画像の登録」（および「Ⅰ-3 学習用画像の準備」）については一括登録が行えないため、学習画像の枚数分、複数回の実行が必要です。  </p>
 <h3 id="Ⅰ-モデルの学習を行う"><a href="#Ⅰ-モデルの学習を行う" class="headerlink" title="Ⅰ.モデルの学習を行う"></a>Ⅰ.モデルの学習を行う</h3><table>
 <thead>
 <tr>
@@ -270,7 +268,7 @@
 <td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" rel="noopener">Face - Detect</a></td>
 <td>人物画像のURL</td>
 <td>顔ID, 画像のURLから顔として認識された領域の座標情報</td>
-<td>自分のキー配下で発行される顔IDを取得するために、リファレンスAPIページを利用<br/><br/>（任意）デモ画面で検出した顔座標状況を確認</td>
+<td>自分のキー配下で発行される顔IDを取得するために、リファレンスAPIページを利用    （任意）デモ画面で検出した顔座標状況を確認</td>
 </tr>
 <tr>
 <td>2.顔認識の実行</td>
@@ -291,7 +289,7 @@
 <p>(3) レスポンスセクションに結果が表示されます。 以下の画像のように [200 OK] と応答があれば問題ありません。処理が成功しています。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face06.jpg" alt="face06" title="face06"></p>
 <hr>
 <h1 id="Ⅰ-2-グループに対して、人物を登録する"><a href="#Ⅰ-2-グループに対して、人物を登録する" class="headerlink" title="Ⅰ-2.グループに対して、人物を登録する"></a>Ⅰ-2.グループに対して、人物を登録する</h1><p>（以降、前の手順と重複するエンドポイント選択手順などは割愛します。<br>　ご参考として、リクエストセクションと、レスポンスセクションのスクリーンショットをそれぞれ貼付します）  </p>
-<p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c" target="_blank" rel="noopener">PersonGroup Person – Create</a> ページを開きます。<br>(1) リクエストセクション<br>前の手順で設定したグループIDを入力します。<br/><br>人物名は、ユーザー様で任意に設定可能です（この名称は以降の手順では特に利用しません）<br/></p>
+<p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c" target="_blank" rel="noopener">PersonGroup Person – Create</a> ページを開きます。<br>(1) リクエストセクション<br>前の手順で設定したグループIDを入力します。<br>人物名は、ユーザー様で任意に設定可能です（この名称は以降の手順では特に利用しません）  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face07.jpg" alt="face07" title="face07"></p>
 <p>(2) レスポンスセクション<br>以降の手順で必要となるため、自動で設定された personId を取り置きます。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face08.jpg" alt="face08" title="face08"></p>
 <hr>
@@ -300,7 +298,7 @@
 <p>次の手順のために、画面右側に出力された座標情報を取り置きます。</p>
 <hr>
 <h1 id="Ⅰ-4-人物に対して、学習用画像を登録する"><a href="#Ⅰ-4-人物に対して、学習用画像を登録する" class="headerlink" title="Ⅰ-4.人物に対して、学習用画像を登録する"></a>Ⅰ-4.人物に対して、学習用画像を登録する</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b" target="_blank" rel="noopener">PersonGroup Person - Add Face</a> ページを開きます。  </p>
-<p>(1) リクエストセクション<br>これまでの手順で設定および取得した、グループIDと人物IDを入力します。<br/><br>また、targetFace には、前の手順で取得した顔として認識された領域の座標情報を入力します。以下のようなフォーマット変換が必要です。<br/></p>
+<p>(1) リクエストセクション<br>これまでの手順で設定および取得した、グループIDと人物IDを入力します。<br>また、targetFace には、前の手順で取得した顔として認識された領域の座標情報を入力します。以下のようなフォーマット変換が必要です。  </p>
 <table>
 <thead>
 <tr>
@@ -336,12 +334,12 @@
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face16.jpg" alt="face16" title="face16"></p>
 <p>(2) レスポンスセクション<br>次の手順のために、出力されたfaceIdを取り置きます。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face17.jpg" alt="face17" title="face17"></p>
 <p>※ 任意手順  </p>
-<p><a href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo" target="_blank" rel="noopener">デモ画面</a> で、以下のように顔認識用画像のURLを入力して [送信]　し、検出された顔座標の状況を目視確認します。<br>サンプル画像に detection_02 モデルを適用すると、2つの顔が検出されます。<br/></p>
+<p><a href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo" target="_blank" rel="noopener">デモ画面</a> で、以下のように顔認識用画像のURLを入力して [送信]　し、検出された顔座標の状況を目視確認します。<br>サンプル画像に detection_02 モデルを適用すると、2つの顔が検出されます。  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face18.jpg" alt="face18" title="face18"></p>
 <hr>
-<h1 id="Ⅱ-2-顔認識の実行"><a href="#Ⅱ-2-顔認識の実行" class="headerlink" title="Ⅱ-2.顔認識の実行"></a>Ⅱ-2.顔認識の実行</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a> ページを開きます。<br>(1) リクエストセクション<br>Request bodyに、以下のように設定します。<br>largePersonGroupId <strong>を削除し</strong>、<strong>personGroupId</strong>　にキーを変更します。そして、グループIDを入力します。<br>faceIds には、以下のように前の手順で取得した顔IDを入力します。<br/></p>
+<h1 id="Ⅱ-2-顔認識の実行"><a href="#Ⅱ-2-顔認識の実行" class="headerlink" title="Ⅱ-2.顔認識の実行"></a>Ⅱ-2.顔認識の実行</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a> ページを開きます。<br>(1) リクエストセクション<br>Request bodyに、以下のように設定します。<br>largePersonGroupId <strong>を削除し</strong>、<strong>personGroupId</strong>　にキーを変更します。そして、グループIDを入力します。<br>faceIds には、以下のように前の手順で取得した顔IDを入力します。  </p>
 <blockquote>
-<p>{<br>   “<strong>personGroupId</strong>“: “groupid01”,<br/><br>   “<strong>faceIds</strong>“: [<br/><br>   “17d2e2a6-c891-4f16-bf6e-14180c9b0e8b”,<br/><br>    “a3a2ce7c-3743-4819-ae8f-47d4940bbee5”<br/><br>   ],<br/><br>   “maxNumOfCandidatesReturned”: 1,<br/><br>   “confidenceThreshold”: 0.5<br/><br>}</p>
+<p>{<br>   “<strong>personGroupId</strong>“: “groupid01”,<br>   “<strong>faceIds</strong>“: [<br>   “17d2e2a6-c891-4f16-bf6e-14180c9b0e8b”,<br>    “a3a2ce7c-3743-4819-ae8f-47d4940bbee5”<br>   ],<br>   “maxNumOfCandidatesReturned”: 1,<br>   “confidenceThreshold”: 0.5<br>}</p>
 </blockquote>
 <p>maxNumOfCandidatesReturned などの項目は、既定のままでも、画面に表示されている説明に準じて、値を変更いただいても問題ありません。</p>
 <p>(2) レスポンスセクション<br>顔IDごとに、顔認識の結果として、その人物IDと確度（0から1の値をとります）が返却されます。<br>人物IDが返却されない場合は、パラメータセクションで confidenceThreshold に設定した以上の値の確度で認識した人物に該当がなかったことを示します。</p>
