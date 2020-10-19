@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face18.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face19.jpg">
 <meta property="article:published_time" content="2020-10-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-19T04:16:45.208Z">
+<meta property="article:modified_time" content="2020-10-19T04:21:28.800Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Face API Recognition Identify">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,31 @@
 </tr>
 </tbody></table>
 <p>　</p>
-<h3 id="Ⅱ-顔認識を行う"><a href="#Ⅱ-顔認識を行う" class="headerlink" title="Ⅱ.顔認識を行う"></a>Ⅱ.顔認識を行う</h3><p>　<br>|  手順内容  |  API  |  主要な送信パラメータ |  主要な受信パラメータ  |  備考  |<br>| —- | —- | —- | —- | —- |<br>|  1.顔認識用画像の準備  |  <a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" rel="noopener">Face - Detect</a>  |  人物画像のURL  |  顔ID, 画像のURLから顔として認識された領域の座標情報  |  自分のキー配下で発行される顔IDを取得するために、リファレンスAPIページを利用<br/><br/>（任意）デモ画面で検出した顔座標状況を確認  |<br>|  2.顔認識の実行  |  <a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a>  |  グループID, 顔ID  |  (顔IDごとに) 人物ID, 確度  |  -  |</p>
+<h3 id="Ⅱ-顔認識を行う"><a href="#Ⅱ-顔認識を行う" class="headerlink" title="Ⅱ.顔認識を行う"></a>Ⅱ.顔認識を行う</h3><table>
+<thead>
+<tr>
+<th>手順内容</th>
+<th>API</th>
+<th>主要な送信パラメータ</th>
+<th>主要な受信パラメータ</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.顔認識用画像の準備</td>
+<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" rel="noopener">Face - Detect</a></td>
+<td>人物画像のURL</td>
+<td>顔ID, 画像のURLから顔として認識された領域の座標情報</td>
+<td>自分のキー配下で発行される顔IDを取得するために、リファレンスAPIページを利用<br/><br/>（任意）デモ画面で検出した顔座標状況を確認</td>
+</tr>
+<tr>
+<td>2.顔認識の実行</td>
+<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a></td>
+<td>グループID, 顔ID</td>
+<td>(顔IDごとに) 人物ID, 確度</td>
+<td>-</td>
+</tr>
+</tbody></table>
 <hr>
 <h1 id="手順詳細"><a href="#手順詳細" class="headerlink" title="手順詳細"></a>手順詳細</h1><p>以下にご参考まで、2020年10月時点の各手順実行時のスクリーンショットを貼付します。</p>
 <hr>
