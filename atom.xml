@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/"/>
-  <updated>2020-10-18T15:22:24.526Z</updated>
+  <updated>2020-10-19T04:10:10.558Z</updated>
   <id>https://jpaiblog.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Face API 顔認識機能をプログラミングせずに利用する方法</title>
+    <link href="https://jpaiblog.github.io/2020/10/19/face-identify-without-coding/"/>
+    <id>https://jpaiblog.github.io/2020/10/19/face-identify-without-coding/</id>
+    <published>2020-10-18T15:00:00.000Z</published>
+    <updated>2020-10-19T04:10:10.558Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Face API 顔認識機能を、プログラミングせずに利用する方法をご紹介します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#利用にあたり推奨するサンプル画像について&quot;&gt;利用にあたり推奨するサンプル画像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#手順概要&quot;&gt;手順概要&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#手順詳細&quot;&gt;手順詳細&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="Face API" scheme="https://jpaiblog.github.io/categories/Face-API/"/>
+    
+    
+      <category term="Face API Recognition Identify" scheme="https://jpaiblog.github.io/tags/Face-API-Recognition-Identify/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LUIS オーサリング リソースへの移行について</title>
     <link href="https://jpaiblog.github.io/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.526Z</updated>
+    <updated>2020-10-19T04:10:10.569Z</updated>
     
     <summary type="html">
     
@@ -42,7 +67,7 @@
     <link href="https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.556Z</updated>
+    <updated>2020-10-19T04:10:10.599Z</updated>
     
     <summary type="html">
     
@@ -67,7 +92,7 @@
     <link href="https://jpaiblog.github.io/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.512Z</updated>
+    <updated>2020-10-19T04:10:10.531Z</updated>
     
     <summary type="html">
     
@@ -94,7 +119,7 @@
     <link href="https://jpaiblog.github.io/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.542Z</updated>
+    <updated>2020-10-19T04:10:10.589Z</updated>
     
     <summary type="html">
     
@@ -115,7 +140,7 @@
     <link href="https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.519Z</updated>
+    <updated>2020-10-19T04:10:10.535Z</updated>
     
     <summary type="html">
     
@@ -136,7 +161,7 @@
     <link href="https://jpaiblog.github.io/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.537Z</updated>
+    <updated>2020-10-19T04:10:10.577Z</updated>
     
     <summary type="html">
     
@@ -157,7 +182,7 @@
     <link href="https://jpaiblog.github.io/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.531Z</updated>
+    <updated>2020-10-19T04:10:10.572Z</updated>
     
     <summary type="html">
     
@@ -178,7 +203,7 @@
     <link href="https://jpaiblog.github.io/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-18T15:22:24.507Z</updated>
+    <updated>2020-10-19T04:10:10.525Z</updated>
     
     <summary type="html">
     
