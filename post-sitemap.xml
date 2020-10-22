@@ -2,78 +2,78 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://jpaiblog.github.io</loc>
+        <loc>https://jpaiblog.github.io/blog</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/</loc>
-        <lastmod>2020-10-19T04:30:54.252Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</loc>
+        <lastmod>2020-10-22T10:13:10.086Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/04/30/test-APIs/</loc>
-        <lastmod>2020-10-19T04:30:54.238Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</loc>
+        <lastmod>2020-10-22T10:13:10.071Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/03/03/QNA-management-service/</loc>
-        <lastmod>2020-10-19T04:30:54.232Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</loc>
+        <lastmod>2020-10-22T10:13:10.032Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/01/12/past-blog/</loc>
-        <lastmod>2020-10-19T04:30:54.227Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</loc>
+        <lastmod>2020-10-22T10:13:10.025Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/06/05/LUIS-authoring-resource/</loc>
-        <lastmod>2020-10-19T04:30:54.223Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</loc>
+        <lastmod>2020-10-22T10:13:10.021Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/10/19/face-identify-without-coding/</loc>
-        <lastmod>2020-10-19T04:30:54.209Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</loc>
+        <lastmod>2020-10-22T10:13:10.007Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/</loc>
-        <lastmod>2020-10-19T04:30:54.193Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</loc>
+        <lastmod>2020-10-22T10:13:09.992Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/05/14/cognitive-portal-sub-not-found/</loc>
-        <lastmod>2020-10-19T04:30:54.176Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</loc>
+        <lastmod>2020-10-22T10:13:09.986Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/2020/01/01/about-jpaiblog/</loc>
-        <lastmod>2020-10-19T04:30:54.163Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</loc>
+        <lastmod>2020-10-22T10:13:09.982Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

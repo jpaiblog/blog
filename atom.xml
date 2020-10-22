@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Japan Cognitive Services Support Blog</title>
-  <icon>https://jpaiblog.github.io/icon.png</icon>
+  <icon>https://jpaiblog.github.io/blog/icon.png</icon>
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://jpaiblog.github.io/"/>
-  <updated>2020-10-19T04:30:54.209Z</updated>
-  <id>https://jpaiblog.github.io/</id>
+  <link href="https://jpaiblog.github.io/blog/"/>
+  <updated>2020-10-22T10:13:10.007Z</updated>
+  <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
     <name>jpaiblog</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Face API 顔認識機能をプログラミングせずに利用する方法</title>
-    <link href="https://jpaiblog.github.io/2020/10/19/face-identify-without-coding/"/>
-    <id>https://jpaiblog.github.io/2020/10/19/face-identify-without-coding/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
+    <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.209Z</updated>
+    <updated>2020-10-22T10:13:10.007Z</updated>
     
     <summary type="html">
     
@@ -34,19 +34,19 @@
     </summary>
     
     
-      <category term="Face API" scheme="https://jpaiblog.github.io/categories/Face-API/"/>
+      <category term="Face API" scheme="https://jpaiblog.github.io/blog/categories/Face-API/"/>
     
     
-      <category term="Face API Recognition Identify" scheme="https://jpaiblog.github.io/tags/Face-API-Recognition-Identify/"/>
+      <category term="Face API Recognition Identify" scheme="https://jpaiblog.github.io/blog/tags/Face-API-Recognition-Identify/"/>
     
   </entry>
   
   <entry>
     <title>LUIS オーサリング リソースへの移行について</title>
-    <link href="https://jpaiblog.github.io/2020/06/05/LUIS-authoring-resource/"/>
-    <id>https://jpaiblog.github.io/2020/06/05/LUIS-authoring-resource/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
+    <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.223Z</updated>
+    <updated>2020-10-22T10:13:10.021Z</updated>
     
     <summary type="html">
     
@@ -55,19 +55,19 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="LUIS" scheme="https://jpaiblog.github.io/tags/LUIS/"/>
+      <category term="LUIS" scheme="https://jpaiblog.github.io/blog/tags/LUIS/"/>
     
   </entry>
   
   <entry>
     <title>Translator Text API の翻訳文字数の確認方法</title>
-    <link href="https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/"/>
-    <id>https://jpaiblog.github.io/2020/05/28/TranslatorTextAPI-char-translated/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
+    <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.252Z</updated>
+    <updated>2020-10-22T10:13:10.086Z</updated>
     
     <summary type="html">
     
@@ -80,19 +80,19 @@
     </summary>
     
     
-      <category term="Translator Text API" scheme="https://jpaiblog.github.io/categories/Translator-Text-API/"/>
+      <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/categories/Translator-Text-API/"/>
     
     
-      <category term="Translator Text API" scheme="https://jpaiblog.github.io/tags/Translator-Text-API/"/>
+      <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/tags/Translator-Text-API/"/>
     
   </entry>
   
   <entry>
     <title>Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策</title>
-    <link href="https://jpaiblog.github.io/2020/05/14/cognitive-portal-sub-not-found/"/>
-    <id>https://jpaiblog.github.io/2020/05/14/cognitive-portal-sub-not-found/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
+    <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.176Z</updated>
+    <updated>2020-10-22T10:13:09.986Z</updated>
     
     <summary type="html">
     
@@ -101,25 +101,25 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="LUIS" scheme="https://jpaiblog.github.io/tags/LUIS/"/>
+      <category term="LUIS" scheme="https://jpaiblog.github.io/blog/tags/LUIS/"/>
     
-      <category term="QnA Maker" scheme="https://jpaiblog.github.io/tags/QnA-Maker/"/>
+      <category term="QnA Maker" scheme="https://jpaiblog.github.io/blog/tags/QnA-Maker/"/>
     
-      <category term="Custom Vision" scheme="https://jpaiblog.github.io/tags/Custom-Vision/"/>
+      <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
     
-      <category term="Speech Services" scheme="https://jpaiblog.github.io/tags/Speech-Services/"/>
+      <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/tags/Speech-Services/"/>
     
   </entry>
   
   <entry>
     <title>Cognitive Serivces で使用する API テスト ページについて</title>
-    <link href="https://jpaiblog.github.io/2020/04/30/test-APIs/"/>
-    <id>https://jpaiblog.github.io/2020/04/30/test-APIs/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
+    <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.238Z</updated>
+    <updated>2020-10-22T10:13:10.071Z</updated>
     
     <summary type="html">
     
@@ -128,19 +128,19 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="API" scheme="https://jpaiblog.github.io/tags/API/"/>
+      <category term="API" scheme="https://jpaiblog.github.io/blog/tags/API/"/>
     
   </entry>
   
   <entry>
     <title>ポータルにサインインできない事象について (AADSTS650051)</title>
-    <link href="https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/"/>
-    <id>https://jpaiblog.github.io/2020/03/07/error-AADSTS650051/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
+    <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.193Z</updated>
+    <updated>2020-10-22T10:13:09.992Z</updated>
     
     <summary type="html">
     
@@ -149,19 +149,19 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="AADSTS650051" scheme="https://jpaiblog.github.io/tags/AADSTS650051/"/>
+      <category term="AADSTS650051" scheme="https://jpaiblog.github.io/blog/tags/AADSTS650051/"/>
     
   </entry>
   
   <entry>
     <title>QNA Maker の管理サービス (Cognitive Services リソース) のリージョンについて</title>
-    <link href="https://jpaiblog.github.io/2020/03/03/QNA-management-service/"/>
-    <id>https://jpaiblog.github.io/2020/03/03/QNA-management-service/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
+    <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.232Z</updated>
+    <updated>2020-10-22T10:13:10.032Z</updated>
     
     <summary type="html">
     
@@ -170,19 +170,19 @@
     </summary>
     
     
-      <category term="QNA Maker" scheme="https://jpaiblog.github.io/categories/QNA-Maker/"/>
+      <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/categories/QNA-Maker/"/>
     
     
-      <category term="管理サービス" scheme="https://jpaiblog.github.io/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/"/>
+      <category term="管理サービス" scheme="https://jpaiblog.github.io/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>過去ブログについて</title>
-    <link href="https://jpaiblog.github.io/2020/01/12/past-blog/"/>
-    <id>https://jpaiblog.github.io/2020/01/12/past-blog/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
+    <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.227Z</updated>
+    <updated>2020-10-22T10:13:10.025Z</updated>
     
     <summary type="html">
     
@@ -191,19 +191,19 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="過去ブログ" scheme="https://jpaiblog.github.io/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/"/>
+      <category term="過去ブログ" scheme="https://jpaiblog.github.io/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/"/>
     
   </entry>
   
   <entry>
     <title>jpaiblog について</title>
-    <link href="https://jpaiblog.github.io/2020/01/01/about-jpaiblog/"/>
-    <id>https://jpaiblog.github.io/2020/01/01/about-jpaiblog/</id>
+    <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
+    <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-19T04:30:54.163Z</updated>
+    <updated>2020-10-22T10:13:09.982Z</updated>
     
     <summary type="html">
     
@@ -219,10 +219,10 @@
     </summary>
     
     
-      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/categories/Cognitive-Services/"/>
+      <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-      <category term="はじめに" scheme="https://jpaiblog.github.io/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
+      <category term="はじめに" scheme="https://jpaiblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
     
   </entry>
   
