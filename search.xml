@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>QnA Maker に関連する App Service プランの価格レベルについて</title>
-      <link href="/blog/2020/10/20/QnA-Maker-App-Service/"/>
-      <url>/blog/2020/10/20/QnA-Maker-App-Service/</url>
-      
-        <content type="html"><![CDATA[<p>QnA Maker に関連する App Servcie プランの価格レベルを Free に調整する方法をご紹介します。</p><a id="more"></a><br><hr><h1 id="App-Service-プランの価格レベルを調整する方法について"><a href="#App-Service-プランの価格レベルを調整する方法について" class="headerlink" title="App Service プランの価格レベルを調整する方法について"></a>App Service プランの価格レベルを調整する方法について</h1><p>QnA Maker の利用を検討される段階で、無料での利用が望ましいが、Free 価格レベルの QnA Maker を作成しようとしたら、関連のリソース App Service プランの価格レベルの既定値は、Standard (S1) となっています。<br><br>これは、多くの一般的なシナリオで問題なく QnA Maker を利用できるコンピューティング リソースを確保するためです。</p><p>もし課金を抑えたい場合は、QnA Maker の作成後、すぐに関連のリソース App Service プランの価格レベルを Free に変更すればいいです。</p><p>以下の図のように、App Service プラン リソースの画面で、スケール アップ (App Service のプラン) ⇒ 開発/テスト ⇒ F1  ⇒ 適用 の順に実施すると、App Service プランの価格レベルを Free に変更できます。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/app-service-plan-scale-down.png" alt="app-service-plan-scale-down"></p><p>Free 価格レベルに変更する前に、Standard 価格レベルの App Service プランに対する課金が秒単位で続けられます（約 ¥13.216/時間）。<br>各価格レベルの課金情報とそのコンピューティング リソースのスペックについては、下記リンクから確認できます。<br></p><ul><li><a href="https://azure.microsoft.com/ja-jp/pricing/details/app-service/windows/" target="_blank" rel="noopener">App Service の価格</a></li></ul><p>なお、App Service プランの価格レベルを Free に変更した場合はリソースの制約（クォータ）により正常に動作しない場合があるので、何らか問題が発生した際は必要に応じて適切な価格レベルへの変更をご検討ください。</p><h1 id="QnA-Maker-を作成する段階で-Free-価格レベルの-App-Service-プランを作成する方法について"><a href="#QnA-Maker-を作成する段階で-Free-価格レベルの-App-Service-プランを作成する方法について" class="headerlink" title="QnA Maker を作成する段階で Free 価格レベルの App Service プランを作成する方法について"></a>QnA Maker を作成する段階で Free 価格レベルの App Service プランを作成する方法について</h1><p>ここで、補足として、QnA Maker を作成する段階で、ARM テンプレートを用いて Free 価格レベルの App Service プランの作成方法を紹介します。<br></p><ol><li><p>QnA Makerの作成画面で基本情報を入力します。<br><br>QnA Maker と Azure Search の価格レベルにそれぞれ Freeを指定した上、他の情報の入力後に、「確認および作成」をクリックします。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step01.png" alt="step01"></p></li><li><p>「Automation オプション」をクリックします。<br><br>注：この画面で「作成」をクリックしないでください。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step02.png" alt="step02"></p></li><li><p>「ダウンロード」をクリックします。<br><br>ダウンロードした zip ファイルを解凍します。 <br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step03.png" alt="step03"></p></li><li><p>「カスタム テンプレートのデプロイ」を検索します。<br><br>Azure ポータルの検索バーに「カスタム テンプレートのデプロイ」を入力し、下に表示される「カスタム テンプレートのデプロイ」をクリックします。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step04.png" alt="step04"></p></li><li><p>「エディターで独自のテンプレートを作成する」をクリックします。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step05.png" alt="step05"></p></li><li><p>テンプレートファイルを読み込みます。<br><br>「ファイルの読み込み」をクリックして、ステップ 3 でダウンロードした template.json ファイルを選択します。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step06.png" alt="step06"></p></li><li><p>テンプレートを編集して保存します。<br><br>以下のように、”type:” “Microsoft.Web/serverfarms” の項目で “sku” の ”Standard” と “S1” をそれぞれ “Free” と “F1” に変更してファイルを保存します。<br><br>なお、アップロード前の JSON ファイルで編集いただいても構いません。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step07.png" alt="step07"></p></li><li><p>「パラメーターの編集」をクリックします。<br><br>注：Web ブラウザーによってはボタンの名前が全て表示されない場合がございますので、マウスカーソルをボタン上に置いて表示されるツールチップでご確認ください。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step08.png" alt="step08"></p></li><li><p>パラメーターファイルを読み込みます。<br><br>「ファイルの読み込み」をクリックし、ステップ 3 でダウンロードした parameters.json ファイルを選択します。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step09.png" alt="step09"></p></li><li><p>パラメーターを保存します。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step10.png" alt="step10"></p></li><li><p>テンプレートファイルをデプロイします。<br><br>デプロイ先のリソースグループを選択した上、使用条件を確認して同意いただけましたら「購入」をクリックします。<br><br><img src="https://jpaiblog.github.io/images/QnA-Maker-App-Service/step11.png" alt="step11"></p></li></ol><p>ARM テンプレートを利用して、Free の価格レベルの App Service プランを含む QnA Maker を作成する手順は以上となります。</p><hr><p><code>変更履歴</code><br><code>2020/10/20 created by Chao</code>  </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> QnA Maker </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> QnA Maker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Face API 顔認識機能をプログラミングせずに利用する方法</title>
       <link href="/blog/2020/10/19/face-identify-without-coding/"/>
       <url>/blog/2020/10/19/face-identify-without-coding/</url>
@@ -120,9 +95,9 @@
       
         <tags>
             
-            <tag> LUIS </tag>
-            
             <tag> QnA Maker </tag>
+            
+            <tag> LUIS </tag>
             
             <tag> Custom Vision </tag>
             
