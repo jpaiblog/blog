@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2020-10-22T10:13:10.007Z</updated>
+  <updated>2020-11-02T09:00:08.673Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>QnA Maker に関連する App Service プランの価格レベルについて</title>
+    <link href="https://jpaiblog.github.io/blog/2020/10/20/QnA-Maker-App-Service/"/>
+    <id>https://jpaiblog.github.io/blog/2020/10/20/QnA-Maker-App-Service/</id>
+    <published>2020-10-20T03:00:00.000Z</published>
+    <updated>2020-11-02T09:00:08.673Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;QnA Maker に関連する App Servcie プランの価格レベルを Free に調整する方法をご紹介します。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="QnA Maker" scheme="https://jpaiblog.github.io/blog/categories/QnA-Maker/"/>
+    
+    
+      <category term="QnA Maker" scheme="https://jpaiblog.github.io/blog/tags/QnA-Maker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Face API 顔認識機能をプログラミングせずに利用する方法</title>
     <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
     <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.007Z</updated>
+    <updated>2020-11-02T09:00:08.650Z</updated>
     
     <summary type="html">
     
@@ -46,7 +67,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.021Z</updated>
+    <updated>2020-11-02T09:00:08.663Z</updated>
     
     <summary type="html">
     
@@ -67,7 +88,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.086Z</updated>
+    <updated>2020-11-02T09:00:08.703Z</updated>
     
     <summary type="html">
     
@@ -92,7 +113,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:09.986Z</updated>
+    <updated>2020-11-02T09:00:08.638Z</updated>
     
     <summary type="html">
     
@@ -119,7 +140,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.071Z</updated>
+    <updated>2020-11-02T09:00:08.690Z</updated>
     
     <summary type="html">
     
@@ -140,7 +161,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:09.992Z</updated>
+    <updated>2020-11-02T09:00:08.642Z</updated>
     
     <summary type="html">
     
@@ -161,7 +182,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.032Z</updated>
+    <updated>2020-11-02T09:00:08.677Z</updated>
     
     <summary type="html">
     
@@ -182,7 +203,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:10.025Z</updated>
+    <updated>2020-11-02T09:00:08.669Z</updated>
     
     <summary type="html">
     
@@ -203,7 +224,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-10-22T10:13:09.982Z</updated>
+    <updated>2020-11-02T09:00:08.632Z</updated>
     
     <summary type="html">
     
