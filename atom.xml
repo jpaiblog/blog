@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2020-11-11T09:48:15.644Z</updated>
+  <updated>2020-11-24T12:58:22.724Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -17,25 +17,15 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法</title>
-    <link href="https://jpaiblog.github.io/blog/2020/11/12/use-private-endpoints/"/>
-    <id>https://jpaiblog.github.io/blog/2020/11/12/use-private-endpoints/</id>
-    <published>2020-11-11T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.644Z</updated>
+    <title>Webポータル画面が期待通りに表示されない場合の確認方法</title>
+    <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
+    <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
+    <published>2020-11-10T15:00:00.000Z</published>
+    <updated>2020-11-24T12:58:22.724Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法をご案内します。&lt;br&gt;Cognitive Services のリソースを、 パブリック インターネットに 公開せずに利用できるメリットがあります。&lt;br&gt;（Private Link を使用した、より実際的なシステム構成については、&lt;a href=&quot;https://docs.microsoft.com/ja-jp/azure/networking/networking-overview#azure-private-link&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Azure ネットワーク サービスの概要：Azure Private Link&lt;/a&gt; のドキュメントをご参照ください）&lt;br&gt;本稿では、サンプルとして以下の図のような構成を設定する手順をご説明します。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg&quot; alt=&quot;endpoint01&quot; title=&quot;endpoint01&quot;&gt; &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;#1.CognitiveServices：サポート状況を確認&quot;&gt;CognitiveServices：サポート状況を確認&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2.CognitiveServices：リソースを作成&quot;&gt;CognitiveServices：リソースを作成&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3.CognitiveServices：通常の疎通を確認&quot;&gt;CognitiveServices：通常の疎通を確認&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#4.VNET,Bastionhost,およびPrivateEndpoint：リソースを作成&quot;&gt;VNET,Bastion host,およびPrivateEndpoint：リソースを作成&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#5.PrivateEndpoint：接続情報の確認&quot;&gt;PrivateEndpoint：接続情報の確認&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#6.CognitiveServices：ネットワークを制限&quot;&gt;CognitiveServices：ネットワークを制限&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#7.PrivateEndpoint+CognitiveServices：アクセスを確認&quot;&gt;PrivateEndpoint+CognitiveServices：アクセスを確認&lt;/a&gt; &lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;Webポータル画面が 『プルダウンリストに選択肢が表示されるはずなのに、表示されない』 など、期待通りに表示されない場合に確認するポイントをご紹介します。&lt;/p&gt;
     
     </summary>
     
@@ -48,20 +38,15 @@
   </entry>
   
   <entry>
-    <title>Webポータル画面が期待通りに表示されない場合の確認方法</title>
-    <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
-    <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
+    <title>Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法</title>
+    <link href="https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/"/>
+    <id>https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.604Z</updated>
+    <updated>2020-11-24T12:58:22.788Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Coginitive Services の一部には、特有のWebポータル画面を持つサービスがあります。&lt;br&gt;Azureポータル画面や、それらサービス特有のWebポータル画面で 『プルダウンに選択肢が表示されるはずなのに、表示されない』 など、期待通りの画面表示とならない場合の確認方法をご紹介します。&lt;br&gt;（以下の画像は、Metrics Advisor サービスのポータル画面における例です）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://jpaiblog.github.io/images/not-expected-display-on-the-webbrowser/browser01.jpg&quot; alt=&quot;browser01&quot; title=&quot;browser01&quot;&gt; &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;#Webブラウザの言語翻訳機能の状態を確認する&quot;&gt;Webブラウザの言語翻訳機能の状態を確認する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#Webブラウザから最新のデータにアクセスして確認する&quot;&gt;Webブラウザから最新のデータにアクセスして確認する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#現在利用しているブラウザ以外のブラウザを使用して確認する&quot;&gt;現在利用しているブラウザ以外のブラウザを使用して確認する&lt;/a&gt;
+      &lt;p&gt;Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法を解説します。  &lt;/p&gt;
     
     </summary>
     
@@ -78,7 +63,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
     <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.584Z</updated>
+    <updated>2020-11-24T12:58:22.677Z</updated>
     
     <summary type="html">
     
@@ -103,7 +88,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.598Z</updated>
+    <updated>2020-11-24T12:58:22.716Z</updated>
     
     <summary type="html">
     
@@ -124,7 +109,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.640Z</updated>
+    <updated>2020-11-24T12:58:22.772Z</updated>
     
     <summary type="html">
     
@@ -149,7 +134,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.564Z</updated>
+    <updated>2020-11-24T12:58:22.661Z</updated>
     
     <summary type="html">
     
@@ -176,7 +161,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.629Z</updated>
+    <updated>2020-11-24T12:58:22.740Z</updated>
     
     <summary type="html">
     
@@ -197,7 +182,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.570Z</updated>
+    <updated>2020-11-24T12:58:22.665Z</updated>
     
     <summary type="html">
     
@@ -218,7 +203,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.615Z</updated>
+    <updated>2020-11-24T12:58:22.736Z</updated>
     
     <summary type="html">
     
@@ -239,7 +224,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.609Z</updated>
+    <updated>2020-11-24T12:58:22.732Z</updated>
     
     <summary type="html">
     
@@ -260,7 +245,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-11-11T09:48:15.558Z</updated>
+    <updated>2020-11-24T12:58:22.657Z</updated>
     
     <summary type="html">
     

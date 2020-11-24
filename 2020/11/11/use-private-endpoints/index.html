@@ -19,12 +19,12 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法をご案内します。Cognitive Services のリソースを、 パブリック インターネットに 公開せずに利用できるメリットがあります。（Private Link を使用した、より実際的なシステム構成については、Azure ネットワーク サービスの">
+  <meta name="description" content="Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法を解説します。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/2020/11/12/use-private-endpoints/index.html">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法をご案内します。Cognitive Services のリソースを、 パブリック インターネットに 公開せずに利用できるメリットがあります。（Private Link を使用した、より実際的なシステム構成については、Azure ネットワーク サービスの">
+<meta property="og:description" content="Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法を解説します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/use-private-endpoints/endpoint02.jpg">
@@ -38,8 +38,8 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/use-private-endpoints/endpoint10.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg">
-<meta property="article:published_time" content="2020-11-11T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-11T09:48:15.644Z">
+<meta property="article:published_time" content="2020-11-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-24T12:58:22.788Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Cognitive Services">
 <meta name="twitter:card" content="summary">
@@ -143,12 +143,12 @@
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/11/12/use-private-endpoints/">
+  	<a href="/blog/2020/11/11/use-private-endpoints/">
     	Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法
     </a>
   </h2>
 	<time>
-	  11月 12, 2020
+	  11月 11, 2020
 	</time>
 	
     
@@ -158,12 +158,16 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-CognitiveServices：サポート状況を確認"><span class="toc-number">1.</span> <span class="toc-text">1.CognitiveServices：サポート状況を確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-CognitiveServices：リソースを作成"><span class="toc-number">2.</span> <span class="toc-text">2.CognitiveServices：リソースを作成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-CognitiveServices：通常の疎通を確認"><span class="toc-number">3.</span> <span class="toc-text">3.CognitiveServices：通常の疎通を確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-VNET-Bastionhost-およびPrivateEndpoint：リソースを作成"><span class="toc-number">4.</span> <span class="toc-text">4.VNET,Bastionhost,およびPrivateEndpoint：リソースを作成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-PrivateEndpoint：接続情報の確認"><span class="toc-number">5.</span> <span class="toc-text">5.PrivateEndpoint：接続情報の確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-CognitiveServices：ネットワークを制限"><span class="toc-number">6.</span> <span class="toc-text">6.CognitiveServices：ネットワークを制限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-PrivateEndpoint-CognitiveServices：アクセスを確認"><span class="toc-number">7.</span> <span class="toc-text">7.PrivateEndpoint+CognitiveServices：アクセスを確認</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-CognitiveServices：サポート状況を確認"><span class="toc-number">1.</span> <span class="toc-text">1.CognitiveServices：サポート状況を確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-CognitiveServices：リソースを作成"><span class="toc-number">2.</span> <span class="toc-text">2.CognitiveServices：リソースを作成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-CognitiveServices：通常の疎通を確認"><span class="toc-number">3.</span> <span class="toc-text">3.CognitiveServices：通常の疎通を確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-VNET-Bastionhost-およびPrivateEndpoint：リソースを作成"><span class="toc-number">4.</span> <span class="toc-text">4.VNET,Bastionhost,およびPrivateEndpoint：リソースを作成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-PrivateEndpoint：接続情報の確認"><span class="toc-number">5.</span> <span class="toc-text">5.PrivateEndpoint：接続情報の確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#When-you-create-a-private-endpoint-the-DNS-CNAME-resource-record-for-the-Cognitive-Services-resource-is-updated-to-an-alias-in-a-subdomain-with-the-prefix-‘privatelink’"><span class="toc-number">6.</span> <span class="toc-text">When you create a private endpoint, the DNS CNAME resource record for the Cognitive Services resource is updated to an alias in a subdomain with the prefix ‘privatelink’.  </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-CognitiveServices：ネットワークを制限"><span class="toc-number">7.</span> <span class="toc-text">6.CognitiveServices：ネットワークを制限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-PrivateEndpoint-CognitiveServices：アクセスを確認"><span class="toc-number">8.</span> <span class="toc-text">7.PrivateEndpoint+CognitiveServices：アクセスを確認</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法をご案内します。<br>Cognitive Services のリソースを、 パブリック インターネットに 公開せずに利用できるメリットがあります。<br>（Private Link を使用した、より実際的なシステム構成については、<a href="https://docs.microsoft.com/ja-jp/azure/networking/networking-overview#azure-private-link" target="_blank" rel="noopener">Azure ネットワーク サービスの概要：Azure Private Link</a> のドキュメントをご参照ください）<br>本稿では、サンプルとして以下の図のような構成を設定する手順をご説明します。</p>
-<p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg" alt="endpoint01" title="endpoint01"> </p>
+    	<p>Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法を解説します。  </p>
+<a id="more"></a>
+<br>
+
+<p>Private Link を使用した場合、Cognitive Services のリソースを、 パブリック インターネットに 公開せずに利用できるメリットがあります。<br>（Private Link を使用した、より実際的なシステム構成については、<a href="https://docs.microsoft.com/ja-jp/azure/networking/networking-overview#azure-private-link" target="_blank" rel="noopener">Azure ネットワーク サービスの概要：Azure Private Link</a> のドキュメントをご参照ください）<br>本稿では、サンプルとして以下の図のような構成を設定する手順をご紹介します。</p>
+<p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg" alt="endpoint01" title="endpoint01">  </p>
 <ol>
 <li><a href="#1.CognitiveServices：サポート状況を確認">CognitiveServices：サポート状況を確認</a></li>
 <li><a href="#2.CognitiveServices：リソースを作成">CognitiveServices：リソースを作成</a> </li>
@@ -173,11 +177,10 @@
 <li><a href="#6.CognitiveServices：ネットワークを制限">CognitiveServices：ネットワークを制限</a> </li>
 <li><a href="#7.PrivateEndpoint+CognitiveServices：アクセスを確認">PrivateEndpoint+CognitiveServices：アクセスを確認</a> </li>
 </ol>
-<a id="more"></a>
 <br>
 
 <hr>
-<h1 id="1-CognitiveServices：サポート状況を確認"><a href="#1-CognitiveServices：サポート状況を確認" class="headerlink" title="1.CognitiveServices：サポート状況を確認"></a>1.CognitiveServices：サポート状況を確認</h1><p>Cognitive Services のサービスのうち、仮想ネットワーク対応しているサービスを下記のドキュメントのリストで確認します。<br>本稿では、翻訳サービスの Translator API を例として取り上げ、構成していきます。</p>
+<h1 id="1-CognitiveServices：サポート状況を確認"><a href="#1-CognitiveServices：サポート状況を確認" class="headerlink" title="1.CognitiveServices：サポート状況を確認"></a>1.CognitiveServices：サポート状況を確認</h1><p>Cognitive Services のサービスのうち、仮想ネットワーク対応しているサービスを下記のドキュメントのリストで確認します。<br>本稿では、翻訳サービスの Translator API を例として取り上げ、構成を設定していきます。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal#supported-regions-and-service-offerings" target="_blank" rel="noopener">Configure Azure Cognitive Services virtual networks：Supported regions and service offerings</a></li>
 </ul>
@@ -193,7 +196,7 @@
 <p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint03.jpg" alt="endpoint03" title="endpoint03"> </p>
 <p>（たとえば、お手元のPCから、以下の PowerShell スクリプトを用いて、Translator API にリクエストを送信し、英語の”Hello”がスペイン語の”Hola”に翻訳されることを確認します）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$contentType &#x3D; &#39;application&#x2F;json&#39; </span><br><span class="line">$endpointKey&#x3D;&#39;&lt;your-key&gt;&#39;</span><br><span class="line">$region&#x3D;&#39;&lt;your-region&gt;&#39;</span><br><span class="line">$uri &#x3D; &#39;https:&#x2F;&#x2F;api.cognitive.microsofttranslator.com&#x2F;translate?api-version&#x3D;3.0&amp;from&#x3D;en&amp;to&#x3D;es&#39;</span><br><span class="line">$body &#x3D; &#39;[&#123;&quot;Text&quot;:&quot;Hello&quot;&#125;]&#39;</span><br><span class="line"></span><br><span class="line">$response &#x3D; Invoke-WebRequest -Headers @&#123;&quot;Ocp-Apim-Subscription-Key&quot;&#x3D;$endpointKey;&quot;Ocp-Apim-Subscription-Region&quot;&#x3D;$region&#125; -Method POST -Uri $uri -body $body -ContentType $contentType</span><br><span class="line">$response.Content</span><br></pre></td></tr></table></figure>
-<p>このスクリプトは以下のドキュメント記載の Curl スクリプトを 参考に作成しています。</p>
+<p>このスクリプトは以下のドキュメント記載の Curl コマンドを利用したスクリプトを 参考に作成しています。</p>
 <ul>
 <li><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/translator/reference/v3-0-reference#authenticating-with-a-regional-resource" target="_blank" rel="noopener">Translator v3.0：リージョン リソースを使用した認証</a></li>
 </ul>
@@ -213,11 +216,28 @@
 <p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint08.jpg" alt="endpoint08" title="endpoint08"> </p>
 <p>（ご参考）</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal#dns-changes-for-private-endpoints" target="_blank" rel="noopener">Configure Azure Cognitive Services virtual networks:DNS changes for private endpoints</a>  <blockquote>
-<p>When you create a private endpoint, the DNS CNAME resource record for the Cognitive Services resource is updated to an alias in a subdomain with the prefix <strong>‘privatelink’</strong>.  </p>
-</blockquote>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal#dns-changes-for-private-endpoints" target="_blank" rel="noopener">Configure Azure Cognitive Services virtual networks:DNS changes for private endpoints</a><br>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<blockquote>
+<h1 id="When-you-create-a-private-endpoint-the-DNS-CNAME-resource-record-for-the-Cognitive-Services-resource-is-updated-to-an-alias-in-a-subdomain-with-the-prefix-‘privatelink’"><a href="#When-you-create-a-private-endpoint-the-DNS-CNAME-resource-record-for-the-Cognitive-Services-resource-is-updated-to-an-alias-in-a-subdomain-with-the-prefix-‘privatelink’" class="headerlink" title="When you create a private endpoint, the DNS CNAME resource record for the Cognitive Services resource is updated to an alias in a subdomain with the prefix ‘privatelink’.  "></a>When you create a private endpoint, the DNS CNAME resource record for the Cognitive Services resource is updated to an alias in a subdomain with the prefix <strong>‘privatelink’</strong>.  </h1></blockquote>
 </li>
 </ul>
+<blockquote>
+<p>When you create a private endpoint, the DNS CNAME resource record for the Cognitive Services resource is updated to an alias in a subdomain with the prefix <strong>‘privatelink’</strong>.  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>94ed51a7ff5056f43a1df2ea96a563a02f9c7077</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <hr>
 <h1 id="6-CognitiveServices：ネットワークを制限"><a href="#6-CognitiveServices：ネットワークを制限" class="headerlink" title="6.CognitiveServices：ネットワークを制限"></a>6.CognitiveServices：ネットワークを制限</h1><p>AzureポータルのTranslator  リソースページの”ネットワーク”メニューで規定のネットワーク アクセス ルールを制限します。</p>
 <p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint09.jpg" alt="endpoint09" title="endpoint09"> </p>
@@ -232,7 +252,7 @@
 <p>前の手順で書き留めたプライベートエンドポイントへリクエストするように記述します。<br>（リソースによって接続情報は異なります。上記のサンプルスクリプトをそのまま実行せず、手順5の方法でそれぞれのプライベートエンドポイントの情報を確認してください）</p>
 <p><img src="https://jpaiblog.github.io/images/use-private-endpoints/endpoint01.jpg" alt="endpoint01" title="endpoint01"> </p>
 <hr>
-<p><code>変更履歴</code><br><code>2020/11/12 created by Uehara</code>  </p>
+<p><code>変更履歴</code><br><code>2020/11/11 created by Uehara</code>  </p>
 
   	</div>
 	  
@@ -246,9 +266,13 @@
 	
 		<div class="art-item-footer">
 				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/11/11/not-expected-display-on-the-webbrowser/" rel="prev"  title="Webポータル画面が期待通りに表示されない場合の確認方法">
+						Webポータル画面が期待通りに表示されない場合の確認方法 
+					</a></span>
 				
-					<span class="art-item-right">next：<a href="/blog/2020/11/11/not-expected-display-on-the-webbrowser/" rel="next"  title="Webポータル画面が期待通りに表示されない場合の確認方法">
-						Webポータル画面が期待通りに表示されない場合の確認方法
+				
+					<span class="art-item-right">next：<a href="/blog/2020/10/19/face-identify-without-coding/" rel="next"  title="Face API 顔認識機能をプログラミングせずに利用する方法">
+						Face API 顔認識機能をプログラミングせずに利用する方法
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
