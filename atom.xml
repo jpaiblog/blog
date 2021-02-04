@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2020-11-24T12:58:22.724Z</updated>
+  <updated>2021-02-04T00:10:56.891Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>QnA Maker における Excel ファイルの利用について</title>
+    <link href="https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/"/>
+    <id>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</id>
+    <published>2021-02-02T15:00:00.000Z</published>
+    <updated>2021-02-04T00:10:56.891Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Excel ファイルを利用して日本語の QnA ペアを追加する際の注意事項についてご紹介します。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/categories/QNA-Maker/"/>
+    
+    
+      <category term="QnA ペアの追加" scheme="https://jpaiblog.github.io/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/"/>
+    
+      <category term="Excel ファイル" scheme="https://jpaiblog.github.io/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Webポータル画面が期待通りに表示されない場合の確認方法</title>
     <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.724Z</updated>
+    <updated>2021-02-04T00:10:56.883Z</updated>
     
     <summary type="html">
     
@@ -42,7 +65,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.788Z</updated>
+    <updated>2021-02-04T00:10:57.008Z</updated>
     
     <summary type="html">
     
@@ -63,7 +86,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
     <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.677Z</updated>
+    <updated>2021-02-04T00:10:56.861Z</updated>
     
     <summary type="html">
     
@@ -88,7 +111,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.716Z</updated>
+    <updated>2021-02-04T00:10:56.876Z</updated>
     
     <summary type="html">
     
@@ -109,7 +132,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.772Z</updated>
+    <updated>2021-02-04T00:10:56.969Z</updated>
     
     <summary type="html">
     
@@ -134,7 +157,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.661Z</updated>
+    <updated>2021-02-04T00:10:56.839Z</updated>
     
     <summary type="html">
     
@@ -161,7 +184,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.740Z</updated>
+    <updated>2021-02-04T00:10:56.934Z</updated>
     
     <summary type="html">
     
@@ -182,7 +205,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.665Z</updated>
+    <updated>2021-02-04T00:10:56.849Z</updated>
     
     <summary type="html">
     
@@ -203,7 +226,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.736Z</updated>
+    <updated>2021-02-04T00:10:56.898Z</updated>
     
     <summary type="html">
     
@@ -224,7 +247,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.732Z</updated>
+    <updated>2021-02-04T00:10:56.888Z</updated>
     
     <summary type="html">
     
@@ -245,7 +268,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2020-11-24T12:58:22.657Z</updated>
+    <updated>2021-02-04T00:10:56.833Z</updated>
     
     <summary type="html">
     
