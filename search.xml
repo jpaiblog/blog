@@ -212,6 +212,31 @@
     
     
     <entry>
+      <title>QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について</title>
+      <link href="/blog/2020/03/18/exclamation-displayed-on-KBname/"/>
+      <url>/blog/2020/03/18/exclamation-displayed-on-KBname/</url>
+      
+        <content type="html"><![CDATA[<p>QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。  </p><a id="more"></a><br><p>QnA Maker ポータル画面左上のナレッジベース（KB）名称部位に赤いエクスクラメーションアイコンが表示される場合があります。</p><p><img src="https://jpaiblog.github.io/images/exclamation-displayed-on-kbname/exclamationicon.jpg" alt="exclamation" title="exclamation"> </p><p>このとき、表示されたアイコンににカーソルを重ねると、メッセージが表示されます。<br>表示されたメッセージの内容をご確認いただき、その内容に沿った対応をご実施ください。</p><p>（もし、メッセージが表示されない場合には、当ブログの　<a href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/">Webポータル画面が期待通りに表示されない場合の確認方法</a>　の対応方法をご確認ください）</p><p>マークが示すメッセージとして可能性が高いものは、以下のランタイムの更新に関するメッセージです。</p><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure?tabs=v1#get-the-latest-runtime-updates" target="_blank" rel="noopener">QnA Maker のリソースを管理する：最新のランタイム更新プログラムを取得する</a></p><blockquote><p>QnA Maker ランタイムは、Azure portal で QnA Maker サービスを作成するときにデプロイされる Azure App Service インスタンスの一部です。<br>ランタイムの更新は定期的に行われます。<br>QnA Maker App Service インスタンスは、2019 年 4 月のサイト拡張リリース (バージョン 5+) 以降は自動更新モードになります。<br>この更新は、アップグレード中のダウンタイムがゼロになるように設計されています。</p></blockquote><p>上記ドキュメントへのリンクを記載したメッセージが表示された場合には、その手順に沿い、ランタイムを手動更新することで、赤いエクスクラメーションアイコンの表示が消えます。  </p><p>または、ランタイムの自動更新が順次実施されていく間に、一時的にアイコン表示が行われる場合があります。<br>その場合には、手動更新を行わなくても、更新が自動適用されることにより、赤いエクスクラメーションアイコンの表示が消えます。  </p><hr><p><code>変更履歴</code><br><code>2020/03/18 created by Uehara</code>  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> QNA Maker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> QNA Maker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ポータルにサインインできない事象について (AADSTS650051)</title>
       <link href="/blog/2020/03/07/error-AADSTS650051/"/>
       <url>/blog/2020/03/07/error-AADSTS650051/</url>
