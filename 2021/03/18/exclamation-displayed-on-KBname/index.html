@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>ポータルにサインインできない事象について (AADSTS650051) | Japan Cognitive Services Support Blog</title>
+  <title>QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,18 +19,20 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (www.luis.ai や www.customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
+  <meta name="description" content="QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ポータルにサインインできない事象について (AADSTS650051)">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/index.html">
+<meta property="og:title" content="QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (www.luis.ai や www.customvision.ai など) へのサインインが失敗する場合の対処方法を紹介します。">
+<meta property="og:description" content="QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。">
 <meta property="og:locale" content="ja_JP">
-<meta property="article:published_time" content="2020-03-06T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-18T07:13:25.474Z">
+<meta property="og:image" content="https://jpaiblog.github.io/images/exclamation-displayed-on-kbname/exclamationicon.jpg">
+<meta property="article:published_time" content="2021-03-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-18T07:13:25.501Z">
 <meta property="article:author" content="jpaiblog">
-<meta property="article:tag" content="AADSTS650051">
+<meta property="article:tag" content="QNA Maker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/exclamation-displayed-on-kbname/exclamationicon.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -125,22 +127,22 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-error-AADSTS650051"
+        <article id="post-exclamation-displayed-on-KBname"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/03/07/error-AADSTS650051/">
-    	ポータルにサインインできない事象について (AADSTS650051)
+  	<a href="/blog/2021/03/18/exclamation-displayed-on-KBname/">
+    	QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について
     </a>
   </h2>
 	<time>
-	  3月 7, 2020
+	  3月 18, 2021
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/Cognitive-Services/">Cognitive Services</a>
+        <a href="/blog/categories/QNA-Maker/">QNA Maker</a>
     </div>
 
 	</section>
@@ -149,37 +151,29 @@
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (<a href="http://www.luis.ai" target="_blank" rel="noopener">www.luis.ai</a> や <a href="http://www.customvision.ai" target="_blank" rel="noopener">www.customvision.ai</a> など) へのサインインが失敗する場合の対処方法を紹介します。</p>
+    	<p>QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。  </p>
 <a id="more"></a>
 <br>
 
-<hr>
-<p>下記エラーメッセージは (ドメイン名) の DNS 名に紐づく Azure AD のテナントが、管理者不在のバイラル (非管理) テナントと呼ばれる状態 (unmanaged state) であり、それが原因でポータルへサインインできないことを意味します。  </p>
+<p>QnA Maker ポータル画面左上のナレッジベース（KB）名称部位に赤いエクスクラメーションアイコンが表示される場合があります。</p>
+<p><img src="https://jpaiblog.github.io/images/exclamation-displayed-on-kbname/exclamationicon.jpg" alt="exclamation" title="exclamation"> </p>
+<p>このとき、表示されたアイコンににカーソルを重ねると、メッセージが表示されます。<br>表示されたメッセージの内容をご確認いただき、その内容に沿った対応をご実施ください。</p>
+<p>（もし、メッセージが表示されない場合には、当ブログの　<a href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/">Webポータル画面が期待通りに表示されない場合の確認方法</a>　の対応方法をご確認ください）</p>
+<p>マークが示すメッセージとして可能性が高いものは、以下のランタイムの更新に関するメッセージです。</p>
+<p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/qnamaker/how-to/set-up-qnamaker-service-azure?tabs=v1#get-the-latest-runtime-updates" target="_blank" rel="noopener">QnA Maker のリソースを管理する：最新のランタイム更新プログラムを取得する</a></p>
 <blockquote>
-<p>ErrorDescription’: ‘AADSTS650051: Using application ‘&lt;ポータル FQDN&gt;’ is currently not supported for your organization &lt;ドメイン名&gt; because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of &lt;ドメイン名&gt; before the application &lt;ポータル FQDN&gt; can be provisioned.`</p>
+<p>QnA Maker ランタイムは、Azure portal で QnA Maker サービスを作成するときにデプロイされる Azure App Service インスタンスの一部です。<br>ランタイムの更新は定期的に行われます。<br>QnA Maker App Service インスタンスは、2019 年 4 月のサイト拡張リリース (バージョン 5+) 以降は自動更新モードになります。<br>この更新は、アップグレード中のダウンタイムがゼロになるように設計されています。</p>
 </blockquote>
-<p>類似のサービスに関する記事とはなりますが、詳細と対処方法は以下をご参照ください。  </p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/archive/blogs/jpcognitiveblog/cannot-signin-custom-vision-service-portal" target="_blank" rel="noopener">非管理テナントのアカウントで Custom Vision Service のポータルにサインインできない場合の対処方法</a></li>
-</ul>
-<p>この問題は、当該テナントに紐づく (ドメイン名) のドメインの所有確認を行うことで解消されるため、以下のドキュメントの “3. 「管理者になる」メニューを実行します。” まで実施ください。  </p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/archive/blogs/exchangeteamjp/domain-registered-by-self-service-sign-up" target="_blank" rel="noopener">セルフサービス サインアップで登録されたドメインの対処方法</a></li>
-</ul>
-<p>なお、この問題を解消するだけであれば、手順 4 以降の作業は必要ありませんが、手順 3 を実施する段階で DNS の設定変更が必要となります。Azure AD テナントやドメインの管理者にて確認ください。<br><br></p>
-<p>関連する公開情報:</p>
-<ul>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/b2b/troubleshoot#you-receive-an-aadsts65005-error-when-you-try-to-log-in-to-an-azure-resource" target="_blank" rel="noopener">Azure リソースにログインしようとすると “AADSTS65005” エラーを受け取ります</a></li>
-<li><a href="https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/domains-admin-takeover" target="_blank" rel="noopener">Azure Active Directory の非管理対象ディレクトリを管理者として引き継ぐ</a></li>
-</ul>
+<p>上記ドキュメントへのリンクを記載したメッセージが表示された場合には、その手順に沿い、ランタイムを手動更新することで、赤いエクスクラメーションアイコンの表示が消えます。  </p>
+<p>または、ランタイムの自動更新が順次実施されていく間に、一時的にアイコン表示が行われる場合があります。<br>その場合には、手動更新を行わなくても、更新が自動適用されることにより、赤いエクスクラメーションアイコンの表示が消えます。  </p>
 <hr>
-<p><code>変更履歴</code><br><code>2020/03/07 created by Mochizuki</code>  </p>
+<p><code>変更履歴</code><br><code>2021/03/18 created by Uehara</code>  </p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/AADSTS650051/">AADSTS650051</a>
+        <a href="/blog/tags/QNA-Maker/">QNA Maker</a>
       
 	  </div>
     
@@ -187,13 +181,9 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/04/30/test-APIs/" rel="prev"  title="Cognitive Serivces で使用する API テスト ページについて">
-						Cognitive Serivces で使用する API テスト ページについて 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/03/03/QNA-management-service/" rel="next"  title="QNA Maker の管理サービス (Cognitive Services リソース) のリージョンについて">
-						QNA Maker の管理サービス (Cognitive Services リソース) のリージョンについて
+					<span class="art-item-right">next：<a href="/blog/2021/02/03/QnA-Maker-Import-Excel/" rel="next"  title="QnA Maker における Excel ファイルを使用した QnA ペアの追加について">
+						QnA Maker における Excel ファイルを使用した QnA ペアの追加について
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -203,7 +193,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'ポータルにサインインできない事象について (AADSTS650051)',
+		title: 'QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について',
 		tools: true
 	}
 </script>
