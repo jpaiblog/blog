@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2021-05-06T01:34:12.703Z</updated>
+  <updated>2021-05-17T07:32:44.194Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/"/>
+    <id>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</id>
+    <published>2021-05-16T15:00:00.000Z</published>
+    <updated>2021-05-17T07:32:44.194Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法をご紹介します。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/categories/Speech-Services/"/>
+    
+    
+      <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/tags/Speech-Services/"/>
+    
+      <category term="Custom Translator" scheme="https://jpaiblog.github.io/blog/tags/Custom-Translator/"/>
+    
+      <category term="Speech SDK" scheme="https://jpaiblog.github.io/blog/tags/Speech-SDK/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Bing Search API 関するお問い合わせについて</title>
     <link href="https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/"/>
     <id>https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/</id>
     <published>2021-04-30T07:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.703Z</updated>
+    <updated>2021-05-17T07:32:44.200Z</updated>
     
     <summary type="html">
     
@@ -44,7 +69,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/"/>
     <id>https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/</id>
     <published>2021-03-17T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.639Z</updated>
+    <updated>2021-05-17T07:32:44.109Z</updated>
     
     <summary type="html">
     
@@ -65,7 +90,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/"/>
     <id>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</id>
     <published>2021-02-02T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.693Z</updated>
+    <updated>2021-05-17T07:32:44.181Z</updated>
     
     <summary type="html">
     
@@ -88,7 +113,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.680Z</updated>
+    <updated>2021-05-17T07:32:44.163Z</updated>
     
     <summary type="html">
     
@@ -109,7 +134,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.750Z</updated>
+    <updated>2021-05-17T07:32:44.263Z</updated>
     
     <summary type="html">
     
@@ -130,7 +155,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
     <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.658Z</updated>
+    <updated>2021-05-17T07:32:44.135Z</updated>
     
     <summary type="html">
     
@@ -155,7 +180,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.673Z</updated>
+    <updated>2021-05-17T07:32:44.156Z</updated>
     
     <summary type="html">
     
@@ -176,7 +201,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.732Z</updated>
+    <updated>2021-05-17T07:32:44.238Z</updated>
     
     <summary type="html">
     
@@ -201,7 +226,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.627Z</updated>
+    <updated>2021-05-17T07:32:44.097Z</updated>
     
     <summary type="html">
     
@@ -228,7 +253,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.717Z</updated>
+    <updated>2021-05-17T07:32:44.220Z</updated>
     
     <summary type="html">
     
@@ -249,7 +274,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.634Z</updated>
+    <updated>2021-05-17T07:32:44.102Z</updated>
     
     <summary type="html">
     
@@ -270,7 +295,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.699Z</updated>
+    <updated>2021-05-17T07:32:44.189Z</updated>
     
     <summary type="html">
     
@@ -291,7 +316,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.686Z</updated>
+    <updated>2021-05-17T07:32:44.174Z</updated>
     
     <summary type="html">
     
@@ -312,7 +337,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2021-05-06T01:34:12.610Z</updated>
+    <updated>2021-05-17T07:32:44.090Z</updated>
     
     <summary type="html">
     
