@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Face API 顔認識機能を、プログラミングせずに利用する方法をご紹介します。  利用にあたり推奨するサンプル画像 手順概要 手順詳細">
 <meta property="og:type" content="article">
@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face18.jpg">
 <meta property="og:image" content="https://jpaiblog.github.io/images/face-identify-without-coding/face19.jpg">
 <meta property="article:published_time" content="2020-10-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T06:45:48.592Z">
+<meta property="article:modified_time" content="2021-07-19T06:40:32.335Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Face API Recognition Identify">
 <meta name="twitter:card" content="summary">
@@ -64,8 +64,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -165,36 +164,34 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#利用にあたり推奨するサンプル画像について"><span class="toc-number">1.</span> <span class="toc-text">利用にあたり推奨するサンプル画像について</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ai-fundamentals-data-face-wendell-（学習する人物画像として利用）"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">ai-fundamentals&#x2F;data&#x2F;face&#x2F;wendell　（学習する人物画像として利用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ai-fundamentals-data-face-employees-jpg-（顔認識対象の画像として利用）"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">ai-fundamentals&#x2F;data&#x2F;face&#x2F;employees.jpg　（顔認識対象の画像として利用）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#手順概要"><span class="toc-number">2.</span> <span class="toc-text">手順概要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ⅰ-モデルの学習を行う"><span class="toc-number">2.0.1.</span> <span class="toc-text">Ⅰ.モデルの学習を行う</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ⅱ-顔認識を行う"><span class="toc-number">2.0.2.</span> <span class="toc-text">Ⅱ.顔認識を行う</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#手順詳細"><span class="toc-number">3.</span> <span class="toc-text">手順詳細</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#準備-キーとエンドポイントを確認"><span class="toc-number">4.</span> <span class="toc-text">(準備)キーとエンドポイントを確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-1-グループを登録する"><span class="toc-number">5.</span> <span class="toc-text">Ⅰ-1.グループを登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-2-グループに対して、人物を登録する"><span class="toc-number">6.</span> <span class="toc-text">Ⅰ-2.グループに対して、人物を登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-3-学習用画像の準備"><span class="toc-number">7.</span> <span class="toc-text">Ⅰ-3.学習用画像の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-4-人物に対して、学習用画像を登録する"><span class="toc-number">8.</span> <span class="toc-text">Ⅰ-4.人物に対して、学習用画像を登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-5-モデルの学習"><span class="toc-number">9.</span> <span class="toc-text">Ⅰ-5.モデルの学習</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-6-学習結果の確認"><span class="toc-number">10.</span> <span class="toc-text">Ⅰ-6.学習結果の確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅱ-1-顔認識用画像の準備"><span class="toc-number">11.</span> <span class="toc-text">Ⅱ-1.顔認識用画像の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅱ-2-顔認識の実行"><span class="toc-number">12.</span> <span class="toc-text">Ⅱ-2.顔認識の実行</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%8E%A8%E5%A5%A8%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E7%94%BB%E5%83%8F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">利用にあたり推奨するサンプル画像について</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ai-fundamentals-data-face-wendell-%EF%BC%88%E5%AD%A6%E7%BF%92%E3%81%99%E3%82%8B%E4%BA%BA%E7%89%A9%E7%94%BB%E5%83%8F%E3%81%A8%E3%81%97%E3%81%A6%E5%88%A9%E7%94%A8%EF%BC%89"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">ai-fundamentals&#x2F;data&#x2F;face&#x2F;wendell　（学習する人物画像として利用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ai-fundamentals-data-face-employees-jpg-%EF%BC%88%E9%A1%94%E8%AA%8D%E8%AD%98%E5%AF%BE%E8%B1%A1%E3%81%AE%E7%94%BB%E5%83%8F%E3%81%A8%E3%81%97%E3%81%A6%E5%88%A9%E7%94%A8%EF%BC%89"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">ai-fundamentals&#x2F;data&#x2F;face&#x2F;employees.jpg　（顔認識対象の画像として利用）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%8B%E9%A0%86%E6%A6%82%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">手順概要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%85%A0-%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%AD%A6%E7%BF%92%E3%82%92%E8%A1%8C%E3%81%86"><span class="toc-number">2.0.1.</span> <span class="toc-text">Ⅰ.モデルの学習を行う</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%85%A1-%E9%A1%94%E8%AA%8D%E8%AD%98%E3%82%92%E8%A1%8C%E3%81%86"><span class="toc-number">2.0.2.</span> <span class="toc-text">Ⅱ.顔認識を行う</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%8B%E9%A0%86%E8%A9%B3%E7%B4%B0"><span class="toc-number">3.</span> <span class="toc-text">手順詳細</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%96%E5%82%99-%E3%82%AD%E3%83%BC%E3%81%A8%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E7%A2%BA%E8%AA%8D"><span class="toc-number">4.</span> <span class="toc-text">(準備)キーとエンドポイントを確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-1-%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B"><span class="toc-number">5.</span> <span class="toc-text">Ⅰ-1.グループを登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-2-%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E3%80%81%E4%BA%BA%E7%89%A9%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B"><span class="toc-number">6.</span> <span class="toc-text">Ⅰ-2.グループに対して、人物を登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-3-%E5%AD%A6%E7%BF%92%E7%94%A8%E7%94%BB%E5%83%8F%E3%81%AE%E6%BA%96%E5%82%99"><span class="toc-number">7.</span> <span class="toc-text">Ⅰ-3.学習用画像の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-4-%E4%BA%BA%E7%89%A9%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E3%80%81%E5%AD%A6%E7%BF%92%E7%94%A8%E7%94%BB%E5%83%8F%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B"><span class="toc-number">8.</span> <span class="toc-text">Ⅰ-4.人物に対して、学習用画像を登録する</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-5-%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%AD%A6%E7%BF%92"><span class="toc-number">9.</span> <span class="toc-text">Ⅰ-5.モデルの学習</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A0-6-%E5%AD%A6%E7%BF%92%E7%B5%90%E6%9E%9C%E3%81%AE%E7%A2%BA%E8%AA%8D"><span class="toc-number">10.</span> <span class="toc-text">Ⅰ-6.学習結果の確認</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A1-1-%E9%A1%94%E8%AA%8D%E8%AD%98%E7%94%A8%E7%94%BB%E5%83%8F%E3%81%AE%E6%BA%96%E5%82%99"><span class="toc-number">11.</span> <span class="toc-text">Ⅱ-1.顔認識用画像の準備</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%85%A1-2-%E9%A1%94%E8%AA%8D%E8%AD%98%E3%81%AE%E5%AE%9F%E8%A1%8C"><span class="toc-number">12.</span> <span class="toc-text">Ⅱ-2.顔認識の実行</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Face API 顔認識機能を、プログラミングせずに利用する方法をご紹介します。</p>
 <ul>
-<li><a href="#利用にあたり推奨するサンプル画像について">利用にあたり推奨するサンプル画像</a></li>
-<li><a href="#手順概要">手順概要</a></li>
-<li><a href="#手順詳細">手順詳細</a><a id="more"></a></li>
-<li><a href="#(準備)キーとエンドポイントを確認">(準備)キーとエンドポイントを確認</a> </li>
-<li><a href="#Ⅰ-1.グループを登録する">Ⅰ-1.グループを登録する</a></li>
-<li><a href="#Ⅰ-2.グループに対して、人物を登録する">Ⅰ-2.グループに対して、人物を登録する</a></li>
-<li><a href="#Ⅰ-3.学習用画像の準備">Ⅰ-3.学習用画像の準備 </a></li>
-<li><a href="#Ⅰ-4.人物に対して、学習用画像を登録する">Ⅰ-4.人物に対して、学習用画像を登録する</a></li>
-<li><a href="#Ⅰ-5.モデルの学習">Ⅰ-5.モデルの学習</a></li>
-<li><a href="#Ⅰ-6.学習結果の確認">Ⅰ-6.学習結果の確認</a></li>
-<li><a href="#Ⅱ-1.顔認識用画像の準備">Ⅱ-1.顔認識用画像の準備</a></li>
-<li><a href="#Ⅱ-2.顔認識の実行">Ⅱ-2.顔認識の実行</a><br>
-
-</li>
+<li><a href="#%E5%88%A9%E7%94%A8%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%8E%A8%E5%A5%A8%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E7%94%BB%E5%83%8F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">利用にあたり推奨するサンプル画像</a></li>
+<li><a href="#%E6%89%8B%E9%A0%86%E6%A6%82%E8%A6%81">手順概要</a></li>
+<li><a href="#%E6%89%8B%E9%A0%86%E8%A9%B3%E7%B4%B0">手順詳細</a><span id="more"></span></li>
+<li><a href="#(%E6%BA%96%E5%82%99)%E3%82%AD%E3%83%BC%E3%81%A8%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E7%A2%BA%E8%AA%8D">(準備)キーとエンドポイントを確認</a> </li>
+<li><a href="#%E2%85%A0-1.%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B">Ⅰ-1.グループを登録する</a></li>
+<li><a href="#%E2%85%A0-2.%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E3%80%81%E4%BA%BA%E7%89%A9%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B">Ⅰ-2.グループに対して、人物を登録する</a></li>
+<li><a href="#%E2%85%A0-3.%E5%AD%A6%E7%BF%92%E7%94%A8%E7%94%BB%E5%83%8F%E3%81%AE%E6%BA%96%E5%82%99">Ⅰ-3.学習用画像の準備 </a></li>
+<li><a href="#%E2%85%A0-4.%E4%BA%BA%E7%89%A9%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E3%80%81%E5%AD%A6%E7%BF%92%E7%94%A8%E7%94%BB%E5%83%8F%E3%82%92%E7%99%BB%E9%8C%B2%E3%81%99%E3%82%8B">Ⅰ-4.人物に対して、学習用画像を登録する</a></li>
+<li><a href="#%E2%85%A0-5.%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%AD%A6%E7%BF%92">Ⅰ-5.モデルの学習</a></li>
+<li><a href="#%E2%85%A0-6.%E5%AD%A6%E7%BF%92%E7%B5%90%E6%9E%9C%E3%81%AE%E7%A2%BA%E8%AA%8D">Ⅰ-6.学習結果の確認</a></li>
+<li><a href="#%E2%85%A1-1.%E9%A1%94%E8%AA%8D%E8%AD%98%E7%94%A8%E7%94%BB%E5%83%8F%E3%81%AE%E6%BA%96%E5%82%99">Ⅱ-1.顔認識用画像の準備</a></li>
+<li><a href="#%E2%85%A1-2.%E9%A1%94%E8%AA%8D%E8%AD%98%E3%81%AE%E5%AE%9F%E8%A1%8C">Ⅱ-2.顔認識の実行</a><br></li>
 </ul>
 <hr>
-<h1 id="利用にあたり推奨するサンプル画像について"><a href="#利用にあたり推奨するサンプル画像について" class="headerlink" title="利用にあたり推奨するサンプル画像について"></a>利用にあたり推奨するサンプル画像について</h1><p>利用にあたっては、<a href="https://github.com/MicrosoftDocs/ai-fundamentals/blob/master/01d%20-%20Face%20Analysis.ipynb" target="_blank" rel="noopener">チュートリアル</a>で利用されているサンプル画像の利用を推奨します。<br>顔認識には<a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/face/concepts/face-recognition#input-data" target="_blank" rel="noopener">一定以上の品質の画像</a>が必要となるため、まずは以下のサンプル画像でお試しをいただければスムーズに確認が進みます。</p>
+<h1 id="利用にあたり推奨するサンプル画像について"><a href="#利用にあたり推奨するサンプル画像について" class="headerlink" title="利用にあたり推奨するサンプル画像について"></a>利用にあたり推奨するサンプル画像について</h1><p>利用にあたっては、<a target="_blank" rel="noopener" href="https://github.com/MicrosoftDocs/ai-fundamentals/blob/master/01d%20-%20Face%20Analysis.ipynb">チュートリアル</a>で利用されているサンプル画像の利用を推奨します。<br>顔認識には<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/face/concepts/face-recognition#input-data">一定以上の品質の画像</a>が必要となるため、まずは以下のサンプル画像でお試しをいただければスムーズに確認が進みます。</p>
 <h4 id="ai-fundamentals-data-face-wendell-（学習する人物画像として利用）"><a href="#ai-fundamentals-data-face-wendell-（学習する人物画像として利用）" class="headerlink" title="ai-fundamentals/data/face/wendell　（学習する人物画像として利用）"></a>ai-fundamentals/data/face/wendell　（学習する人物画像として利用）</h4><ul>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg</a></li>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg</a></li>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg</a><br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face01.jpg" alt="face01" title="face01">  </li>
+<li><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_01.jpg</a></li>
+<li><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_02.jpg</a></li>
+<li><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/wendell/Wendell_03.jpg</a><br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face01.jpg" alt="face01" title="face01">  </li>
 </ul>
 <h4 id="ai-fundamentals-data-face-employees-jpg-（顔認識対象の画像として利用）"><a href="#ai-fundamentals-data-face-employees-jpg-（顔認識対象の画像として利用）" class="headerlink" title="ai-fundamentals/data/face/employees.jpg　（顔認識対象の画像として利用）"></a>ai-fundamentals/data/face/employees.jpg　（顔認識対象の画像として利用）</h4><ul>
-<li><a href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg</a></li>
+<li><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg">https://raw.githubusercontent.com/MicrosoftDocs/ai-fundamentals/master/data/face/employees.jpg</a></li>
 </ul>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face02.jpg" alt="face02" title="face02"> </p>
 <hr>
@@ -211,42 +208,42 @@
 </thead>
 <tbody><tr>
 <td>1.グループを登録する</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244" target="_blank" rel="noopener">PersonGroup - Create</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244">PersonGroup - Create</a></td>
 <td>グループID, グループ名</td>
 <td>-</td>
 <td>グループIDはユーザーが任意に設定する</td>
 </tr>
 <tr>
 <td>2.グループに対して、人物を登録する</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c" target="_blank" rel="noopener">PersonGroup Person – Create</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c">PersonGroup Person – Create</a></td>
 <td>グループID, 人物名</td>
 <td>人物ID</td>
 <td>人物IDは自動で設定される</td>
 </tr>
 <tr>
 <td>3.学習用画像の準備</td>
-<td><a href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo" target="_blank" rel="noopener">Face - Detect</a></td>
+<td><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo">Face - Detect</a></td>
 <td>人物画像のURL</td>
 <td>顔ID, 画像のURLから顔として認識された領域の座標情報</td>
 <td>検出した顔座標が画像上に可視化される利便があるため、デモ画面の利用を推奨</td>
 </tr>
 <tr>
 <td>4.人物に対して、学習用画像を登録する</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b" target="_blank" rel="noopener">PersonGroup Person - Add Face</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b">PersonGroup Person - Add Face</a></td>
 <td>グループID, 人物ID, 人物画像のURL, 人物画像の中の顔領域の座標情報</td>
 <td>-</td>
 <td>学習用画像の登録は画像1枚ずつの登録。REST APIでは一括登録不可</td>
 </tr>
 <tr>
 <td>5.モデルの学習</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249" target="_blank" rel="noopener">PersonGroup - Train</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249">PersonGroup - Train</a></td>
 <td>グループID</td>
 <td>-</td>
 <td>-</td>
 </tr>
 <tr>
 <td>6.学習結果の確認</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247" target="_blank" rel="noopener">PersonGroup - Get Training Status</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247">PersonGroup - Get Training Status</a></td>
 <td>グループID</td>
 <td>学習結果状況</td>
 <td>-</td>
@@ -265,14 +262,14 @@
 </thead>
 <tbody><tr>
 <td>1.顔認識用画像の準備</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" rel="noopener">Face - Detect</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a></td>
 <td>人物画像のURL</td>
 <td>顔ID, 画像のURLから顔として認識された領域の座標情報</td>
 <td>自分のキー配下で発行される顔IDを取得するために、リファレンスAPIページを利用    （任意）デモ画面で検出した顔座標状況を確認</td>
 </tr>
 <tr>
 <td>2.顔認識の実行</td>
-<td><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a></td>
+<td><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a></td>
 <td>グループID, 顔ID</td>
 <td>(顔IDごとに) 人物ID, 確度</td>
 <td>-</td>
@@ -283,21 +280,21 @@
 <hr>
 <h1 id="準備-キーとエンドポイントを確認"><a href="#準備-キーとエンドポイントを確認" class="headerlink" title="(準備)キーとエンドポイントを確認"></a>(準備)キーとエンドポイントを確認</h1><p>Azure ポータル画面のFaceリソース画面で、キーとエンドポイントを確認します。キーは後続の処理で利用するので、その文字列を取り置きます。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face03.jpg" alt="face03" title="face03"> </p>
 <hr>
-<h1 id="Ⅰ-1-グループを登録する"><a href="#Ⅰ-1-グループを登録する" class="headerlink" title="Ⅰ-1.グループを登録する"></a>Ⅰ-1.グループを登録する</h1><p>(1) <a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244" target="_blank" rel="noopener">リファレンスAPI</a>ページにアクセスすると、ページの中ほどにエンドポイントを選択するセクションがあります。<br>前の手順で確認したエンドポイントが記載された青いボックスをクリックして、テスト用ページへ遷移します。  </p>
+<h1 id="Ⅰ-1-グループを登録する"><a href="#Ⅰ-1-グループを登録する" class="headerlink" title="Ⅰ-1.グループを登録する"></a>Ⅰ-1.グループを登録する</h1><p>(1) <a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244">リファレンスAPI</a>ページにアクセスすると、ページの中ほどにエンドポイントを選択するセクションがあります。<br>前の手順で確認したエンドポイントが記載された青いボックスをクリックして、テスト用ページへ遷移します。  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face04.jpg" alt="face04" title="face04"></p>
 <p>(2) テスト用ページの中ほどに、パラメータを設定するセクションがあります。<br>Ocp-Apim-Subscription-Key　には、前の手順で確認したキー情報を設定します。<br>その他項目は、以下の画像のように設定します。  グループID (personGroupId) もグループ名称 (name) も、ユーザーで任意に設定可能です。<br>また、Request body に設定する userData はオプション項目のため、削除せずに付加したままでも構いません。<br>パラメータを設定し終わったら、[Send] ボタンをクリックします。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face05.jpg" alt="face05" title="face05"></p>
 <p>(3) レスポンスセクションに結果が表示されます。 以下の画像のように [200 OK] と応答があれば問題ありません。処理が成功しています。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face06.jpg" alt="face06" title="face06"></p>
 <hr>
 <h1 id="Ⅰ-2-グループに対して、人物を登録する"><a href="#Ⅰ-2-グループに対して、人物を登録する" class="headerlink" title="Ⅰ-2.グループに対して、人物を登録する"></a>Ⅰ-2.グループに対して、人物を登録する</h1><p>（以降、前の手順と重複するエンドポイント選択手順などは割愛します。<br>　ご参考として、リクエストセクションと、レスポンスセクションのスクリーンショットをそれぞれ貼付します）  </p>
-<p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c" target="_blank" rel="noopener">PersonGroup Person – Create</a> ページを開きます。<br>(1) リクエストセクション<br>前の手順で設定したグループIDを入力します。<br>人物名は、ユーザー様で任意に設定可能です（この名称は以降の手順では特に利用しません）  </p>
+<p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c">PersonGroup Person – Create</a> ページを開きます。<br>(1) リクエストセクション<br>前の手順で設定したグループIDを入力します。<br>人物名は、ユーザー様で任意に設定可能です（この名称は以降の手順では特に利用しません）  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face07.jpg" alt="face07" title="face07"></p>
 <p>(2) レスポンスセクション<br>以降の手順で必要となるため、自動で設定された personId を取り置きます。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face08.jpg" alt="face08" title="face08"></p>
 <hr>
-<h1 id="Ⅰ-3-学習用画像の準備"><a href="#Ⅰ-3-学習用画像の準備" class="headerlink" title="Ⅰ-3.学習用画像の準備"></a>Ⅰ-3.学習用画像の準備</h1><p><a href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo" target="_blank" rel="noopener">デモ画面</a>を開き、[Face Detection] デモが選択されていることを確認します。<br>以下の画像のように、画面左下の [画像のURL] 入力項目にURLを入力して [送信]　ボタンをクリックします。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face09.jpg" alt="face09" title="face09"></p>
+<h1 id="Ⅰ-3-学習用画像の準備"><a href="#Ⅰ-3-学習用画像の準備" class="headerlink" title="Ⅰ-3.学習用画像の準備"></a>Ⅰ-3.学習用画像の準備</h1><p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo">デモ画面</a>を開き、[Face Detection] デモが選択されていることを確認します。<br>以下の画像のように、画面左下の [画像のURL] 入力項目にURLを入力して [送信]　ボタンをクリックします。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face09.jpg" alt="face09" title="face09"></p>
 <p>画面右側に、顔として認識された領域の座標情報が出力されます。<br>同時に画面左側に、その領域が元の顔画像に青いバウンディングボックスとして可視化されるので、どこが顔として認識されたのかが容易に確認可能です。</p>
 <p>次の手順のために、画面右側に出力された座標情報を取り置きます。</p>
 <hr>
-<h1 id="Ⅰ-4-人物に対して、学習用画像を登録する"><a href="#Ⅰ-4-人物に対して、学習用画像を登録する" class="headerlink" title="Ⅰ-4.人物に対して、学習用画像を登録する"></a>Ⅰ-4.人物に対して、学習用画像を登録する</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b" target="_blank" rel="noopener">PersonGroup Person - Add Face</a> ページを開きます。  </p>
+<h1 id="Ⅰ-4-人物に対して、学習用画像を登録する"><a href="#Ⅰ-4-人物に対して、学習用画像を登録する" class="headerlink" title="Ⅰ-4.人物に対して、学習用画像を登録する"></a>Ⅰ-4.人物に対して、学習用画像を登録する</h1><p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b">PersonGroup Person - Add Face</a> ページを開きます。  </p>
 <p>(1) リクエストセクション<br>これまでの手順で設定および取得した、グループIDと人物IDを入力します。<br>また、targetFace には、前の手順で取得した顔として認識された領域の座標情報を入力します。以下のようなフォーマット変換が必要です。  </p>
 <table>
 <thead>
@@ -322,22 +319,22 @@
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face10.jpg" alt="face10" title="face10"></p>
 <p>(2) レスポンスセクション<br>[200 OK] と応答があれば問題ありません。また、ここで返却される persistedFaceId は以降の手順で利用しません。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face11.jpg" alt="face11" title="face11"></p>
 <hr>
-<h1 id="Ⅰ-5-モデルの学習"><a href="#Ⅰ-5-モデルの学習" class="headerlink" title="Ⅰ-5.モデルの学習"></a>Ⅰ-5.モデルの学習</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249" target="_blank" rel="noopener">PersonGroup - Train</a> ページを開きます。<br>(1) リクエストセクション<br>グループIDを設定します。  </p>
+<h1 id="Ⅰ-5-モデルの学習"><a href="#Ⅰ-5-モデルの学習" class="headerlink" title="Ⅰ-5.モデルの学習"></a>Ⅰ-5.モデルの学習</h1><p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249">PersonGroup - Train</a> ページを開きます。<br>(1) リクエストセクション<br>グループIDを設定します。  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face12.jpg" alt="face12" title="face12"></p>
 <p>(2) レスポンスセクション<br>[202 Accepted]の応答があれば問題ありません。次の手順で、学習の結果を確認します。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face13.jpg" alt="face13" title="face13"></p>
 <hr>
-<h1 id="Ⅰ-6-学習結果の確認"><a href="#Ⅰ-6-学習結果の確認" class="headerlink" title="Ⅰ-6.学習結果の確認"></a>Ⅰ-6.学習結果の確認</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247" target="_blank" rel="noopener">PersonGroup - Get Training Status</a> ページを開きます。<br>(1) リクエストセクション<br>グループIDを設定します。  </p>
+<h1 id="Ⅰ-6-学習結果の確認"><a href="#Ⅰ-6-学習結果の確認" class="headerlink" title="Ⅰ-6.学習結果の確認"></a>Ⅰ-6.学習結果の確認</h1><p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247">PersonGroup - Get Training Status</a> ページを開きます。<br>(1) リクエストセクション<br>グループIDを設定します。  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face14.jpg" alt="face14" title="face14"></p>
 <p>(2) レスポンスセクション<br>“status”: “succeeded” と返却されていれば問題ありません。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face15.jpg" alt="face15" title="face15"></p>
 <hr>
-<h1 id="Ⅱ-1-顔認識用画像の準備"><a href="#Ⅱ-1-顔認識用画像の準備" class="headerlink" title="Ⅱ-1.顔認識用画像の準備"></a>Ⅱ-1.顔認識用画像の準備</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236" target="_blank" rel="noopener">Face - Detect</a> ページを開きます。<br>(1) リクエストセクション<br>recognitionModelで、現時点で最新の recognition_03 バージョンを選択します。<br>detectionModelで、現時点で最新の detection_02 バージョンを選択します。<br>urlに顔認識用画像のURLを入力します。</p>
+<h1 id="Ⅱ-1-顔認識用画像の準備"><a href="#Ⅱ-1-顔認識用画像の準備" class="headerlink" title="Ⅱ-1.顔認識用画像の準備"></a>Ⅱ-1.顔認識用画像の準備</h1><p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a> ページを開きます。<br>(1) リクエストセクション<br>recognitionModelで、現時点で最新の recognition_03 バージョンを選択します。<br>detectionModelで、現時点で最新の detection_02 バージョンを選択します。<br>urlに顔認識用画像のURLを入力します。</p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face16.jpg" alt="face16" title="face16"></p>
 <p>(2) レスポンスセクション<br>次の手順のために、出力されたfaceIdを取り置きます。<br><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face17.jpg" alt="face17" title="face17"></p>
 <p>※ 任意手順  </p>
-<p><a href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo" target="_blank" rel="noopener">デモ画面</a> で、以下のように顔認識用画像のURLを入力して [送信]　し、検出された顔座標の状況を目視確認します。<br>サンプル画像に detection_02 モデルを適用すると、2つの顔が検出されます。  </p>
+<p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/services/cognitive-services/face/#demo">デモ画面</a> で、以下のように顔認識用画像のURLを入力して [送信]　し、検出された顔座標の状況を目視確認します。<br>サンプル画像に detection_02 モデルを適用すると、2つの顔が検出されます。  </p>
 <p><img src="https://jpaiblog.github.io/images/face-identify-without-coding/face18.jpg" alt="face18" title="face18"></p>
 <hr>
-<h1 id="Ⅱ-2-顔認識の実行"><a href="#Ⅱ-2-顔認識の実行" class="headerlink" title="Ⅱ-2.顔認識の実行"></a>Ⅱ-2.顔認識の実行</h1><p><a href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239" target="_blank" rel="noopener">Face - Identify</a> ページを開きます。<br>(1) リクエストセクション<br>Request bodyに、以下のように設定します。<br>largePersonGroupId <strong>を削除し</strong>、<strong>personGroupId</strong>　にキーを変更します。そして、グループIDを入力します。<br>faceIds には、以下のように前の手順で取得した顔IDを入力します。  </p>
+<h1 id="Ⅱ-2-顔認識の実行"><a href="#Ⅱ-2-顔認識の実行" class="headerlink" title="Ⅱ-2.顔認識の実行"></a>Ⅱ-2.顔認識の実行</h1><p><a target="_blank" rel="noopener" href="https://japaneast.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a> ページを開きます。<br>(1) リクエストセクション<br>Request bodyに、以下のように設定します。<br>largePersonGroupId <strong>を削除し</strong>、<strong>personGroupId</strong>　にキーを変更します。そして、グループIDを入力します。<br>faceIds には、以下のように前の手順で取得した顔IDを入力します。  </p>
 <blockquote>
 <p>{<br>   “<strong>personGroupId</strong>“: “groupid01”,<br>   “<strong>faceIds</strong>“: [<br>   “17d2e2a6-c891-4f16-bf6e-14180c9b0e8b”,<br>    “a3a2ce7c-3743-4819-ae8f-47d4940bbee5”<br>   ],<br>   “maxNumOfCandidatesReturned”: 1,<br>   “confidenceThreshold”: 0.5<br>}</p>
 </blockquote>
@@ -477,7 +474,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 

@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Azure の関連ポータル サイトで Azure サブスクリプションやリソースが表示されない原因と対処策について解説します。">
 <meta property="og:type" content="article">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/azure-portal-dir-switch-1.png">
 <meta property="og:image" content="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/azure-portal-dir-switch-2.png">
 <meta property="article:published_time" content="2020-05-13T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T06:45:48.539Z">
+<meta property="article:modified_time" content="2021-07-19T06:40:32.314Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="LUIS">
 <meta property="article:tag" content="QnA Maker">
@@ -52,8 +52,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -153,21 +152,21 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#■原因"><span class="toc-number">1.</span> <span class="toc-text">■原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#■対処策"><span class="toc-number">2.</span> <span class="toc-text">■対処策</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-1-ポータル-サイト内でディレクトリを変更する"><span class="toc-number">2.1.</span> <span class="toc-text">方法 1. ポータル サイト内でディレクトリを変更する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法-2-Azure-ポータルでディレクトリを変更する"><span class="toc-number">2.2.</span> <span class="toc-text">方法 2. Azure ポータルでディレクトリを変更する</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#■-補足"><span class="toc-number">3.</span> <span class="toc-text">■ 補足</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%96%A0%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.</span> <span class="toc-text">■原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%96%A0%E5%AF%BE%E5%87%A6%E7%AD%96"><span class="toc-number">2.</span> <span class="toc-text">■対処策</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB-%E3%82%B5%E3%82%A4%E3%83%88%E5%86%85%E3%81%A7%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B"><span class="toc-number">2.1.</span> <span class="toc-text">方法 1. ポータル サイト内でディレクトリを変更する</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2-Azure-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%81%A7%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B"><span class="toc-number">2.2.</span> <span class="toc-text">方法 2. Azure ポータルでディレクトリを変更する</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%96%A0-%E8%A3%9C%E8%B6%B3"><span class="toc-number">3.</span> <span class="toc-text">■ 補足</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Azure の関連ポータル サイトで Azure サブスクリプションやリソースが表示されない原因と対処策について解説します。</p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
 <p>Azure で提供されているサービスの一部は、Azure ポータル以外に独自のポータル サイトを提供しています。<br>より具体的に Cognitive Services を例に挙げると以下のようなポータル サイトが存在します。</p>
 <ul>
-<li>QnA Maker: <a href="https://www.qnamaker.ai/" target="_blank" rel="noopener">https://www.qnamaker.ai/</a></li>
-<li>Custom Vision: <a href="https://www.customvision.ai/" target="_blank" rel="noopener">https://www.customvision.ai/</a></li>
-<li>Speech Services: <a href="https://speech.microsoft.com/" target="_blank" rel="noopener">https://speech.microsoft.com/</a></li>
-<li>LUIS: <a href="https://www.luis.ai/" target="_blank" rel="noopener">https://www.luis.ai/</a></li>
+<li>QnA Maker: <a target="_blank" rel="noopener" href="https://www.qnamaker.ai/">https://www.qnamaker.ai/</a></li>
+<li>Custom Vision: <a target="_blank" rel="noopener" href="https://www.customvision.ai/">https://www.customvision.ai/</a></li>
+<li>Speech Services: <a target="_blank" rel="noopener" href="https://speech.microsoft.com/">https://speech.microsoft.com/</a></li>
+<li>LUIS: <a target="_blank" rel="noopener" href="https://www.luis.ai/">https://www.luis.ai/</a></li>
 </ul>
 <p>これらのポータル サイトは Azure と連携しており、サインインしたユーザーの Azure サブスクリプションやリソースを、ポータル内で表示・操作することができます。</p>
 <p>しかしながら、例えば、以下のように複数の Azure AD ディレクトリ (contoso.onmicrosoft.com と fabrikam.onmicrosoft.com) に関連付けられているユーザー アカウント (user@contoso.onmicrosoft.com) があるとします。この場合、ロールベースのアクセス制御 (RBAC) の設定が適切でも、上記のポータル サイトでサブスクリプションやリソースが表示されないことがあります。</p>
@@ -176,11 +175,11 @@
 <p>しかし、別のディレクトリにゲスト ユーザーとして招待されることで、複数のディレクトリと関連付けられている場合、ホーム ディレクトリ以外のディレクトリ (上記の図では Bの fabrikam.onmicrosoft.com) に対するサインインは行われないため、そのディレクトリに対するアクセス トークンは取得されません。それにより、ポータルサイト上ではディレクトリ B に紐づいたサブスクリプションやリソースが表示されない事象が発生します。これは Azure AD ディレクトリへのサインインを伴うアクセス権の管理上想定される動作です。</p>
 <h3 id="■対処策"><a href="#■対処策" class="headerlink" title="■対処策"></a>■対処策</h3><p>ディレクトリ B に関連付けられた Azure サブスクリプションに対するアクセス トークンを取得するには、ディレクトリ B へのサインインを明示的に完了する必要があります。</p>
 <h4 id="方法-1-ポータル-サイト内でディレクトリを変更する"><a href="#方法-1-ポータル-サイト内でディレクトリを変更する" class="headerlink" title="方法 1. ポータル サイト内でディレクトリを変更する"></a>方法 1. ポータル サイト内でディレクトリを変更する</h4><p>ポータル サイトによっては、サイト内でディレクトリを切り替える機能が用意されています。この機能を利用してディレクトリ B に切り替えます。</p>
-<p>例. <a href="https://www.customvision.ai/" target="_blank" rel="noopener">Custom Vision ポータル</a>:</p>
+<p>例. <a target="_blank" rel="noopener" href="https://www.customvision.ai/">Custom Vision ポータル</a>:</p>
 <p><img src="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/custom-vision-dir-switch.png" alt="Custom Vision portal dir switch"></p>
-<p>これはディレクトリ (テナント) 固有のサインイン エンドポイント (login.microsoftonline.com/<strong>&lt;テナント ID またはテナント名&gt;/</strong>…) を使用してサインインすることで実現されています。</p>
-<p>ご参考: <a href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/active-directory-v2-protocols#endpoints" target="_blank" rel="noopener">Azure AD のサインイン エンドポイント</a></p>
-<h4 id="方法-2-Azure-ポータルでディレクトリを変更する"><a href="#方法-2-Azure-ポータルでディレクトリを変更する" class="headerlink" title="方法 2. Azure ポータルでディレクトリを変更する"></a>方法 2. Azure ポータルでディレクトリを変更する</h4><p>ポータル サイト内でディレクリを切り替える機能が用意されていない場合は、Azure ポータル (<a href="https://portal.azure.com" target="_blank" rel="noopener">https://portal.azure.com</a>) を使ってディレクトリの切り替えを行います。そして、各サービスのポータルサイト (<a href="https://www.qnamaker.ai/" target="_blank" rel="noopener">QnA Maker</a> など) にアクセスします。</p>
+<p>これはディレクトリ (テナント) 固有のサインイン エンドポイント (login.microsoftonline.com/**&lt;テナント ID またはテナント名&gt;/**…) を使用してサインインすることで実現されています。</p>
+<p>ご参考: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/develop/active-directory-v2-protocols#endpoints">Azure AD のサインイン エンドポイント</a></p>
+<h4 id="方法-2-Azure-ポータルでディレクトリを変更する"><a href="#方法-2-Azure-ポータルでディレクトリを変更する" class="headerlink" title="方法 2. Azure ポータルでディレクトリを変更する"></a>方法 2. Azure ポータルでディレクトリを変更する</h4><p>ポータル サイト内でディレクリを切り替える機能が用意されていない場合は、Azure ポータル (<a target="_blank" rel="noopener" href="https://portal.azure.com/">https://portal.azure.com</a>) を使ってディレクトリの切り替えを行います。そして、各サービスのポータルサイト (<a target="_blank" rel="noopener" href="https://www.qnamaker.ai/">QnA Maker</a> など) にアクセスします。</p>
 <p>特にディレクトリ B で多要素認証 (MFA) が強制されているなどサインイン方法に制約がある場合は、こちらの方法をお試しください。</p>
 <p>Azure ポータルでのディレクトリの切り替え方法は次の手順のようになります。</p>
 <ol>
@@ -190,7 +189,7 @@
 <li><p>Azure サブスクリプションが存在するディレクトリを選択してサインインを完了します</p>
 <p> <img src="https://jpaiblog.github.io/images/cognitive-portal-sub-not-found/azure-portal-dir-switch-2.png" alt="Azure portal dir switch 2"></p>
 </li>
-<li><p>Web ブラウザーの別のタブで対象のポータル サイト (例. <a href="https://www.qnamaker.ai/" target="_blank" rel="noopener">QnA Maker</a>) を開きます</p>
+<li><p>Web ブラウザーの別のタブで対象のポータル サイト (例. <a target="_blank" rel="noopener" href="https://www.qnamaker.ai/">QnA Maker</a>) を開きます</p>
 </li>
 </ol>
 <p>もし上記の手順でもポータル サイトで Azure サブスクリプションやリソースが表示されない場合、既定のディレクトリを Azure サブスクリプションが紐づいたディレクトリに変更してから、そのディレクトリに切り替えることで解消するかご確認ください。</p>
@@ -335,7 +334,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 

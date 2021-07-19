@@ -17,7 +17,7 @@
   <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Bing Search API に関するお問い合わせを起票いただく際にご留意いただきたい点をご案内します。">
 <meta property="og:type" content="article">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="Bing Search API に関するお問い合わせを起票いただく際にご留意いただきたい点をご案内します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2021-04-30T07:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-20T06:45:48.672Z">
+<meta property="article:modified_time" content="2021-07-19T06:40:32.367Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Bing Search API">
 <meta name="twitter:card" content="summary">
@@ -44,8 +44,7 @@
     }
   </script>
   <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="loading-bar-wrapper">
@@ -145,46 +144,46 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Bing-Search-API-の具体的な動作に関するご質問について"><span class="toc-number">1.</span> <span class="toc-text">(1) Bing Search API の具体的な動作に関するご質問について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Bing-Search-API-で取得した情報の利用について"><span class="toc-number">2.</span> <span class="toc-text">(2) Bing Search API で取得した情報の利用について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Bing-Search-API-で検索対象になる情報について"><span class="toc-number">3.</span> <span class="toc-text">(3) Bing Search API で検索対象になる情報について</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Bing-Search-API-%E3%81%AE%E5%85%B7%E4%BD%93%E7%9A%84%E3%81%AA%E5%8B%95%E4%BD%9C%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%94%E8%B3%AA%E5%95%8F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">(1) Bing Search API の具体的な動作に関するご質問について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Bing-Search-API-%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%97%E3%81%9F%E6%83%85%E5%A0%B1%E3%81%AE%E5%88%A9%E7%94%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">(2) Bing Search API で取得した情報の利用について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Bing-Search-API-%E3%81%A7%E6%A4%9C%E7%B4%A2%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%81%AA%E3%82%8B%E6%83%85%E5%A0%B1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">3.</span> <span class="toc-text">(3) Bing Search API で検索対象になる情報について</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<p>Bing Search API に関するお問い合わせを起票いただく際にご留意いただきたい点をご案内します。</p>
-<a id="more"></a>
+<span id="more"></span>
 <br>
 
 <hr>
 <h2 id="1-Bing-Search-API-の具体的な動作に関するご質問について"><a href="#1-Bing-Search-API-の具体的な動作に関するご質問について" class="headerlink" title="(1) Bing Search API の具体的な動作に関するご質問について"></a>(1) Bing Search API の具体的な動作に関するご質問について</h2><p>Bing Search API の具体的な動作、例えば特定のパラメーターを設定するとエラーが発生する、あるクエリのみレスポンスが非常に遅い、といった内容について調査を行うには、個々の API リクエストを一意に識別可能な <strong>BingAPIs-TraceId</strong> が必要となります。これは API のレスポンス ヘッダーに含まれています。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/reference/headers" target="_blank" rel="noopener">Web Search API v7 headers</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/reference/headers">Web Search API v7 headers</a></li>
 </ul>
 <p>また、事象を再現可能な curl のコマンド例を併せて提供いただけるとよりスムーズに調査を行うことができます。例えば以下のように -v オプションを指定することで BingAPIs-TraceId を確認することもできます。</p>
-<p>curl -v –header “Ocp-Apim-Subscription-Key: Key” “<a href="https://api.bing.microsoft.com/v7.0/custom/search?q=Test&amp;customconfig=ID&amp;setLang=ja&amp;textDecorations=true&amp;count=10&amp;offset=10&amp;textFormat=HTML&quot;" target="_blank" rel="noopener">https://api.bing.microsoft.com/v7.0/custom/search?q=Test&amp;customconfig=ID&amp;setLang=ja&amp;textDecorations=true&amp;count=10&amp;offset=10&amp;textFormat=HTML&quot;</a> </p>
+<p>curl -v –header “Ocp-Apim-Subscription-Key: Key” “<a target="_blank" rel="noopener" href="https://api.bing.microsoft.com/v7.0/custom/search?q=Test&amp;customconfig=ID&amp;setLang=ja&amp;textDecorations=true&amp;count=10&amp;offset=10&amp;textFormat=HTML&quot;">https://api.bing.microsoft.com/v7.0/custom/search?q=Test&amp;customconfig=ID&amp;setLang=ja&amp;textDecorations=true&amp;count=10&amp;offset=10&amp;textFormat=HTML&quot;</a> </p>
 <ul>
-<li><a href="https://curl.se/docs/manpage.html" target="_blank" rel="noopener">curl command reference</a> (※弊社外のサイトとなります)</li>
+<li><a target="_blank" rel="noopener" href="https://curl.se/docs/manpage.html">curl command reference</a> (※弊社外のサイトとなります)</li>
 </ul>
 <p>その他 Bing Search API で利用可能なパラメーターやレスポンスの形式については以下のリファレンスをご参照ください。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/reference/endpoints" target="_blank" rel="noopener">Web Search API v7 reference</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/reference/endpoints">Web Search API v7 reference</a></li>
 </ul>
 <p>なお、BingAPIs-TraceId は有効期限が非常に短いため、発生から時間が経過すると調査が困難になる場合があります。</p>
 <h2 id="2-Bing-Search-API-で取得した情報の利用について"><a href="#2-Bing-Search-API-で取得した情報の利用について" class="headerlink" title="(2) Bing Search API で取得した情報の利用について"></a>(2) Bing Search API で取得した情報の利用について</h2><p>Bing Search API は Cognitive Services とは異なる利用条件が設定されています。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/use-display-requirements" target="_blank" rel="noopener">Bing Search API use and display requirements</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/use-display-requirements">Bing Search API use and display requirements</a></li>
 </ul>
 <p>特に多くお問い合わせいただく内容として、Bing Search API の検索結果を機械学習もしくはそれに類する処理で使用することは禁止されています。また特定のシナリオついて、技術サポート窓口で利用の可否を回答することはできませんので、必要に応じて法務部門や顧問弁護士等の専門家にご相談いただき、利用者の責任においてご判断ください。</p>
 <ul>
-<li><a href="https://azure.microsoft.com/ja-jp/support/legal/" target="_blank" rel="noopener">Microsoft Azure の法的情報</a></li>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/support/legal/">Microsoft Azure の法的情報</a></li>
 </ul>
-<h2 id="3-Bing-Search-API-で検索対象になる情報について"><a href="#3-Bing-Search-API-で検索対象になる情報について" class="headerlink" title="(3) Bing Search API で検索対象になる情報について"></a>(3) Bing Search API で検索対象になる情報について</h2><p>Bing Search API は<a href="http://www.bing.com/" target="_blank" rel="noopener">一般向けの Bing</a> と同じ検索インデックスを使用しているため、インデックスに含まれていない Web ページやコンテンツは検索の対象となりません。すなわち、通常の Bing で検索できない情報は Bing Search API の検索結果にも含まれません。これは Bing Custom Search についても同様です。ご自身が管理しているコンテンツを Bing のインデックスに追加するための具体的な手法 (いわゆる検索エンジン対策, SEO) については Azure サポート プランの対象外となるため、Bing Webmaster へお問い合わせください。</p>
+<h2 id="3-Bing-Search-API-で検索対象になる情報について"><a href="#3-Bing-Search-API-で検索対象になる情報について" class="headerlink" title="(3) Bing Search API で検索対象になる情報について"></a>(3) Bing Search API で検索対象になる情報について</h2><p>Bing Search API は<a target="_blank" rel="noopener" href="http://www.bing.com/">一般向けの Bing</a> と同じ検索インデックスを使用しているため、インデックスに含まれていない Web ページやコンテンツは検索の対象となりません。すなわち、通常の Bing で検索できない情報は Bing Search API の検索結果にも含まれません。これは Bing Custom Search についても同様です。ご自身が管理しているコンテンツを Bing のインデックスに追加するための具体的な手法 (いわゆる検索エンジン対策, SEO) については Azure サポート プランの対象外となるため、Bing Webmaster へお問い合わせください。</p>
 <p>Bing Webmaster について:</p>
 <ul>
-<li><a href="https://www.bing.com/webmasters/about" target="_blank" rel="noopener">Bing Webmaster Tools</a></li>
-<li><a href="https://www.bing.com/webmasters/help/webmaster-support-24ab5ebf" target="_blank" rel="noopener">Bing Webmaster Support</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bing.com/webmasters/about">Bing Webmaster Tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bing.com/webmasters/help/webmaster-support-24ab5ebf">Bing Webmaster Support</a></li>
 </ul>
 <p>Bing Custom Search について:</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-custom-search/how-to/define-your-custom-view" target="_blank" rel="noopener">Configure your Bing Custom Search instance</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/bing/search-apis/bing-custom-search/how-to/define-your-custom-view">Configure your Bing Custom Search instance</a></li>
 </ul>
 <hr>
 <p><code>変更履歴</code><br><code>2021/04/30 created by Nakagami</code>  </p>
@@ -319,7 +318,7 @@
     
   </div>
   
-  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' target="_blank" rel="noopener" class="codename">MaterialFlow</a>.</div>
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
   
 </footer>
 
