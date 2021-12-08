@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Azure に関するお問い合わせ起票時のセキュリティ チェックが強化されます</title>
+      <link href="/blog/2021/12/08/enhance-security-check/"/>
+      <url>/blog/2021/12/08/enhance-security-check/</url>
+      
+        <content type="html"><![CDATA[<p>2021 年 12 月 8 日以降、Azure サブスクリプションへのアクセス権のセキュリティ チェックが強化されます。具体的な内容を以下に紹介します。  </p><span id="more"></span><br><hr><h1 id="セキュリティ-チェック内容の詳細について"><a href="#セキュリティ-チェック内容の詳細について" class="headerlink" title="セキュリティ チェック内容の詳細について"></a>セキュリティ チェック内容の詳細について</h1><p>マイクロソフトではお客様の情報保護を最優先としており、様々な側面からセキュリティ上の脅威を評価して対策を行っています。その中で、サポート窓口が悪用されるリスクを低減するための対応として、調査対象となる Azure サブスクリプションへのアクセス権を確認していますが、2021 年 12 月 8 日以降、セキュリティ チェックが強化されます。  </p><p>これにより、問い合わせ起票時に選択された Azure サブスクリプションと異なるサブスクリプションに関するお問い合わせはお承りできなくなります。詳細および最新情報については 2021 年 11 月 26 日 に公開された以下のブログをご参照ください。  </p><ul><li><a href="https://jpaztech.github.io/blog/information/Different-subscriptions-research/">お問い合わせ発行時と「異なる」サブスクリプションならびに AAD テナントの調査依頼に対してのセキュリティ チェックが強化されます</a></li></ul><p>またこちらは電話でお問い合わせの発行を依頼いただいた場合も同様となります。電話については下記のブログで個別に説明していますので、併せてご確認ください。  </p><ul><li><a href="https://jpaztech.github.io/blog/information/Security-check-stricter/">電話経由における Azure サブスクリプションの調査のセキュリティ チェックが厳格化されます</a></li></ul><p>※ 本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。  </p><hr><p><code>変更履歴</code><br><code>2021/12/8 created by Nakagami</code></p><p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> セキュリティ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Azure </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法</title>
       <link href="/blog/2021/05/17/speech-translation-with-custom-translator/"/>
       <url>/blog/2021/05/17/speech-translation-with-custom-translator/</url>
