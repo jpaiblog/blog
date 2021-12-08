@@ -6,7 +6,7 @@
   <link href="https://jpaiblog.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2021-12-08T01:59:49.200Z</updated>
+  <updated>2021-12-08T02:15:55.561Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/"/>
     <id>https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/</id>
     <published>2021-12-08T01:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.200Z</updated>
+    <updated>2021-12-08T02:15:55.561Z</updated>
     
     
     <summary type="html">&lt;p&gt;2021 年 12 月 8 日以降、Azure サブスクリプションへのアクセス権のセキュリティ チェックが強化されます。具体的な内容を以下に紹介します。  &lt;/p&gt;</summary>
@@ -40,7 +40,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/"/>
     <id>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</id>
     <published>2021-05-16T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.260Z</updated>
+    <updated>2021-12-08T02:15:55.633Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法をご紹介します。&lt;/p&gt;</summary>
@@ -63,7 +63,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/"/>
     <id>https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/</id>
     <published>2021-04-30T07:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.264Z</updated>
+    <updated>2021-12-08T02:15:55.638Z</updated>
     
     
     <summary type="html">&lt;p&gt;Bing Search API に関するお問い合わせを起票いただく際にご留意いただきたい点をご案内します。&lt;/p&gt;</summary>
@@ -84,7 +84,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/"/>
     <id>https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/</id>
     <published>2021-03-17T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.211Z</updated>
+    <updated>2021-12-08T02:15:55.570Z</updated>
     
     
     <summary type="html">&lt;p&gt;QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。  &lt;/p&gt;</summary>
@@ -103,7 +103,7 @@
     <link href="https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/"/>
     <id>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</id>
     <published>2021-02-02T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.252Z</updated>
+    <updated>2021-12-08T02:15:55.623Z</updated>
     
     
     <summary type="html">&lt;p&gt;Excel ファイルを利用して日本語の QnA ペアを追加する際の注意事項についてご紹介します。&lt;/p&gt;</summary>
@@ -124,7 +124,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.243Z</updated>
+    <updated>2021-12-08T02:15:55.614Z</updated>
     
     
     <summary type="html">&lt;p&gt;Webポータル画面が 『プルダウンリストに選択肢が表示されるはずなのに、表示されない』 など、期待通りに表示されない場合に確認するポイントをご紹介します。&lt;/p&gt;</summary>
@@ -143,7 +143,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/"/>
     <id>https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/</id>
     <published>2020-11-10T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.294Z</updated>
+    <updated>2021-12-08T02:15:55.685Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Private Link を使用して、Private Endpoint 経由で Cognitive Services にアクセスする方法を解説します。  &lt;/p&gt;</summary>
@@ -162,7 +162,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/"/>
     <id>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</id>
     <published>2020-10-18T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.225Z</updated>
+    <updated>2021-12-08T02:15:55.591Z</updated>
     
     
     <summary type="html">&lt;p&gt;Face API 顔認識機能を、プログラミングせずに利用する方法をご紹介します。&lt;/p&gt;
@@ -185,7 +185,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
     <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
     <published>2020-06-04T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.239Z</updated>
+    <updated>2021-12-08T02:15:55.607Z</updated>
     
     
     <summary type="html">&lt;p&gt;LUIS オーサリング リソースへの移行について、オーサリング リソースの役割および移行による変更点を紹介します。&lt;/p&gt;</summary>
@@ -204,7 +204,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
     <published>2020-05-27T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.283Z</updated>
+    <updated>2021-12-08T02:15:55.671Z</updated>
     
     
     <summary type="html">&lt;p&gt;Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。&lt;/p&gt;
@@ -227,7 +227,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
     <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
     <published>2020-05-13T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.176Z</updated>
+    <updated>2021-12-08T02:15:55.557Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure の関連ポータル サイトで Azure サブスクリプションやリソースが表示されない原因と対処策について解説します。&lt;/p&gt;</summary>
@@ -252,7 +252,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
     <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
     <published>2020-04-30T03:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.273Z</updated>
+    <updated>2021-12-08T02:15:55.654Z</updated>
     
     
     <summary type="html">&lt;p&gt;Cognitive Serivces の API について、テスト実行用の参考サイトを紹介します。&lt;/p&gt;</summary>
@@ -271,7 +271,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
     <published>2020-03-06T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.205Z</updated>
+    <updated>2021-12-08T02:15:55.566Z</updated>
     
     
     <summary type="html">&lt;p&gt;エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (&lt;a href=&quot;http://www.luis.ai/&quot;&gt;www.luis.ai&lt;/a&gt; や &lt;a href=&quot;http://www.customvision.ai/&quot;&gt;www.customvision.ai&lt;/a&gt; など) へのサインインが失敗する場合の対処方法を紹介します。&lt;/p&gt;</summary>
@@ -290,7 +290,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
     <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
     <published>2020-03-02T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.256Z</updated>
+    <updated>2021-12-08T02:15:55.629Z</updated>
     
     
     <summary type="html">&lt;p&gt;QNA Maker の管理サービス (Cognitive Services リソース) についてご紹介します。&lt;/p&gt;</summary>
@@ -309,7 +309,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
     <published>2020-01-11T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.247Z</updated>
+    <updated>2021-12-08T02:15:55.619Z</updated>
     
     
     <summary type="html">&lt;p&gt;過去のブログ情報を紹介します。&lt;/p&gt;</summary>
@@ -328,7 +328,7 @@
     <link href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/"/>
     <id>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</id>
     <published>2019-12-31T15:00:00.000Z</published>
-    <updated>2021-12-08T01:59:49.171Z</updated>
+    <updated>2021-12-08T02:15:55.552Z</updated>
     
     
       
