@@ -148,35 +148,12 @@
 
   </section>
   <section class="article typo">
-	  <p>Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。<br><br></p>
-<hr>
-<h2 id="エクスポートされた-ONNX-モデルを使用する方法"><a href="#エクスポートされた-ONNX-モデルを使用する方法" class="headerlink" title="エクスポートされた ONNX モデルを使用する方法"></a>エクスポートされた ONNX モデルを使用する方法</h2><p>Custom Vision では、エッジ デバイス上でのリアルタイム推論用に最適化されている、”コンパクト ドメイン” で学習されたイテレーションでのみモデルのエクスポートが可能です。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/select-domain#compact-domains">コンパクト ドメインとは</a></li>
-</ul>
-<p>もしコンパクト ドメイン以外のドメインで一度学習を行ったプロジェクトで、学習済みモデルのエクスポートを行いたい場合は、対象プロジェクトの設定 (Settings) から、[ドメイン (Domains)] のセクションでコンパクト ドメインを選択して、再度学習 (Train) を実行することでエクスポートが可能になります。</p>
-<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-compact-domain.png"><br clear="left"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#convert-to-a-compact-domain">コンパクト ドメインへの変換方法</a></li>
-</ul>
-<p>学習済みモデルをエクスポートするには、対象プロジェクトの [Performance] タブを選択し、[Export] をクリックします。</p>
-<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-how-to-export.png"><br clear="left"></p>
-<p>エクスポートの際にモデル ファイルの形式を指定できます。ONNX 形式のモデルを利用する場合は以下を選択します。</p>
-<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-export-onnx.png"><br clear="left"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#export-your-model">モデルをエクスポートする</a></li>
-</ul>
-<p>ONNX 形式のモデル ファイルをアプリケーションで利用する方法については以下のサンプルを適宜ご利用ください。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample">ONNXファイルを用いた推論サンプルコード</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/onnx/onnx">Onnx on GitHub</a></li>
-</ul>
-<h2 id="参考情報"><a href="#参考情報" class="headerlink" title="参考情報"></a>参考情報</h2><h5 id="■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？"><a href="#■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？" class="headerlink" title="■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？"></a>■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？</h5><p>いいえ。Custom Vision の同一プロジェクト・同一ドメインで、画像やタグ付けだけを変更して再学習を行っても、入力や出力のデータサイズやノード名は固定で変わりません。また、これらの形式はエクスポートのタイミングで変更されることもないため、アプリケーションで参照するモデル ファイルの置き換えを行っても、再学習前に利用していた推論コードの変更は変更無く、そのまま実行が可能です。</p>
-<hr>
-<p><code>変更履歴</code><br><code>2022/02/21 created by kazuyaonuki</code>  </p>
-<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。</p>
+	  <p>Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。</p>
 
-
+    
+	  <div class="readmore">
+      <a href="/blog/2022/02/21/custom-vision-exported-onnx-format/">Read More</a>
+    </div>
     
     
     
