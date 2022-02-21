@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</loc>
-        <lastmod>2022-02-21T07:31:28.905Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.733Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/11/11/use-private-endpoints/</loc>
-        <lastmod>2022-02-21T07:31:28.905Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.733Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/</loc>
-        <lastmod>2022-02-21T07:31:28.874Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.717Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,39 +33,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</loc>
-        <lastmod>2022-02-21T07:31:28.874Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</loc>
-        <lastmod>2022-02-21T07:31:28.858Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</loc>
-        <lastmod>2022-02-21T07:31:28.858Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</loc>
-        <lastmod>2022-02-21T07:31:28.858Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</loc>
-        <lastmod>2022-02-21T07:31:28.858Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.717Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,15 +41,23 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</loc>
-        <lastmod>2022-02-21T07:31:28.842Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</loc>
-        <lastmod>2022-02-21T07:31:28.842Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</loc>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</loc>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,31 +65,23 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</loc>
-        <lastmod>2022-02-21T07:31:28.842Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/</loc>
-        <lastmod>2022-02-21T07:31:28.827Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</loc>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/</loc>
-        <lastmod>2022-02-21T07:31:28.811Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/</loc>
-        <lastmod>2022-02-21T07:31:28.811Z</lastmod>
+        <loc>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</loc>
+        <lastmod>2022-02-21T07:40:15.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,7 +89,23 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</loc>
-        <lastmod>2022-02-21T07:31:28.811Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.686Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/</loc>
+        <lastmod>2022-02-21T07:40:15.686Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpaiblog.github.io/blog/2020/10/19/face-identify-without-coding/</loc>
+        <lastmod>2022-02-21T07:40:15.686Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -129,7 +113,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</loc>
-        <lastmod>2022-02-21T07:31:28.796Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.671Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -137,7 +121,23 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</loc>
-        <lastmod>2022-02-21T07:31:28.796Z</lastmod>
+        <lastmod>2022-02-21T07:40:15.671Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/</loc>
+        <lastmod>2022-02-21T07:40:15.671Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/</loc>
+        <lastmod>2022-02-21T07:40:15.671Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
