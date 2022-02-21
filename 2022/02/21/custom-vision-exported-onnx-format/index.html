@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: Face API | Japan Cognitive Services Support Blog</title>
+  <title>Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,22 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Cognitive Services Support Blog">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/categories/Face-API/index.html">
+  <meta name="description" content="Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。  エクスポートされた ONNX モデルを使用する方法Custom Vision では、エッジ デバイス上でのリアルタイム推論用に最適化されている、”コンパクト ドメイン” で学習されたイテレーションでのみモデルのエクスポートが可能です。  コンパクト ドメインとは  もしコンパクト">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。  エクスポートされた ONNX モデルを使用する方法Custom Vision では、エッジ デバイス上でのリアルタイム推論用に最適化されている、”コンパクト ドメイン” で学習されたイテレーションでのみモデルのエクスポートが可能です。  コンパクト ドメインとは  もしコンパクト">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-compact-domain.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-how-to-export.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-export-onnx.png">
+<meta property="article:published_time" content="2022-02-21T01:30:00.000Z">
+<meta property="article:modified_time" content="2022-02-21T07:31:28.811Z">
 <meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Custom Vision">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-compact-domain.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -119,59 +128,86 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Category : Face API'}
-  </script>
-
-<section class="post-list">
+        <article id="post-custom-vision-exported-onnx-format"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2022/02/21/custom-vision-exported-onnx-format/">
+    	Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について
+    </a>
+  </h2>
+	<time>
+	  2月 21, 2022
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/10/19/face-identify-without-coding/">
-        Face API 顔認識機能をプログラミングせずに利用する方法
-      </a>
-    </h2>
-    
-    <time>
-      10月 19, 2020
-    </time>
-		
     
     <div class='cats'>
-        <a href="/blog/categories/Face-API/">Face API</a>
+        <a href="/blog/categories/Cognitive-Services/">Cognitive Services</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>Face API 顔認識機能を、プログラミングせずに利用する方法をご紹介します。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F-ONNX-%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">エクスポートされた ONNX モデルを使用する方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1"><span class="toc-number">2.</span> <span class="toc-text">参考情報</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%96%A0-%E5%86%8D%E5%AD%A6%E7%BF%92%E3%82%84%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E3%80%81ONNX-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%85%E3%81%AE%E5%85%A5%E5%8A%9B%E3%81%8A%E3%82%88%E3%81%B3%E5%87%BA%E5%8A%9B%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%81%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E3%81%93%E3%81%A8%E3%81%AF%E3%81%82%E3%82%8B%E3%81%8B%EF%BC%9F"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？</span></a></li></ol></li></ol></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。<br><br></p>
+<hr>
+<h2 id="エクスポートされた-ONNX-モデルを使用する方法"><a href="#エクスポートされた-ONNX-モデルを使用する方法" class="headerlink" title="エクスポートされた ONNX モデルを使用する方法"></a>エクスポートされた ONNX モデルを使用する方法</h2><p>Custom Vision では、エッジ デバイス上でのリアルタイム推論用に最適化されている、”コンパクト ドメイン” で学習されたイテレーションでのみモデルのエクスポートが可能です。</p>
 <ul>
-<li><a href="#%E5%88%A9%E7%94%A8%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%8E%A8%E5%A5%A8%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E7%94%BB%E5%83%8F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">利用にあたり推奨するサンプル画像</a></li>
-<li><a href="#%E6%89%8B%E9%A0%86%E6%A6%82%E8%A6%81">手順概要</a></li>
-<li><a href="#%E6%89%8B%E9%A0%86%E8%A9%B3%E7%B4%B0">手順詳細</a>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/select-domain#compact-domains">コンパクト ドメインとは</a></li>
+</ul>
+<p>もしコンパクト ドメイン以外のドメインで一度学習を行ったプロジェクトで、学習済みモデルのエクスポートを行いたい場合は、対象プロジェクトの設定 (Settings) から、[ドメイン (Domains)] のセクションでコンパクト ドメインを選択して、再度学習 (Train) を実行することでエクスポートが可能になります。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-compact-domain.png" alt="Custom Vision Compact Domain"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#convert-to-a-compact-domain">コンパクト ドメインへの変換方法</a></li>
+</ul>
+<p>学習済みモデルをエクスポートするには、対象プロジェクトの [Performance] タブを選択し、[Export] をクリックします。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-how-to-export.png" alt="How To Export"></p>
+<p>エクスポートの際にモデル ファイルの形式を指定できます。ONNX 形式のモデルを利用する場合は以下を選択します。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-export-onnx.png" alt="Export ONNX"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#export-your-model">モデルをエクスポートする</a></li>
+</ul>
+<p>ONNX 形式のモデル ファイルをアプリケーションで利用する方法については以下のサンプルを適宜ご利用ください。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample">ONNXファイルを用いた推論サンプルコード</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/onnx/onnx">Onnx on GitHub</a></li>
+</ul>
+<h2 id="参考情報"><a href="#参考情報" class="headerlink" title="参考情報"></a>参考情報</h2><h5 id="■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？"><a href="#■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？" class="headerlink" title="■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？"></a>■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？</h5><p>いいえ。Custom Vision の同一プロジェクト・同一ドメインで、画像やタグ付けだけを変更して再学習を行っても、入力や出力のデータサイズやノード名は固定で変わりません。また、これらの形式はエクスポートのタイミングで変更されることもないため、アプリケーションで参照するモデル ファイルの置き換えを行っても、再学習前に利用していた推論コードの変更は変更無く、そのまま実行が可能です。</p>
+<hr>
+<p><code>変更履歴</code><br><code>2022/02/21 created by kazuyaonuki</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。</p>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/10/19/face-identify-without-coding/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/Face-API-Recognition-Identify/">Face API Recognition Identify</a>
+        <a href="/blog/tags/Custom-Vision/">Custom Vision</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2021/12/08/enhance-security-check/" rel="next"  title="Azure に関するお問い合わせ起票時のセキュリティ チェックが強化されます">
+						Azure に関するお問い合わせ起票時のセキュリティ チェックが強化されます
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

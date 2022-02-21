@@ -131,6 +131,69 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/blog/2022/02/21/custom-vision-exported-onnx-format/">
+        Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について
+      </a>
+    </h2>
+    
+    <time>
+      2月 21, 2022
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/blog/categories/Cognitive-Services/">Cognitive Services</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <p>Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。<br><br></p>
+<hr>
+<h2 id="エクスポートされた-ONNX-モデルを使用する方法"><a href="#エクスポートされた-ONNX-モデルを使用する方法" class="headerlink" title="エクスポートされた ONNX モデルを使用する方法"></a>エクスポートされた ONNX モデルを使用する方法</h2><p>Custom Vision では、エッジ デバイス上でのリアルタイム推論用に最適化されている、”コンパクト ドメイン” で学習されたイテレーションでのみモデルのエクスポートが可能です。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/select-domain#compact-domains">コンパクト ドメインとは</a></li>
+</ul>
+<p>もしコンパクト ドメイン以外のドメインで一度学習を行ったプロジェクトで、学習済みモデルのエクスポートを行いたい場合は、対象プロジェクトの設定 (Settings) から、[ドメイン (Domains)] のセクションでコンパクト ドメインを選択して、再度学習 (Train) を実行することでエクスポートが可能になります。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-compact-domain.png" alt="Custom Vision Compact Domain"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#convert-to-a-compact-domain">コンパクト ドメインへの変換方法</a></li>
+</ul>
+<p>学習済みモデルをエクスポートするには、対象プロジェクトの [Performance] タブを選択し、[Export] をクリックします。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-how-to-export.png" alt="How To Export"></p>
+<p>エクスポートの際にモデル ファイルの形式を指定できます。ONNX 形式のモデルを利用する場合は以下を選択します。</p>
+<p><img src="https://jpaiblog.github.io/images/custom-vision-exported-onnx-format/custom-vision-export-onnx.png" alt="Export ONNX"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/export-your-model#export-your-model">モデルをエクスポートする</a></li>
+</ul>
+<p>ONNX 形式のモデル ファイルをアプリケーションで利用する方法については以下のサンプルを適宜ご利用ください。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Azure-Samples/cognitive-services-onnx-customvision-sample">ONNXファイルを用いた推論サンプルコード</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/onnx/onnx">Onnx on GitHub</a></li>
+</ul>
+<h2 id="参考情報"><a href="#参考情報" class="headerlink" title="参考情報"></a>参考情報</h2><h5 id="■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？"><a href="#■-再学習やエクスポートのタイミングによって、ONNX-ファイル内の入力および出力のフォーマットが変更されることはあるか？" class="headerlink" title="■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？"></a>■ 再学習やエクスポートのタイミングによって、ONNX ファイル内の入力および出力のフォーマットが変更されることはあるか？</h5><p>いいえ。Custom Vision の同一プロジェクト・同一ドメインで、画像やタグ付けだけを変更して再学習を行っても、入力や出力のデータサイズやノード名は固定で変わりません。また、これらの形式はエクスポートのタイミングで変更されることもないため、アプリケーションで参照するモデル ファイルの置き換えを行っても、再学習前に利用していた推論コードの変更は変更無く、そのまま実行が可能です。</p>
+<hr>
+<p><code>変更履歴</code><br><code>2022/02/21 created by kazuyaonuki</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。</p>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/blog/tags/Custom-Vision/">Custom Vision</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/blog/2020/05/14/cognitive-portal-sub-not-found/">
         Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策
       </a>
@@ -224,7 +287,7 @@
     
         <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
     
-        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>9</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>10</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
     
@@ -245,7 +308,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 20px; color: #000">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 14px; color: #808080">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 20px; color: #000">LUIS</a> <a href="/blog/tags/QNA-Maker/" style="font-size: 14px; color: #808080">QNA Maker</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 20px; color: #000">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 14px; color: #808080">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 20px; color: #000">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 20px; color: #000">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 20px; color: #000">LUIS</a> <a href="/blog/tags/QNA-Maker/" style="font-size: 14px; color: #808080">QNA Maker</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 20px; color: #000">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 14px; color: #808080">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
     </div>
 </div>
 
