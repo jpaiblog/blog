@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Custom Vision のトレーニングが失敗した場合の調査に必要な情報について</title>
+      <link href="/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/"/>
+      <url>/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/</url>
+      
+        <content type="html"><![CDATA[<p>Custom Vision のトレーニングが失敗した場合の調査に必要な情報をまとめました。</p><span id="more"></span><br><hr><h1 id="Custom-Vision-のトレーニングが失敗した場合の調査について"><a href="#Custom-Vision-のトレーニングが失敗した場合の調査について" class="headerlink" title="Custom Vision のトレーニングが失敗した場合の調査について"></a>Custom Vision のトレーニングが失敗した場合の調査について</h1><p>Custom Vision でトレーニングを実行した際に何らかの原因によってトレーニングが失敗すると、そのイテレーションは “Failed” と表示されます。これはリソースの一時的な不足など一過性の問題でも発生するため、まずはリトライ (再実行) をお試しください。また、下記ドキュメントに記載されたトレーニング データの推奨量を満たしているかも併せてご確認ください。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier">Custom Vision のモデルを改善する方法</a></li></ul><p>もし繰り返し実行しても失敗する場合は別途原因の調査が必要となります。Azure ポータルからお問い合わせいただく際には、以下の情報を採取・提供いただけるとスムーズです。</p><h3 id="1-トレーニングを実行したプロジェクトの-ID-Project-Id"><a href="#1-トレーニングを実行したプロジェクトの-ID-Project-Id" class="headerlink" title="(1) トレーニングを実行したプロジェクトの ID (Project Id)"></a>(1) トレーニングを実行したプロジェクトの ID (Project Id)</h3><p>Custom Vision ポータル (<a href="https://www.customvision.ai/">https://www.customvision.ai/</a>) 上で、<br>プロジェクトを選択した後、画面右上の歯車マーク (Settings) からご確認いただけます。</p><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/cv-portal-01.png" alt="cv-portal-01" title="cv-portal-01">  </p><h3 id="2-トレーニング-イテレーション-毎に付与される-ID-Iteration-Id"><a href="#2-トレーニング-イテレーション-毎に付与される-ID-Iteration-Id" class="headerlink" title="(2) トレーニング (イテレーション) 毎に付与される ID (Iteration Id)"></a>(2) トレーニング (イテレーション) 毎に付与される ID (Iteration Id)</h3><p>まず (1) と同じプロジェクトの Settings で KEY の情報をメモしておきます。</p><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/cv-portal-02.png" alt="cv-portal-02" title="cv-portal-02">  </p><p>次に下記のコンソールから、イテレーションを列挙する API を呼び出すことで Failed となったイテレーションの Iteration Id を確認することができます。</p><ul><li><a href="https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddec9">Custom Vision Training v3.3 - GetIterations</a></li></ul><p>コンソールの起動時には現在ご利用のリージョンを選択してください。</p><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/api-console-01.png" alt="api-console-01" title="api-console-01">  </p><p>API の呼び出しには Training リソースの KEY および Project Id の情報が必要です。</p><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/api-console-02.png" alt="api-console-02" title="api-console-02">  </p><p>API を呼び出した結果の “id” の部分が Iteration Id に相当するため、”status” が “Failed” となっているイテレーションの “id” をご提供ください。</p><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/api-console-03.png" alt="api-console-03" title="api-console-03">  </p><h3 id="3-トレーニングを実行したリソースのリソース-ID"><a href="#3-トレーニングを実行したリソースのリソース-ID" class="headerlink" title="(3) トレーニングを実行したリソースのリソース ID"></a>(3) トレーニングを実行したリソースのリソース ID</h3><p><img src="https://jpaiblog.github.io/images/how-to-troubleshoot-custom-vision-training-issue/cv-portal-03.png" alt="cv-portal-03" title="cv-portal-03">  </p><p>(1) と同様に Settings からご確認いただけます。</p><p>なお、Azure ポータルからの起票時に選択されたサブスクリプションと、同じサブスクリプションに含まれるリソースではない場合は、調査をお承りすることができませんのでご注意ください。</p><ul><li><a href="https://jpaztech.github.io/blog/information/Different-subscriptions-research/">問い合わせ起票時のセキュリティ チェックの強化について</a></li></ul><hr><p><code>変更履歴</code><br><code>2022/03/25 created by Hiroki Nakagami</code>  </p><p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cognitive Services </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Custom Vision </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について</title>
       <link href="/blog/2022/02/21/custom-vision-exported-onnx-format/"/>
       <url>/blog/2022/02/21/custom-vision-exported-onnx-format/</url>
