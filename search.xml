@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Custom Vision の Advanced トレーニングの利用方法</title>
+      <link href="/blog/2022/03/31/how-to-use-advanced-training/"/>
+      <url>/blog/2022/03/31/how-to-use-advanced-training/</url>
+      
+        <content type="html"><![CDATA[<p>Custom Vision の Advanced Training の利用方法をご紹介します。</p><span id="more"></span><br><hr><h1 id="Custom-Vision-モデル作成"><a href="#Custom-Vision-モデル作成" class="headerlink" title="Custom Vision モデル作成"></a>Custom Vision モデル作成</h1><p>Custom Vision ポータル (<a href="https://www.customvision.ai/">https://www.customvision.ai/</a>) を使用して、画像のクラス分類 / または 物体検出のモデル作成が可能です。一連の流れについては、以下のドキュメントをご参照ください。</p><ul><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier">クイックスタート: Custom Vision Web ポータルを使用して画像分類器モデルを構築する</a></p></li><li><p><a href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/get-started-build-detector">クイックスタート: クイックスタート: Custom Vision の Web サイトでオブジェクト検出器を構築する</a></p></li></ul><p>モデルトレーニングでは “Quick Training” / “Advanced Training” のどちらかのタイプを選択可能です。上記ドキュメントは、比較的短時間で完了する Quick Training を前提として記載されていますが、この記事では、Advanced Training の利用手順をご案内します。</p><h1 id="Advanced-Training-の利用手順"><a href="#Advanced-Training-の利用手順" class="headerlink" title="Advanced Training の利用手順"></a>Advanced Training の利用手順</h1><h3 id="1-Train-ボタンクリック"><a href="#1-Train-ボタンクリック" class="headerlink" title="(1)  [Train] ボタンクリック"></a>(1)  [Train] ボタンクリック</h3><p>Custom Vision ポータル (<a href="https://www.customvision.ai/">https://www.customvision.ai/</a>) 上で、<br>トレーニングデータをアップロードした後、画面右上の [Train] ボタンをクリックします。</p><p><img src="https://jpaiblog.github.io/images/how-to-use-advanced-training/cv-advanced-01.png" alt="cv-advanced-01" title="cv-advanced-01"> </p><h3 id="2-Advanced-Training-の設定"><a href="#2-Advanced-Training-の設定" class="headerlink" title="(2) [Advanced Training] の設定"></a>(2) [Advanced Training] の設定</h3><p>[Train] ボタンクリックで表示される子画面上で、Training Types：[Advanced Training] を選択します。</p><p><img src="https://jpaiblog.github.io/images/how-to-use-advanced-training/cv-advanced-02.png" alt="cv-advanced-02" title="cv-advanced-02"> </p><p>Custom Vision では、トレーニング時間あたりの課金を設定させて頂いております。</p><ul><li><a href="https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/custom-vision-service/?cdn=disable">Custom Vision の価格</a></li></ul><p>そのため、ご予算の範囲内で今回のトレーニングにかけられる時間の最大値をTraining budget に設定してください。</p><p>なお、Custom Vision ポータル では、トレーニングを停止する機能のご提供がないことにご留意ください。</p><p>また、Advanced Training が完了次第、メールでお知らせすることが可能です。</p><p>お知らせ機能を利用する場合には、[Send me an email notification after training completes] のチェックボックスをクリックして、任意の Email address を記載してください。</p><p>[Train] ボタンをクリックするとトレーニングが始まります。誠に恐れ入りますが、トレーニング進捗や完了までの残り時間などの表示機能のご提供はありません。前述の メールでのトレーニング完了お知らせ機能のご利用をご検討ください、</p><h1 id="お問い合わせについて"><a href="#お問い合わせについて" class="headerlink" title="お問い合わせについて"></a>お問い合わせについて</h1><p>リソース個別の技術的なご質問については、<a href="https://azure.microsoft.com/ja-jp/support/plans/">DEVELOPER サポートプラン</a> 以上のサポートプランをご契約いただき、Azure ポータルからお問い合わせください。</p><p>なお、Azure ポータルからの起票時に選択されたサブスクリプションと、同じサブスクリプションに含まれるリソースではない場合は、調査をお承りすることができませんのでご注意ください。</p><ul><li><a href="https://jpaztech.github.io/blog/information/Different-subscriptions-research/">問い合わせ起票時のセキュリティ チェックの強化について</a></li></ul><hr><p><code>変更履歴</code><br><code>2022/03/31 created by Uehara</code>  </p><p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cognitive Services </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Custom Vision </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Custom Vision のトレーニングが失敗した場合の調査に必要な情報について</title>
       <link href="/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/"/>
       <url>/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/</url>
