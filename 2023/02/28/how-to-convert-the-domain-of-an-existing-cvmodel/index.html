@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2020/4 | Japan Cognitive Services Support Blog</title>
+  <title>Custom Vision モデルのドメイン変更方法 | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,13 +19,25 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Cognitive Services Support Blog">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/archives/2020/04/index.html">
+  <meta name="description" content="Custom Vision モデルのドメイン変更方法をご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Custom Vision モデルのドメイン変更方法">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="Custom Vision モデルのドメイン変更方法をご紹介します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain01.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain02.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain03.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain04.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain05.jpg">
+<meta property="og:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain06.jpg">
+<meta property="article:published_time" content="2023-02-27T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-28T07:12:58.258Z">
 <meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Custom Vision">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain01.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -119,57 +131,89 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-how-to-convert-the-domain-of-an-existing-cvmodel"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/">
+    	Custom Vision モデルのドメイン変更方法
+    </a>
+  </h2>
+	<time>
+	  2月 28, 2023
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2020.4'}
-  </script>
-
-<section class="post-list">
-	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2020/04/30/test-APIs/">
-        Cognitive Serivces で使用する API テスト ページについて
-      </a>
-    </h2>
-    
-    <time>
-      4月 30, 2020
-    </time>
-		
     
     <div class='cats'>
         <a href="/blog/categories/Cognitive-Services/">Cognitive Services</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>Cognitive Serivces の API について、テスト実行用の参考サイトを紹介します。</p>
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Custom-Vision-%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">Custom Vision モデルのドメインについて</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A2%E5%AD%98%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E5%A4%89%E6%9B%B4%E6%89%8B%E9%A0%86"><span class="toc-number">2.</span> <span class="toc-text">既存モデルのドメイン変更手順</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E8%A8%AD%E5%AE%9A%E7%94%BB%E9%9D%A2%E3%81%AE%E8%A1%A8%E7%A4%BA"><span class="toc-number">2.0.1.</span> <span class="toc-text">(1)  プロジェクト設定画面の表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E9%81%B8%E6%8A%9E%E3%81%A8%E3%80%81%E5%A4%89%E6%9B%B4%E3%81%AE%E4%BF%9D%E5%AD%98"><span class="toc-number">2.0.2.</span> <span class="toc-text">(2) ドメインの選択と、変更の保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%86%8D%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%AE%9F%E8%A1%8C"><span class="toc-number">2.0.3.</span> <span class="toc-text">(3) 再トレーニング実行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%96%B0%E3%81%97%E3%81%84%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88"><span class="toc-number">2.0.4.</span> <span class="toc-text">(4) 新しいモデルのテスト</span></a></li></ol></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Custom Vision モデルのドメイン変更方法をご紹介します。</p>
+<span id="more"></span>
+<br>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2020/04/30/test-APIs/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<hr>
+<h1 id="Custom-Vision-モデルのドメインについて"><a href="#Custom-Vision-モデルのドメインについて" class="headerlink" title="Custom Vision モデルのドメインについて"></a>Custom Vision モデルのドメインについて</h1><p>Azure Custom Vision を使用して、画像のクラス分類 / または 物体検出のモデル作成が可能です。<br>モデルのトレーニング開始前には、モデルのドメイン（対応領域）を選択します。ドメインの詳細については、以下のドキュメントをご確認ください。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/select-domain">Custom Vision プロジェクトのドメインを選択する</a></li>
+</ul>
+<p>一方で、モデルのトレーニングが完了した後にも、ドメインの変更は可能です。ドメインを変更することで、ご自分のシナリオに、より適したモデルとなり、精度の向上が見込める場合があります。</p>
+<p>なお、ドメインの変更に際して、再度、画像のタグ付けの作業を行って頂く必要はありません。</p>
+<p>また、ドメインの変更の結果が、既存モデルに上書きされることはありません。<br>１つのプロジェクトの中で、ドメインを変更したトレーニング結果は別々に保持されます。</p>
+<p>以下は、Custom Vision ポータルで、１つのプロジェクトに異なるドメイン（General (Compact[S1] と General (Compact)) ）が保持されている例のスクリーンショットです。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain01.jpg" alt="cv-domain01" title="cv-domain01"> </p>
+<p>この記事では、既存モデルのドメインの変更方法をご紹介します。</p>
+<h1 id="既存モデルのドメイン変更手順"><a href="#既存モデルのドメイン変更手順" class="headerlink" title="既存モデルのドメイン変更手順"></a>既存モデルのドメイン変更手順</h1><h3 id="1-プロジェクト設定画面の表示"><a href="#1-プロジェクト設定画面の表示" class="headerlink" title="(1)  プロジェクト設定画面の表示"></a>(1)  プロジェクト設定画面の表示</h3><p>Custom Vision ポータル (<a target="_blank" rel="noopener" href="https://www.customvision.ai/">https://www.customvision.ai/</a>) 上で、プロジェクトを一覧表示します。</p>
+<p>一覧から、対象のプロジェクトを選択し、ページ右上にある 歯車 アイコンを選択して、プロジェクト設定画面を表示します。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain02.jpg" alt="cv-domain02" title="cv-domain02"> </p>
+<h3 id="2-ドメインの選択と、変更の保存"><a href="#2-ドメインの選択と、変更の保存" class="headerlink" title="(2) ドメインの選択と、変更の保存"></a>(2) ドメインの選択と、変更の保存</h3><p>[Domains] セクションで、[General [A1]] 等、任意ドメインを変更先として選択します。 [Save Changes] を選択して変更を保存します。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain03.jpg" alt="cv-domain03" title="cv-domain03"> </p>
+<h3 id="3-再トレーニング実行"><a href="#3-再トレーニング実行" class="headerlink" title="(3) 再トレーニング実行"></a>(3) 再トレーニング実行</h3><p>[Train] ボタンを使用して、再度トレーニングを行います。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain04.jpg" alt="cv-domain04" title="cv-domain04"> </p>
+<h3 id="4-新しいモデルのテスト"><a href="#4-新しいモデルのテスト" class="headerlink" title="(4) 新しいモデルのテスト"></a>(4) 新しいモデルのテスト</h3><p>トレーニング完了後、[Performance] タブで、ドメイン変更が反映されたモデルの新しい Iteration のパフォーマンスを確認できます。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain05.jpg" alt="cv-domain05" title="cv-domain05"> </p>
+<p>個別の画像に対する精度を確認する場合には、[Quick Test] ボタンを使用して、該当の Iteration を指定したテストを行います。</p>
+<p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain06.jpg" alt="cv-domain06" title="cv-domain06"> 
+　</p>
+<hr>
+<p><code>変更履歴</code><br><code>2023/02/28 created by Uehara</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
-        <a href="/blog/tags/API/">API</a>
+        <a href="/blog/tags/Custom-Vision/">Custom Vision</a>
       
 	  </div>
     
-  </section>
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/" rel="next"  title="Translator Text API へのアクセスを VNET やプライベート エンドポイントに限定する方法">
+						Translator Text API へのアクセスを VNET やプライベート エンドポイントに限定する方法
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: 'Custom Vision モデルのドメイン変更方法',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>

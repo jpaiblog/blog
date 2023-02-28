@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Custom Vision モデルのドメイン変更方法</title>
+      <link href="/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/"/>
+      <url>/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/</url>
+      
+        <content type="html"><![CDATA[<p>Custom Vision モデルのドメイン変更方法をご紹介します。</p><span id="more"></span><br><hr><h1 id="Custom-Vision-モデルのドメインについて"><a href="#Custom-Vision-モデルのドメインについて" class="headerlink" title="Custom Vision モデルのドメインについて"></a>Custom Vision モデルのドメインについて</h1><p>Azure Custom Vision を使用して、画像のクラス分類 / または 物体検出のモデル作成が可能です。<br>モデルのトレーニング開始前には、モデルのドメイン（対応領域）を選択します。ドメインの詳細については、以下のドキュメントをご確認ください。</p><ul><li><a href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/custom-vision-service/select-domain">Custom Vision プロジェクトのドメインを選択する</a></li></ul><p>一方で、モデルのトレーニングが完了した後にも、ドメインの変更は可能です。ドメインを変更することで、ご自分のシナリオに、より適したモデルとなり、精度の向上が見込める場合があります。</p><p>なお、ドメインの変更に際して、再度、画像のタグ付けの作業を行って頂く必要はありません。</p><p>また、ドメインの変更の結果が、既存モデルに上書きされることはありません。<br>１つのプロジェクトの中で、ドメインを変更したトレーニング結果は別々に保持されます。</p><p>以下は、Custom Vision ポータルで、１つのプロジェクトに異なるドメイン（General (Compact[S1] と General (Compact)) ）が保持されている例のスクリーンショットです。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain01.jpg" alt="cv-domain01" title="cv-domain01"> </p><p>この記事では、既存モデルのドメインの変更方法をご紹介します。</p><h1 id="既存モデルのドメイン変更手順"><a href="#既存モデルのドメイン変更手順" class="headerlink" title="既存モデルのドメイン変更手順"></a>既存モデルのドメイン変更手順</h1><h3 id="1-プロジェクト設定画面の表示"><a href="#1-プロジェクト設定画面の表示" class="headerlink" title="(1)  プロジェクト設定画面の表示"></a>(1)  プロジェクト設定画面の表示</h3><p>Custom Vision ポータル (<a href="https://www.customvision.ai/">https://www.customvision.ai/</a>) 上で、プロジェクトを一覧表示します。</p><p>一覧から、対象のプロジェクトを選択し、ページ右上にある 歯車 アイコンを選択して、プロジェクト設定画面を表示します。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain02.jpg" alt="cv-domain02" title="cv-domain02"> </p><h3 id="2-ドメインの選択と、変更の保存"><a href="#2-ドメインの選択と、変更の保存" class="headerlink" title="(2) ドメインの選択と、変更の保存"></a>(2) ドメインの選択と、変更の保存</h3><p>[Domains] セクションで、[General [A1]] 等、任意ドメインを変更先として選択します。 [Save Changes] を選択して変更を保存します。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain03.jpg" alt="cv-domain03" title="cv-domain03"> </p><h3 id="3-再トレーニング実行"><a href="#3-再トレーニング実行" class="headerlink" title="(3) 再トレーニング実行"></a>(3) 再トレーニング実行</h3><p>[Train] ボタンを使用して、再度トレーニングを行います。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain04.jpg" alt="cv-domain04" title="cv-domain04"> </p><h3 id="4-新しいモデルのテスト"><a href="#4-新しいモデルのテスト" class="headerlink" title="(4) 新しいモデルのテスト"></a>(4) 新しいモデルのテスト</h3><p>トレーニング完了後、[Performance] タブで、ドメイン変更が反映されたモデルの新しい Iteration のパフォーマンスを確認できます。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain05.jpg" alt="cv-domain05" title="cv-domain05"> </p><p>個別の画像に対する精度を確認する場合には、[Quick Test] ボタンを使用して、該当の Iteration を指定したテストを行います。</p><p><img src="https://jpaiblog.github.io/images/how-to-convert-the-domain-of-an-existing-cvmodel/cv-domain06.jpg" alt="cv-domain06" title="cv-domain06"> 　</p><hr><p><code>変更履歴</code><br><code>2023/02/28 created by Uehara</code>  </p><p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cognitive Services </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Custom Vision </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Translator Text API へのアクセスを VNET やプライベート エンドポイントに限定する方法</title>
       <link href="/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/"/>
       <url>/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/</url>
