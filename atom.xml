@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Japan Cognitive Services Support Blog</title>
+  <icon>https://jpaiblog.github.io/blog/icon.png</icon>
+  
+  <link href="https://jpaiblog.github.io/blog/atom.xml" rel="self"/>
+  
+  <link href="https://jpaiblog.github.io/blog/"/>
+  <updated>2023-03-22T07:36:39.961Z</updated>
+  <id>https://jpaiblog.github.io/blog/</id>
+  
+  <author>
+    <name>jpaiblog</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Azure Face API 顔認識機能の制限および利用申請について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/"/>
+    <id>https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/</id>
+    <published>2023-03-13T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.961Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Face API" scheme="https://jpaiblog.github.io/blog/categories/Face-API/"/>
+    
+    
+    <category term="Face API Recognition Identify" scheme="https://jpaiblog.github.io/blog/tags/Face-API-Recognition-Identify/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision モデルのドメイン変更方法</title>
+    <link href="https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/"/>
+    <id>https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/</id>
+    <published>2023-02-27T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.880Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision モデルのドメイン変更方法をご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Translator Text API へのアクセスを VNET やプライベート エンドポイントに限定する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/"/>
+    <id>https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/</id>
+    <published>2022-04-12T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:40.027Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Translator Text API の呼び出しを特定の VNET やプライベート エンドポイント経由に限定する方法について紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/categories/Translator-Text-API/"/>
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/tags/Translator-Text-API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Speech to Text のコンテナーに関する FAQ</title>
+    <link href="https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/"/>
+    <id>https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/</id>
+    <published>2022-04-07T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.973Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Speech to Text のコンテナーに関する FAQ をまとめました。&lt;/p&gt;
+&lt;p&gt;主にベースライン (標準) モデルのコンテナーに関する内容となります。カスタム モデルの場合は異なることがあります。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Speech" scheme="https://jpaiblog.github.io/blog/tags/Speech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision の Advanced トレーニングの利用方法</title>
+    <link href="https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/"/>
+    <id>https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/</id>
+    <published>2022-03-30T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.896Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision の Advanced Training の利用方法をご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision のトレーニングが失敗した場合の調査に必要な情報について</title>
+    <link href="https://jpaiblog.github.io/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/"/>
+    <id>https://jpaiblog.github.io/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/</id>
+    <published>2022-03-24T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.892Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision のトレーニングが失敗した場合の調査に必要な情報をまとめました。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision でモデルを ONNX 形式でエクスポートして利用する方法について</title>
+    <link href="https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/"/>
+    <id>https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/</id>
+    <published>2022-02-21T01:30:00.000Z</published>
+    <updated>2023-03-22T07:36:39.835Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure に関するお問い合わせ起票時のセキュリティ チェックが強化されます</title>
+    <link href="https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/"/>
+    <id>https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/</id>
+    <published>2021-12-08T01:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.848Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2021 年 12 月 8 日以降、Azure サブスクリプションへのアクセス権のセキュリティ チェックが強化されます。具体的な内容を以下に紹介します。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="セキュリティ" scheme="https://jpaiblog.github.io/blog/categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+    
+    <category term="Azure" scheme="https://jpaiblog.github.io/blog/tags/Azure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/"/>
+    <id>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</id>
+    <published>2021-05-16T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.983Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Translator で作成した翻訳モデルを Speech Translation で使用する方法をご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/categories/Speech-Services/"/>
+    
+    
+    <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/tags/Speech-Services/"/>
+    
+    <category term="Custom Translator" scheme="https://jpaiblog.github.io/blog/tags/Custom-Translator/"/>
+    
+    <category term="Speech SDK" scheme="https://jpaiblog.github.io/blog/tags/Speech-SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bing Search API 関するお問い合わせについて</title>
+    <link href="https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/"/>
+    <id>https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/</id>
+    <published>2021-04-30T07:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.996Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Bing Search API に関するお問い合わせを起票いただく際にご留意いただきたい点をご案内します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    <category term="Bing Search API" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/Bing-Search-API/"/>
+    
+    
+    <category term="Bing Search API" scheme="https://jpaiblog.github.io/blog/tags/Bing-Search-API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QnA Maker の KB名称にエクスクラメーションアイコンが表示された場合の対応について</title>
+    <link href="https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/"/>
+    <id>https://jpaiblog.github.io/blog/2021/03/18/exclamation-displayed-on-KBname/</id>
+    <published>2021-03-17T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.870Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;QnA Maker の KB名称部分にエクスクラメーション記号（！）アイコンが表示された場合の対応をご説明します。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/categories/QNA-Maker/"/>
+    
+    
+    <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/tags/QNA-Maker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QnA Maker における Excel ファイルを使用した QnA ペアの追加について</title>
+    <link href="https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/"/>
+    <id>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</id>
+    <published>2021-02-02T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.938Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Excel ファイルを利用して日本語の QnA ペアを追加する際の注意事項についてご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/categories/QNA-Maker/"/>
+    
+    
+    <category term="QnA ペアの追加" scheme="https://jpaiblog.github.io/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/"/>
+    
+    <category term="Excel ファイル" scheme="https://jpaiblog.github.io/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webポータル画面が期待通りに表示されない場合の確認方法</title>
+    <link href="https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/"/>
+    <id>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</id>
+    <published>2020-11-10T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.916Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Web ポータル画面が 『プルダウンリストに選択肢が表示されるはずなのに、表示されない』 など、期待通りに表示されない場合に確認するポイントをご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/tags/Cognitive-Services/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LUIS オーサリング リソースへの移行について</title>
+    <link href="https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/"/>
+    <id>https://jpaiblog.github.io/blog/2020/06/05/LUIS-authoring-resource/</id>
+    <published>2020-06-04T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.907Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;LUIS オーサリング リソースへの移行について、オーサリング リソースの役割および移行による変更点を紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="LUIS" scheme="https://jpaiblog.github.io/blog/tags/LUIS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Translator Text API の翻訳文字数の確認方法</title>
+    <link href="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/"/>
+    <id>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</id>
+    <published>2020-05-27T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:40.019Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%89%8B%E9%A0%86&quot;&gt;翻訳文字数データの確認手順&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%97%E3%81%A6%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86&quot;&gt;翻訳文字数データをファイルとしてダウンロードする手順&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%EF%BC%88%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1%EF%BC%89%E6%96%87%E5%AD%97%E6%95%B0%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E6%96%B9%E6%B3%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%85%AC%E9%96%8B%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88&quot;&gt;（参考情報）文字数カウント方法に関する公開ドキュメント&lt;/a&gt;</summary>
+    
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/categories/Translator-Text-API/"/>
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/tags/Translator-Text-API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策</title>
+    <link href="https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/"/>
+    <id>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</id>
+    <published>2020-05-13T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.823Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Azure の関連ポータル サイトで Azure サブスクリプションやリソースが表示されない原因と対処策について解説します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="LUIS" scheme="https://jpaiblog.github.io/blog/tags/LUIS/"/>
+    
+    <category term="QnA Maker" scheme="https://jpaiblog.github.io/blog/tags/QnA-Maker/"/>
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+    <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/tags/Speech-Services/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cognitive Serivces で使用する API テスト ページについて</title>
+    <link href="https://jpaiblog.github.io/blog/2020/04/30/test-APIs/"/>
+    <id>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</id>
+    <published>2020-04-30T03:00:00.000Z</published>
+    <updated>2023-03-22T07:36:40.008Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Cognitive Serivces の API について、テスト実行用の参考サイトを紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="API" scheme="https://jpaiblog.github.io/blog/tags/API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ポータルにサインインできない事象について (AADSTS650051)</title>
+    <link href="https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/"/>
+    <id>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</id>
+    <published>2020-03-06T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.860Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;エラー コード AADSTS650051 を含むメッセージが出力し、製品ポータル (&lt;a href=&quot;http://www.luis.ai/&quot;&gt;www.luis.ai&lt;/a&gt; や &lt;a href=&quot;http://www.customvision.ai/&quot;&gt;www.customvision.ai&lt;/a&gt; など) へのサインインが失敗する場合の対処方法を紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="AADSTS650051" scheme="https://jpaiblog.github.io/blog/tags/AADSTS650051/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QNA Maker の管理サービス (Cognitive Services リソース) のリージョンについて</title>
+    <link href="https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/"/>
+    <id>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</id>
+    <published>2020-03-02T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.949Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;QNA Maker の管理サービス (Cognitive Services リソース) についてご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="QNA Maker" scheme="https://jpaiblog.github.io/blog/categories/QNA-Maker/"/>
+    
+    
+    <category term="管理サービス" scheme="https://jpaiblog.github.io/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>過去ブログについて</title>
+    <link href="https://jpaiblog.github.io/blog/2020/01/12/past-blog/"/>
+    <id>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</id>
+    <published>2020-01-11T15:00:00.000Z</published>
+    <updated>2023-03-22T07:36:39.927Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;過去のブログ情報を紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="過去ブログ" scheme="https://jpaiblog.github.io/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/"/>
+    
+  </entry>
+  
+</feed>

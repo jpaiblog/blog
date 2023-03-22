@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Azure Face API 顔認識機能の制限および利用申請について | Japan Cognitive Services Support Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="https://jpaiblog.github.io/blog/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jpaiblog.github.io/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jpaiblog.github.io/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jpaiblog.github.io/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://jpaiblog.github.io/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure Face API 顔認識機能の制限および利用申請について">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/index.html">
+<meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpaiblog.github.io/images/Register-for-LimitedAccessfeatures-of-FaceAPI/face01.png">
+<meta property="article:published_time" content="2023-03-13T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-22T07:36:39.961Z">
+<meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Face API Recognition Identify">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/Register-for-LimitedAccessfeatures-of-FaceAPI/face01.png">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  
+<link rel="stylesheet" href="/blog/style.css">
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/blog/' >
+				Japan Cognitive Services Support Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/blog/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/blog/archives'>
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/blog/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/blog/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-Register-for-LimitedAccessfeatures-of-FaceAPI"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/">
+    	Azure Face API 顔認識機能の制限および利用申請について
+    </a>
+  </h2>
+	<time>
+	  3月 14, 2023
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/blog/categories/Face-API/">Face API</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Face-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E4%BD%9C%E6%88%90%E6%97%A5%E3%81%A8%E6%A9%9F%E8%83%BD%E5%88%B6%E9%99%90"><span class="toc-number">1.</span> <span class="toc-text">Face リソース作成日と機能制限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Face-API-%E6%8F%90%E4%BE%9B%E6%A9%9F%E8%83%BD%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">Face API 提供機能について</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%83%E6%AD%A2%E3%81%95%E3%82%8C%E3%82%8B%E6%A9%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">廃止される機能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8C%E9%A1%94%E6%A4%9C%E5%87%BA%E3%80%8D%E6%A9%9F%E8%83%BD%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E5%BE%97%E3%82%89%E3%82%8C%E3%82%8B%E9%A1%94%E5%B1%9E%E6%80%A7%E3%81%AE%E4%B8%80%E9%83%A8%E3%81%AE%E6%83%85%E5%A0%B1"><span class="toc-number">3.1.</span> <span class="toc-text">「顔検出」機能を通じて得られる顔属性の一部の情報</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%B9%E3%83%8A%E3%83%83%E3%83%97%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%E6%A9%9F%E8%83%BD"><span class="toc-number">3.2.</span> <span class="toc-text">スナップショット機能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%B3%E5%9B%BD%E4%B8%AD%E5%8C%97%E9%83%A8%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B-Face-API"><span class="toc-number">3.3.</span> <span class="toc-text">米国中北部リージョンにおける Face API</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B3%E8%AB%8B%E4%B8%8D%E8%A6%81%E3%81%A7%E5%88%A9%E7%94%A8%E3%81%A7%E3%81%8D%E3%82%8B%E6%A9%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">申請不要で利用できる機能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B3%E8%AB%8B%E3%81%8A%E3%82%88%E3%81%B3%E6%89%BF%E8%AA%8D%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E6%A9%9F%E8%83%BD"><span class="toc-number">5.</span> <span class="toc-text">申請および承認が必要な機能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B3%E8%AB%8B%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%83%85%E5%A0%B1"><span class="toc-number">6.</span> <span class="toc-text">申請に関する情報</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%96%A2%E9%80%A3%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"><span class="toc-number">7.</span> <span class="toc-text">関連ドキュメント</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。</p>
+<span id="more"></span>
+<br>
+
+<hr>
+<h1 id="Face-リソース作成日と機能制限"><a href="#Face-リソース作成日と機能制限" class="headerlink" title="Face リソース作成日と機能制限"></a>Face リソース作成日と機能制限</h1><p>2022 年 6 月より前に作成された Face リソースでは、2023 年 6 月 30 日までの間、Face API が提供する全ての機能が利用できます。<br><br>これは、Face API の機能制限に関する発表が 2022 年 6 月に行われたため、それより前に作成された Face リソースに対する約１年の移行措置です。<br><br><br>なお、移行措置は 2023年 6月 30日までには終了します。<br>それ以降にも、後述する「顔認識」機能を継続利用する場合は、利用申請および承認が必要です。<br></p>
+<p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/">Responsible AI investments and safeguards for facial recognition | Azure Blog and Updates | Microsoft Azure (Posted on June 21, 2022)</a></p>
+<blockquote>
+<p>Starting June 30, 2023, existing customers will no longer be able to access facial recognition capabilities if their facial recognition application has not been approved.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://portal.azure.com/">Azure ポータル</a> で Face リソースページの [プロパティ] メニューを開くと、リソース作成日が確認できます。</p>
+<p><img src="https://jpaiblog.github.io/images/Register-for-LimitedAccessfeatures-of-FaceAPI/face01.png" alt="face01" title="face01"></p>
+<h1 id="Face-API-提供機能について"><a href="#Face-API-提供機能について" class="headerlink" title="Face API 提供機能について"></a>Face API 提供機能について</h1><p>Azure Face API の提供機能は、主に、以下の 2つの機能（顔検出、顔認識）に大別できます。</p>
+<pre><code>1. 顔検出
+2. 顔認識
+</code></pre>
+<p>
+上記のうち、「顔検出」（<B>Facial Detection</B>）機能には  「<B>廃止される機能</B>」 と、2023 年 6 月 30 日以降も  「<B>申請不要で利用できる機能</B>」 の 2つが含まれます。<br><br>
+「顔認識」 機能は、その配下の 「顔識別」 （<B>Facial identification</B>） および 「顔検証」（<B>Facial verification</B>） ともに 「<B>申請および承認が必要な機能</B>」 です。
+</p>
+<p>
+それぞれの詳細を、以下に詳述します。
+</p>
+
+<h1 id="廃止される機能"><a href="#廃止される機能" class="headerlink" title="廃止される機能"></a>廃止される機能</h1><h2 id="「顔検出」機能を通じて得られる顔属性の一部の情報"><a href="#「顔検出」機能を通じて得られる顔属性の一部の情報" class="headerlink" title="「顔検出」機能を通じて得られる顔属性の一部の情報"></a>「顔検出」機能を通じて得られる顔属性の一部の情報</h2><p>
+「顔検出」機能を通じて得られる顔属性のうち、特定の一部情報は廃止されます。詳細は以下をご参照ください。 これらは、申請を行っても利用を継続することはできません。
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/concept-face-detection#attributes">顔検出と顔属性 - Face - Azure Cognitive Services | Microsoft Learn</a></p>
+<blockquote>
+<p>感情の状態やアイデンティティの属性の推測に使用できる顔認識機能は廃止されます。<br>この機能は使い方を誤ると、ステレオタイプ化、差別、サービスの不当な拒否に人々をさらす可能性があります。<br>たとえば、<B>感情、性別、年齢、笑顔、顔ひげ、髪、メイク</B> を予測する機能が該当します。<br>これらの機能を既にご利用のお客様は、廃止前の 2023 年 6 月 30 日までに、使用を中止する必要があります。</p>
+</blockquote>
+</p>
+
+<h2 id="スナップショット機能"><a href="#スナップショット機能" class="headerlink" title="スナップショット機能"></a>スナップショット機能</h2><p>
+その他に、Face API データの管理機能の 1つである スナップショット機能も廃止されます。
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/how-to/migrate-face-data">サブスクリプション間で顔データを移行する - Face - Azure Cognitive Services | Microsoft Learn</a></p>
+<blockquote>
+<p>スナップショット API は、2023 年 6 月 30 日にすべてのユーザーに対して廃止されます。</p>
+</blockquote>
+</p>
+
+<h2 id="米国中北部リージョンにおける-Face-API"><a href="#米国中北部リージョンにおける-Face-API" class="headerlink" title="米国中北部リージョンにおける Face API"></a>米国中北部リージョンにおける Face API</h2><p>
+米国中北部リージョンにおける Face API は 廃止されます。
+もし該当するリージョンに Face API リソースをデプロイしている場合には、2023 年 6月 21日までに、前述のスナップショット機能を利用した移行を検討してください。
+
+<p><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/updates/facelimitedaccess/">Responsible AI investments and safeguards for Facial Recognition | Azure の更新情報 | Microsoft Azure</a></p>
+<blockquote>
+<p>If you have Face API resources deployed in the North Central US region, please migrate to another Azure region by June, 30 2023.<br>Otherwise, you may lose access to your resources. </p>
+</blockquote>
+<p>Azure ポータルで 該当する Face リソースページの [プロパティ] メニューを開くと、リソースのデプロイリージョンが確認できます。</p>
+</p>
+
+<h1 id="申請不要で利用できる機能"><a href="#申請不要で利用できる機能" class="headerlink" title="申請不要で利用できる機能"></a>申請不要で利用できる機能</h1><p>
+「顔検出」 機能のみを利用する場合は、利用申請は不要です。<br>
+この機能は 「この画像に 1 つ以上の人間の顔がありますか?」 という質問に答えます。画像内の人間の顔が検出され、その位置を示す座標情報と属性情報が返されます。<br>
+たとえば、人数（顔の数）を数えたり、プライバシーのために画像の顔領域に "ぼかし" を入れたりするだけのユースケースでの利用が想定されています。<br>
+
+<p><a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/">顔認識に関する責任あるAIポリシーの変更とガイダンスについて | Microsoft Base</a></p>
+<blockquote>
+<p>顔検出機能 (ぼかし、露出、眼鏡、頭部姿勢、ランドマーク、ノイズ、オクルージョン、顔の境界ボックスなど) は引き続き一般提供を行いますので、申請は不要です。</p>
+</blockquote>
+</p>
+<p>
+(なお厳密には、『顔情報を特定するための 「returnFaceId」 パラメーター を 「false」 として利用している場合』 のみ、「顔検出」は申請を行わずとも継続利用が可能です。)
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/legal/cognitive-services/face/data-privacy-security?context=/azure/cognitive-services/computer-vision#what-data-does-face-process-how-long-is-it-retained-and-what-protections-are-in-place">Data and privacy for Face - Azure Cognitive Services | Microsoft Learn</a></p>
+<blockquote>
+<p>Approved Customers Only: Face Detection with faceID:<br>detects faces within images and one of the outputs, the faceID, be used for the following Face calls.<br><BR><B>Note the faceID is only provided for customers that have been approved for access: Face – Identify, Face – Verify, Face – Group and Face – Find Similar.</B></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face API - v1.0　API Reference | Face - Detect</a></p>
+<blockquote>
+<p>Request parameters &#x2F; <B>returnFaceId</B> (optional) &#x2F; boolean &#x2F;<br>Return faceIds of the detected faces or not. The default value is true.</p>
+</blockquote>
+</p>
+
+<h1 id="申請および承認が必要な機能"><a href="#申請および承認が必要な機能" class="headerlink" title="申請および承認が必要な機能"></a>申請および承認が必要な機能</h1><p>「顔認識」機能は、「申請および承認が必要な機能」です。<br>
+なお、Face API における「顔認識」機能配下の「<B>顔識別（Facial identification）</B>」、「<B>顔検証（Facial verification）</B>」の両機能の差異については、以下のドキュメント抜粋をご参照ください。
+
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/computer-vision/overview-identity#identification">Azure Face サービスとは - Azure Cognitive Services | Microsoft Docs</a></p>
+<blockquote>
+<p>顔識別では、画像内の 1 つの顔を、安全なリポジトリ内の一連の顔と <B>“一対多”</B> で照合できます。</p>
+</blockquote>
+<blockquote>
+<p>検証操作は、”これら 2 つの顔は同じ人物のものでしょうか?” という質問に答えます。<br>また、検証では、画像内の顔をセキュリティで保護されたリポジトリや写真からの 1 つの顔と <B>“1 対 1”</B> で照合して、それらが同じ個人であることが確認されます</p>
+</blockquote>
+</p>
+<p>
+
+<p><a target="_blank" rel="noopener" href="https://aka.ms/facerecognition">顔認識利用申請フォーム</a> では、申請対象ユース ケースが「顔識別」か「顔検証」かどちらに該当するかを選択して申請する必要があります。</p>
+<p>ユースケースに関する詳細は、以下のドキュメントもご参照ください。<br><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/legal/cognitive-services/face/transparency-note?context=/azure/cognitive-services/computer-vision/context/context">Use cases for Face - Azure Cognitive Services | Microsoft Learn</a> </p>
+</p>
+<p>
+
+
+<p>申請フォームに記載されたもの以外のユースケースに関するフィードバックについては、申請フォームとは別途の <a target="_blank" rel="noopener" href="https://aka.ms/CogSvcsLimitedAccessFeedback">フィードバックフォーム</a> が用意されています。<br><br>なお、こちらのフォームに登録した内容はフィードバックに留まり、利用申請とはみなされない点にご留意ください。</p>
+</p>
+
+<h1 id="申請に関する情報"><a href="#申請に関する情報" class="headerlink" title="申請に関する情報"></a>申請に関する情報</h1><P>
+
+<p><a target="_blank" rel="noopener" href="https://aka.ms/facerecognition">申請フォーム</a> および申請後のご連絡メール等は、英語のみでの対応となり、日本語対応はございません。<br><br>Face API の利用申請を管理・レビューするのは米国本社内の専用部門であり、公平性と独立性のために、技術サポート部門を含めた各国の他の部門はレビュープロセスに直接介入できないためです。</p>
+</p>
+<P>
+申請に関する FAQ については、以下のドキュメントもご参考として頂けます。
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/cognitive-services-limited-access#faq-about-limited-access">Cognitive Services の制限付きアクセス機能 - Azure Cognitive Services | Microsoft Learn</a></p>
+<blockquote>
+<p>制限付きアクセスに関する FAQ <br>（抜粋）<br><br>Q.制限付きアクセスのサービスを使用する資格があるのはだれですか?<br><br>Q.管理下の顧客とは? 管理下の顧客に該当するかどうかがわからない場合はどうすればよいですか?<br><br>Q.申請が拒否された場合、私のデータはどうなりますか?<br></p>
+</blockquote>
+</P>
+
+<h1 id="関連ドキュメント"><a href="#関連ドキュメント" class="headerlink" title="関連ドキュメント"></a>関連ドキュメント</h1><P>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/">Responsible AI investments and safeguards for facial recognition | Azure Blog and Updates | Microsoft Azure</a><br></li>
+<li><a target="_blank" rel="noopener" href="https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/">顔認識に関する責任あるAIポリシーの変更とガイダンスについて | Microsoft Base　（※ 上記ドキュメントの日本語翻訳です）</a><br></li>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/updates/facelimitedaccess/">Responsible AI investments and safeguards for Facial Recognition | Azure の更新情報 | Microsoft Azure</a><br></li>
+</ul>
+<hr>
+<p><code>変更履歴</code><br><code>2023/03/22 created by Uehara</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/blog/tags/Face-API-Recognition-Identify/">Face API Recognition Identify</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/" rel="next"  title="Custom Vision モデルのドメイン変更方法">
+						Custom Vision モデルのドメイン変更方法
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Azure Face API 顔認識機能の制限および利用申請について',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+<!--  -->
+<img class='avatar waves-image' src="https://jpaiblog.github.io/blog/favicon/mstile-150x150.png">
+<div class='header'>jpaiblog</div>
+<div class='content'>
+<div class='desc'>
+    このサイトはマイクロソフトの Azure Cognitive Services サポート チームによって運営されております。</br></br>
+    Powered by: 祝田、津田、ジェシー、中神、上原、カイル</br></br>
+    Web master: 望月
+</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://jpaiblog.github.io/blog/">
+            <div class='name'>Japan Cognitive Service Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpiotblog.github.io/blog/">
+            <div class='name'>Japan IoT Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpmlblog.github.io/blog/">
+            <div class='name'>Japan Machine Learning Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpwdkblog.github.io/blog/">
+            <div class='name'>Japan WDK Support Blog</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>13</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>3</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Speech-Services/"><div class='name'>Speech Services</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Translator-Text-API/"><div class='name'>Translator Text API</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"><div class='name'>セキュリティ</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 20px; color: #000">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 17px; color: #404040">LUIS</a> <a href="/blog/tags/QNA-Maker/" style="font-size: 14px; color: #808080">QNA Maker</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 17px; color: #404040">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 17px; color: #404040">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/damochiz" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+
+<script src="/blog/js/jquery.fitvids.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/blog/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+
+<script src="/blog/js/search.js"></script>
+
+
+<script src="/blog/js/app.js"></script>
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
