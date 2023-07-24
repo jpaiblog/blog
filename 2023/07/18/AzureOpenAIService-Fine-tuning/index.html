@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>AzureOpenAIServiceのFine-tuningについて | Japan Cognitive Services Support Blog</title>
+  <title>Azure OpenAI Service の Fine-tuning について | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,15 +19,15 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="この記事は、AzureOpenAIServiceで実施可能であるFine-tuningの2023年7月14日現在の状況についてご紹介します。">
+  <meta name="description" content="この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AzureOpenAIServiceのFine-tuningについて">
+<meta property="og:title" content="Azure OpenAI Service の Fine-tuning について">
 <meta property="og:url" content="https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="この記事は、AzureOpenAIServiceで実施可能であるFine-tuningの2023年7月14日現在の状況についてご紹介します。">
+<meta property="og:description" content="この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-07-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-20T07:49:16.642Z">
+<meta property="article:modified_time" content="2023-07-24T07:47:33.299Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
@@ -130,7 +130,7 @@
 	<section class='meta'>
 	<h2 class="title">
   	<a href="/blog/2023/07/18/AzureOpenAIService-Fine-tuning/">
-    	AzureOpenAIServiceのFine-tuningについて
+    	Azure OpenAI Service の Fine-tuning について
     </a>
   </h2>
 	<time>
@@ -144,11 +144,11 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%A8%E3%81%AF"><span class="toc-number">1.</span> <span class="toc-text">Fine-tuning(微調整)とは</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E7%8F%BE%E7%8A%B6"><span class="toc-number">2.</span> <span class="toc-text">Fine-tuning(微調整)の現状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E4%BD%8D%E7%BD%AE%E4%BB%98%E3%81%91"><span class="toc-number">3.</span> <span class="toc-text">Fine-tuning(微調整)の一般的な位置付け</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E4%BB%A3%E6%9B%BF%E6%89%8B%E6%AE%B5"><span class="toc-number">4.</span> <span class="toc-text">Fine-tuning(微調整)の代替手段</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%A8%E3%81%AF"><span class="toc-number">1.</span> <span class="toc-text">Fine-tuning (微調整)とは</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E7%8F%BE%E7%8A%B6"><span class="toc-number">2.</span> <span class="toc-text">Fine-tuning (微調整)の現状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E4%B8%80%E8%88%AC%E7%9A%84%E3%81%AA%E4%BD%8D%E7%BD%AE%E4%BB%98%E3%81%91"><span class="toc-number">3.</span> <span class="toc-text">Fine-tuning (微調整)の一般的な位置付け</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fine-tuning-%E5%BE%AE%E8%AA%BF%E6%95%B4-%E3%81%AE%E4%BB%A3%E6%9B%BF%E6%89%8B%E6%AE%B5"><span class="toc-number">4.</span> <span class="toc-text">Fine-tuning (微調整)の代替手段</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>この記事は、AzureOpenAIServiceで実施可能であるFine-tuningの2023年7月14日現在の状況についてご紹介します。</p>
+    	<p>この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。</p>
 <span id="more"></span>
 
 <br>
@@ -156,24 +156,24 @@
 <!-- TrackingID#2306290060002036 -->
 
 <hr>
-<h2 id="Fine-tuning-微調整-とは"><a href="#Fine-tuning-微調整-とは" class="headerlink" title="Fine-tuning(微調整)とは"></a>Fine-tuning(微調整)とは</h2><p>Azure OpenAI Service では、Fine-tuning(微調整)という機能が提供されております。</p>
+<h2 id="Fine-tuning-微調整-とは"><a href="#Fine-tuning-微調整-とは" class="headerlink" title="Fine-tuning (微調整)とは"></a>Fine-tuning (微調整)とは</h2><p>Azure OpenAI Service では、Fine-tuning (微調整)という機能が提供されております。</p>
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio">Azure OpenAI Service を使用してモデルをカスタマイズする方法</a>  </p>
 <blockquote>
 <p>“微調整” と呼ばれるプロセスを使用して、個人用データセットに合わせてモデルを調整できます。  </p>
 </blockquote>
-<h2 id="Fine-tuning-微調整-の現状"><a href="#Fine-tuning-微調整-の現状" class="headerlink" title="Fine-tuning(微調整)の現状"></a>Fine-tuning(微調整)の現状</h2><p>2023年7月14日現在、 下記ドキュメントにも記載の通り、微調整(Fine-tuning)されたモデルを実行可能なリージョンは現状ございません (いずれのリージョンも N&#x2F;A となっています)。</p>
+<h2 id="Fine-tuning-微調整-の現状"><a href="#Fine-tuning-微調整-の現状" class="headerlink" title="Fine-tuning (微調整)の現状"></a>Fine-tuning (微調整)の現状</h2><p>2023 年 7 月 14 日現在、 下記ドキュメントにも記載の通り、微調整 (Fine-tuning) されたモデルを実行可能なリージョンは現状ございません (いずれのリージョンも N&#x2F;A となっています)。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#model-summary-table-and-region-availability">Model Summary table and region availability : Fine-Tuning Regions</a></li>
 </ul>
 <p>※日本語版のドキュメントは翻訳の遅れにより情報が古い場合がございますので、最新の情報は英語版のドキュメントをご参照ください。  </p>
-<p>なお、今後 予定されている機能として、「GPT-3.5 Turbo」および「GPT-4」モデルの Fine-tuning 機能がございます。以下製品開発部門のブログ内で、今年 2023 年後半に向けた段階的なリリースを予定している旨を案内しております。</p>
+<p>なお、今後 予定されている機能として、「 GPT-3.5 Turbo 」および「 GPT-4 」モデルの Fine-tuning 機能がございます。以下製品開発部門のブログ内で、今年 2023 年後半に向けた段階的なリリースを予定している旨を案内しております。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/announcing-updates-to-azure-openai-service-models/ba-p/3866757">Announcing Updates to Azure OpenAI Service Models - Microsoft Community Hub</a><blockquote>
 <p>Introducing new models<br>・Offer a preview of fine-tuning for GPT-3.5-Turbo and GPT-4.<br>We are working on safely enabling fine-tuning for GPT-3.5 Turbo and GPT-4 and expect this feature to be available later this year.<br>This service will initially be available on a limited basis, prioritizing customers who have previously fine-tuned the Davinci series.<br>Fine-tuning of GPT-3.5-Turbo will replace Text and Code-Davinci-002 fine-tunable models.</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="Fine-tuning-微調整-の一般的な位置付け"><a href="#Fine-tuning-微調整-の一般的な位置付け" class="headerlink" title="Fine-tuning(微調整)の一般的な位置付け"></a>Fine-tuning(微調整)の一般的な位置付け</h2><p>補足事項といたしまして、ここで一般的な Fine-tuning の位置付けについてもご説明します。<br>一般的に、微調整(Fine-tuning)は最後の手段 (last resort) と位置付けられます。<br>Fine-tuning の検討の前に、プロンプトを工夫 (プロンプト エンジニアリングを実施) することが推奨されています。</p>
+<h2 id="Fine-tuning-微調整-の一般的な位置付け"><a href="#Fine-tuning-微調整-の一般的な位置付け" class="headerlink" title="Fine-tuning (微調整)の一般的な位置付け"></a>Fine-tuning (微調整)の一般的な位置付け</h2><p>補足事項といたしまして、ここで一般的な Fine-tuning の位置付けについてもご説明します。<br>一般的に、微調整 (Fine-tuning) は最後の手段 (last resort) と位置付けられます。<br>Fine-tuning の検討の前に、プロンプトを工夫 (プロンプト エンジニアリングを実施) することが推奨されています。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/prompt-engineering">プロンプト エンジニアリングの概要</a>    </li>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions">プロンプト エンジニアリングの手法</a></li>
@@ -183,7 +183,7 @@
 <ul>
 <li><a target="_blank" rel="noopener" href="https://youtu.be/tFgqdHKsOME">Azure OpenAI Developers セミナー</a><br>※プロンプト エンジニアリングや Fine-tuning については動画の 22:25 頃から説明されています。</li>
 </ul>
-<h2 id="Fine-tuning-微調整-の代替手段"><a href="#Fine-tuning-微調整-の代替手段" class="headerlink" title="Fine-tuning(微調整)の代替手段"></a>Fine-tuning(微調整)の代替手段</h2><p>Fine-tuning の目的が「内部情報の活用」である場合、Azure OpenAI 以外のサービスと組み合わせた手法が挙げられます。</p>
+<h2 id="Fine-tuning-微調整-の代替手段"><a href="#Fine-tuning-微調整-の代替手段" class="headerlink" title="Fine-tuning (微調整)の代替手段"></a>Fine-tuning (微調整)の代替手段</h2><p>Fine-tuning の目的が「内部情報の活用」である場合、Azure OpenAI 以外のサービスと組み合わせた手法が挙げられます。</p>
 <p>具体的には、「独自データ」を格納した Azure Cognitive Search と組み合わせることにより、Fine-tuning を使用せずに、基本モデルを使用して内部情報に基づいた回答文を生成できます。<br>さらに、回答を提示する際に、Bing AI チャットのように、回答のソースとなるドキュメントへのポインターを表示することも可能です。  </p>
 <ul>
 <li><p>Azure OpenAI Service×Cognitive Searchでの独自データを利用したボット</p>
@@ -220,8 +220,8 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2023/07/19/AzureOpenAIService-TokenLimit/" rel="prev"  title="AzureOpenAIServiceのトークン数の上限について">
-						AzureOpenAIServiceのトークン数の上限について 
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2023/07/19/AzureOpenAIService-TokenLimit/" rel="prev"  title="Azure OpenAI Service のトークン数の上限について">
+						Azure OpenAI Service のトークン数の上限について 
 					</a></span>
 				
 				
@@ -236,7 +236,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'AzureOpenAIServiceのFine-tuningについて',
+		title: 'Azure OpenAI Service の Fine-tuning について',
 		tools: true
 	}
 </script>
