@@ -27,7 +27,7 @@
 <meta property="og:description" content="この記事は、Azure OpenAI Service に対するアクセス制御についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-07-27T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-31T00:17:21.975Z">
+<meta property="article:modified_time" content="2023-08-21T00:08:32.302Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
@@ -169,7 +169,7 @@
 <h2 id="Azure-OpenAI-Studio-をプライベート-エンドポイント接続にて使用するには"><a href="#Azure-OpenAI-Studio-をプライベート-エンドポイント接続にて使用するには" class="headerlink" title="Azure OpenAI Studio をプライベート エンドポイント接続にて使用するには"></a>Azure OpenAI Studio をプライベート エンドポイント接続にて使用するには</h2><!-- TrackingID#2305100060000313 -->
 
 <p>Azure OpenAI Service は、前述のアクセス元の制限に加え、プライベート エンドポイント利用をサポートしています。<br>プライベート エンドポイントを利用する場合、 Azure OpenAI Service の エンドポイント (*.openai.azure.com )　へのアクセスを仮想ネットワーク内のクライアントに限定することが可能です。<br>ただし、留意点として、Azure OpenAI Studio(<a target="_blank" rel="noopener" href="https://oai.azure.com/">https://oai.azure.com/</a>)  へのアクセスでは、プライベートではない一定範囲のパブリック IP アドレスでネットワーク アクセスが必要となります。  </p>
-<p>具体的には、Azure OpenAI Studioへアクセスするクライアントマシンのデプロイ先サブネットに紐づく NSG 及び Firewall にて、以下のドキュメントに記載されているサービスタグを許可いただく必要があります。  </p>
+<p>具体的には、Azure OpenAI Studioへアクセスするクライアントマシンのデプロイ先サブネットに紐づく NSG 及び Firewall にて、以下のドキュメントに記載されているサービスタグを許可する必要があります。  </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal">Configure Virtual Networks for Azure Cognitive Services</a><blockquote>
 <p>Azure OpenAI、LUIS、Speech Services、または言語サービスを使用している場合、CognitiveServicesManagement タグを指定しても、SDK または REST API を使用してサービスを使用できるようになるだけです。<br>仮想ネットワークから Azure OpenAI Studio、LUIS ポータル、Speech Studio または言語サービスにアクセスして使用するには、次のタグを使用する必要があります。<br>･ AzureActiveDirectory<br>･ AzureFrontDoor.Frontend<br>･ AzureResourceManager<br>･ CognitiveServicesManagement<br>･ CognitiveServicesFrontEnd</p>
@@ -179,10 +179,10 @@
 <!-- - [Azure OpenAI Service を Private Endpoint 経由で利用する](https://blog.aimless.jp/archives/2023/04/use-azure-openai-service-with-privateendpoint/)  
 ※弊社社員が有志で執筆した記事となります。 -->
 
-<p>Azure OpenAI Studio は、Azure OpenAI Service の機能 (HTTP REST API) を簡便にお試しいただくための、簡易な (サンプル) アプリケーションという扱いになります。<br>Azure OpenAI Studio の Web サイトそのものは、特定のユーザーやリソースに紐づかない、パブリックな Web サイトとして公開されています。<br>そのため、Azure OpenAI Studio の Web サイトの表示に必要なリソース (画像や JavaScript 等) のダウンロードはプライベート エンドポイント経由とはなりません。</p>
+<p>Azure OpenAI Studio は、Azure OpenAI Service の機能 (HTTP REST API) を簡便に試すための、簡易な (サンプル) アプリケーションという扱いになります。<br>Azure OpenAI Studio の Web サイトそのものは、特定のユーザーやリソースに紐づかない、パブリックな Web サイトとして公開されています。<br>そのため、Azure OpenAI Studio の Web サイトの表示に必要なリソース (画像や JavaScript 等) のダウンロードはプライベート エンドポイント経由とはなりません。</p>
 <h2 id="特定の国からのアクセス制御について"><a href="#特定の国からのアクセス制御について" class="headerlink" title="特定の国からのアクセス制御について"></a>特定の国からのアクセス制御について</h2><!-- TrackingID#2305240060001683 -->
 
-<p>Azure OpenAI Service は、特定の国からのアクセスを制限するような、内部的なアクセス制御を行っておりません。<br>エンドポイントは、パブリックなインターネット経由 (すなわちインターネット上で到達可能なグローバル IP アドレスから) のアクセスを全て許可します。<br>一方で、実際のアクセス可否は、特定の国のネットワーク制限 (例. Great Firewall of China) や法規制に左右されます。特定の地域やネットワーク環境下におけるアクセス可否は、お客様側で現地にてご確認いただく必要がございます。<br>ご参考 :  <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-wan/interconnect-china">Azure Virtual WAN とセキュリティ保護付きハブを使用した中国との相互接続</a></p>
+<p>Azure OpenAI Service は、特定の国からのアクセスを制限するような、内部的なアクセス制御を行っておりません。<br>エンドポイントは、パブリックなインターネット経由 (すなわちインターネット上で到達可能なグローバル IP アドレスから) のアクセスを全て許可します。<br>一方で、実際のアクセス可否は、特定の国のネットワーク制限 (例. Great Firewall of China) や法規制に左右されます。特定の地域やネットワーク環境下におけるアクセス可否は、お客様側で現地にてご確認いただく必要があります。<br>ご参考 :  <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/virtual-wan/interconnect-china">Azure Virtual WAN とセキュリティ保護付きハブを使用した中国との相互接続</a></p>
 <hr>
 <p><code>変更履歴</code><br><code>2023/07/28 created by Kudou</code>   </p>
 <p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>

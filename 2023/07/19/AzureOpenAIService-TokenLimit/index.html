@@ -27,7 +27,7 @@
 <meta property="og:description" content="この記事は、Azure OpenAI Service のトークン数の上限についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-07-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-31T00:17:21.996Z">
+<meta property="article:modified_time" content="2023-08-21T00:08:32.305Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
@@ -161,7 +161,7 @@
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#model-summary-table-and-region-availability">Model Summary table and region availability : Max Request (tokens)</a></li>
 </ul>
-<h2 id="トークン数の上限値-最大要求-を超えた場合の挙動"><a href="#トークン数の上限値-最大要求-を超えた場合の挙動" class="headerlink" title="トークン数の上限値(最大要求)を超えた場合の挙動"></a>トークン数の上限値(最大要求)を超えた場合の挙動</h2><p>現在の Azure OpenAI Service の動作では、トークン数の上限値(最大要求)を超えるトークンが消費された要求も、エラーが発生せず処理される場合がございます。<br>しかし、この挙動は、あくまで現状の内部動作の関係で生じます。<br>将来的に予告無く変更される可能性があるため、ドキュメントに記載されているトークン数の上限値(最大要求)を超えないよう、利用いただくことを強くお勧めします。</p>
+<h2 id="トークン数の上限値-最大要求-を超えた場合の挙動"><a href="#トークン数の上限値-最大要求-を超えた場合の挙動" class="headerlink" title="トークン数の上限値(最大要求)を超えた場合の挙動"></a>トークン数の上限値(最大要求)を超えた場合の挙動</h2><p>現在の Azure OpenAI Service の動作では、トークン数の上限値(最大要求)を超えるトークンが消費された要求も、エラーが発生せず処理される場合があります。<br>しかし、この挙動は、あくまで現状の内部動作の関係で生じます。<br>将来的に予告無く変更される可能性があるため、ドキュメントに記載されているトークン数の上限値(最大要求)を超えないよう、利用することを強くお勧めします。</p>
 <p>この留意事項は、下記ドキュメント抜粋部分でも明記しております。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions#managing-conversations">GPT-35-Turbo および GPT-4 モデルの操作方法 : 会話の管理</a><blockquote>
@@ -170,7 +170,7 @@
 </li>
 </ul>
 <h2 id="トークン数の上限値-最大要求-を超えないようにする方法"><a href="#トークン数の上限値-最大要求-を超えないようにする方法" class="headerlink" title="トークン数の上限値(最大要求)を超えないようにする方法"></a>トークン数の上限値(最大要求)を超えないようにする方法</h2><p>Azure OpenAI Service が使用するモデルを開発している OpenAI 社では、指定された文章からモデルが判定するトークン数を計算するライブラリ ( tiktoken ) を提供しています。</p>
-<p>下記ドキュメントでは、サンプル コードを交えた、ライブラリの使用例を紹介しております。<br>この使用例では、過去の会話が続くことでトークンの合計数が上限 (例では 4096 トークン) を超える場合に、古い会話を削除しつつ、上限のトークン数以下の会話を実現します。<br>モデル利用時にトークンを管理する一例として、ご参考にしていただけますと幸いです。  </p>
+<p>下記ドキュメントでは、サンプル コードを交えた、ライブラリの使用例を紹介しております。<br>この使用例では、過去の会話が続くことでトークンの合計数が上限 (例では 4096 トークン) を超える場合に、古い会話を削除しつつ、上限のトークン数以下の会話を実現します。<br>モデル利用時にトークンを管理する一例として、ご参考になれば幸いです。  </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions#managing-convesations">ChatGPT および GPT-4 モデルの操作方法の説明 : 会話の管理</a><blockquote>
 <p>次のコード サンプルは、OpenAI の tiktoken ライブラリを使用して 4096 トークン数を処理する手法を使用した単純なチャット ループの例を示しています。</p>
