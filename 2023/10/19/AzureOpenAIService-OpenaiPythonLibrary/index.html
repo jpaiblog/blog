@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2023/7 | Japan Cognitive Services Support Blog</title>
+  <title>openai-python ライブラリについて | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,12 +19,17 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Japan Cognitive Services Support Blog">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/archives/2023/07/index.html">
+  <meta name="description" content="この記事は、 Azure OpenAI の公式ドキュメント上に記載がある openai-python ライブラリについてご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openai-python ライブラリについて">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="この記事は、 Azure OpenAI の公式ドキュメント上に記載がある openai-python ライブラリについてご紹介します。">
 <meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2023-10-18T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-20T02:39:23.559Z">
 <meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
@@ -119,137 +124,77 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
+        <article id="post-AzureOpenAIService-OpenaiPythonLibrary"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/">
+    	openai-python ライブラリについて
+    </a>
+  </h2>
+	<time>
+	  10月 19, 2023
+	</time>
 	
-  <script>
-    window.subData= { title:'Year : 2023.7'}
-  </script>
+    
+    <div class='cats'>
+        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
+    </div>
 
-<section class="post-list">
+	</section>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2023/07/28/AzureOpenAIService-NetworkLimit/">
-        Azure OpenAI Service に対するアクセス制御について
-      </a>
-    </h2>
-    
-    <time>
-      7月 28, 2023
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
-    </div>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#openai-python-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">openai-python ライブラリについて</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#openai-python-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E5%85%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">openai-python ライブラリのお問い合わせ先について</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-OpenAI-Service-%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B-openai-python-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">Azure OpenAI Service に対する openai-python ライブラリを使用する際の注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6openai-python-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">特定のバージョンを指定してopenai-python ライブラリをインストールする方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-%E5%85%AC%E5%BC%8F%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AB%E8%A8%98%E8%BC%89%E3%81%AE%E3%81%82%E3%82%8B-openai-python-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E5%8F%96%E3%82%8A%E6%89%B1%E3%81%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">5.</span> <span class="toc-text">Azure 公式ドキュメントに記載のある openai-python ライブラリの取り扱いについて</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>この記事は、 Azure OpenAI の公式ドキュメント上に記載がある openai-python ライブラリについてご紹介します。</p>
+<span id="more"></span>
+<br>
+<!-- TrackingID#2310040060001781 -->
 
-  </section>
-  <section class="article typo">
-	  <p>この記事は、Azure OpenAI Service に対するアクセス制御についてご紹介します。</p>
+<hr>
+<h2 id="openai-python-ライブラリについて"><a href="#openai-python-ライブラリについて" class="headerlink" title="openai-python ライブラリについて"></a>openai-python ライブラリについて</h2><p>本ライブラリは OpenAI の API を Python で利用するための公式ライブラリで、機械学習モデルの訓練や予測など、 OpenAI の各種サービスに利用することができます。<br>openai-python ライブラリは、 OpenAI 社によって管理されています。<br>その為、本ライブラリに関して弊社( Microsoft )の技術サポート サービスより正式なご案内をすることはできません。  </p>
+<p>最新の情報を確認するには、 GitHub 上の<a target="_blank" rel="noopener" href="https://github.com/openai/openai-python/releases">リリース履歴</a>や<a target="_blank" rel="noopener" href="https://github.com/openai/openai-python/discussions/categories/announcements">アナウンス</a>をご覧ください。</p>
+<h2 id="openai-python-ライブラリのお問い合わせ先について"><a href="#openai-python-ライブラリのお問い合わせ先について" class="headerlink" title="openai-python ライブラリのお問い合わせ先について"></a>openai-python ライブラリのお問い合わせ先について</h2><p>openai-python に関する正式な見解が必要な場合、大変お手数ですが  <a target="_blank" rel="noopener" href="https://github.com/openai/openai-python">openai-python コミュニティ</a>へ直接お問い合わせをお願いします。 GitHub の <a target="_blank" rel="noopener" href="https://github.com/openai/openai-python/issues">issue</a> や pull request を通じて、開発者コミュニティと直接コミュニケーションを取ることが可能です。</p>
+<h2 id="Azure-OpenAI-Service-に対する-openai-python-ライブラリを使用する際の注意点"><a href="#Azure-OpenAI-Service-に対する-openai-python-ライブラリを使用する際の注意点" class="headerlink" title="Azure OpenAI Service に対する openai-python ライブラリを使用する際の注意点"></a>Azure OpenAI Service に対する openai-python ライブラリを使用する際の注意点</h2><p>Azure OpenAI Service の機能変更に伴い、過去バージョンのライブラリの互換性が失われる可能性があります。 上記にて記載していますとおり、弊社では openai-python ライブラリと Azure OpenAI Service の互換性を保証していないため、ライブラリへの依存性のリスクを回避したい場合は、Azure OpenAI Service の <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/reference">REST API レファレンス</a>に準拠した HTTP リクエスト クライアントの実装をご検討ください。</p>
+<h2 id="特定のバージョンを指定してopenai-python-ライブラリをインストールする方法"><a href="#特定のバージョンを指定してopenai-python-ライブラリをインストールする方法" class="headerlink" title="特定のバージョンを指定してopenai-python ライブラリをインストールする方法"></a>特定のバージョンを指定してopenai-python ライブラリをインストールする方法</h2><p>もし特定のバージョンを利用する必要が生じた場合には、以下のコマンドを実施することで特定のバージョンを指定してライブラリを使用することが可能です。<br>例) v0.28.1 のバージョンを指定してインストールするコマンドは以下の通りです：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install openai==0.28.1</span><br></pre></td></tr></table></figure>
 
-    
-	  <div class="readmore">
-      <a href="/blog/2023/07/28/AzureOpenAIService-NetworkLimit/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
+<p>(参考: <a target="_blank" rel="noopener" href="https://docs.python.org/ja/3/installing/index.html#basic-usage">https://docs.python.org/ja/3/installing/index.html#basic-usage</a> )</p>
+<h2 id="Azure-公式ドキュメントに記載のある-openai-python-ライブラリの取り扱いについて"><a href="#Azure-公式ドキュメントに記載のある-openai-python-ライブラリの取り扱いについて" class="headerlink" title="Azure 公式ドキュメントに記載のある openai-python ライブラリの取り扱いについて"></a>Azure 公式ドキュメントに記載のある openai-python ライブラリの取り扱いについて</h2><p>Azure 公式ドキュメント内や Azure OpenAI Studio 内で、 openai-python ライブラリを使用したサンプルコードを提供しています。これらのコードは、 Azure OpenAI Service を Python のコードでよりシンプルに記載するための参考資料となっております。<br>これらのサンプルコードは上記にてご案内させていただいております通り、弊社技術サポート対象としてご提供させていただいているわけではないこと、また、これらのコードはあくまで参考であり、それらがすべてのユースケースや状況で正確に動作することを保証するものではないことを前提に利用いただくようお願いします。</p>
+<hr>
+<p><code>変更履歴</code><br><code>2023-10-19 created by Kudou</code>   </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
       
         <a href="/blog/tags/Azure-OpenAI/">Azure OpenAI</a>
       
 	  </div>
     
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2023/07/19/AzureOpenAIService-TokenLimit/">
-        Azure OpenAI Service のトークン数の上限について
-      </a>
-    </h2>
-    
-    <time>
-      7月 19, 2023
-    </time>
 		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>この記事は、Azure OpenAI Service のトークン数の上限についてご紹介します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2023/07/19/AzureOpenAIService-TokenLimit/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/Azure-OpenAI/">Azure OpenAI</a>
-      
-	  </div>
-    
-  </section>
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2023/07/28/AzureOpenAIService-NetworkLimit/" rel="next"  title="Azure OpenAI Service に対するアクセス制御について">
+						Azure OpenAI Service に対するアクセス制御について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/blog/2023/07/18/AzureOpenAIService-Fine-tuning/">
-        Azure OpenAI Service の Fine-tuning について
-      </a>
-    </h2>
-    
-    <time>
-      7月 18, 2023
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。</p>
-
-    
-	  <div class="readmore">
-      <a href="/blog/2023/07/18/AzureOpenAIService-Fine-tuning/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/blog/tags/Azure-OpenAI/">Azure OpenAI</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-</section>
-
-
+<script>
+	window.subData = {
+		title: 'openai-python ライブラリについて',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
