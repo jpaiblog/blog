@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>メトリック エクスプローラーを用いてAzure OpenAI の トークン使用量を確認する方法 | Japan Cognitive Services Support Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="https://jpaiblog.github.io/blog/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jpaiblog.github.io/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jpaiblog.github.io/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jpaiblog.github.io/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://jpaiblog.github.io/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="この記事はAzure Portal 上で使用できるメトリック エクスプローラーを用いて、トークン使用量の推移をグラフで表示させる方法についてご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="メトリック エクスプローラーを用いてAzure OpenAI の トークン使用量を確認する方法">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/index.html">
+<meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="この記事はAzure Portal 上で使用できるメトリック エクスプローラーを用いて、トークン使用量の推移をグラフで表示させる方法についてご紹介します。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step1.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step2.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/metricscreenshot.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step3.png">
+<meta property="og:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step4.png">
+<meta property="article:published_time" content="2024-07-24T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-29T04:12:34.696Z">
+<meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Azure OpenAI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step1.png">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  
+<link rel="stylesheet" href="/blog/style.css">
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/blog/' >
+				Japan Cognitive Services Support Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/blog/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/blog/archives'>
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/blog/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/blog/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-AzureOpenAIService-Metric-TPM"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2024/07/25/AzureOpenAIService-Metric-TPM/">
+    	メトリック エクスプローラーを用いてAzure OpenAI の トークン使用量を確認する方法
+    </a>
+  </h2>
+	<time>
+	  7月 25, 2024
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">メトリックについて</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6-Azure-OpenAI-%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A7%E5%87%A6%E7%90%86%E3%81%95%E3%82%8C%E3%81%9F%E5%85%A5%E5%87%BA%E5%8A%9B%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E6%95%B0%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">メトリックを通じて Azure OpenAI モデルで処理された入出力トークン数を確認する方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%96%A2%E9%80%A3%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"><span class="toc-number">3.</span> <span class="toc-text">関連ドキュメント</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>この記事はAzure Portal 上で使用できるメトリック エクスプローラーを用いて、トークン使用量の推移をグラフで表示させる方法についてご紹介します。</p>
+<span id="more"></span>
+<br>
+
+<hr>
+<h1 id="メトリックについて"><a href="#メトリックについて" class="headerlink" title="メトリックについて"></a>メトリックについて</h1><p>メトリックとは、Azure 上で特定のリソースに紐づいて集計された測定値のことを指します。<br>Azure OpenAI リソースで集計されるメトリックには、リソースのパフォーマンスや使用状況を評価するための指標が含まれます。</p>
+<p>具体的には、Azure OpenAI リソースに関する、HTTP 要求数、入出力で処理されたトークン数、微調整モデルで処理されたトレーニング時間数などが含まれます。<br>このように、メトリックを確認することで現在までのトークンの使用量を簡単に確認することできるため、トークン数の消費が多い時間帯の可視化が可能になります。</p>
+<h1 id="メトリックを通じて-Azure-OpenAI-モデルで処理された入出力トークン数を確認する方法"><a href="#メトリックを通じて-Azure-OpenAI-モデルで処理された入出力トークン数を確認する方法" class="headerlink" title="メトリックを通じて Azure OpenAI モデルで処理された入出力トークン数を確認する方法"></a>メトリックを通じて Azure OpenAI モデルで処理された入出力トークン数を確認する方法</h1><p>Azure Portal 上で該当するメトリックを確認する手順についてご紹介します。<br>まず、以下の画像のようにAzure Portal のホーム画面から、対象の Azure OpenAI のリソースを開きます。</p>
+<img src="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step1.png" width=1200px>  
+
+
+<p>次に、以下の画像のように、上でアクセスしたAzure OpenAIリソース画面の左側のタブから「メトリック」を選択します。<br>選択しますと、ページ上にメトリック エクスプローラーを開くことが出来ます。<br>この時メトリック エクスプローラーを操作し、「スコープ」に Azure OpenAI リソース名、「メトリック名前空間」に「コグニティブ サービス 標準的なメトリック」が表示されているかを確認します。</p>
+<p>ここでは、Azure OpenAI モデルで処理された入出力トークンの数「Processed Inference Tokens」を示すことを考えてみます。</p>
+<img src="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step2.png" width=1200px>  
+
+
+<p>公式ドキュメント<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/monitoring#azure-openai-metrics">Azure OpenAI Service の監視</a> より「Azure OpenAIのメトリック」を参照することで、Azure Portalで確認できる「メトリック」と「集計」の情報を確認することができます。</p>
+<p>以下は公式ドキュメントの一部を抜粋したものですが、今回該当するメトリックは、入力と出力の合計のトークンであることから「メトリック」の列を見ると「Processed Inference Tokens」であることがわかります。<br>また、その集計方法については、「集計」の列を見ると「SUM」(合計)であることがわかります。<br>そのため、「メトリック」に 「Processed Inference Tokens」、「集計」に 「合計」をプルダウンから選択することでトークンの使用量を確認することが可能です。　</p>
+<img src="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/metricscreenshot.png" width=1200px>  
+
+
+<p>上記の画像の通り、メトリックに「Processed Inference Tokens」、集計に「合計」を入力した結果、以下のようにトークンの使用量を確認することができました。</p>
+<p>また、画面右上(赤枠部)より時刻表示の調整が可能になります。<br>デフォルトでの表示以外のスケール(過去7日間や過去30日間など)で時刻の表示をすることができます。</p>
+<img src="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step3.png" width=1200px>  
+
+<p>ここで、次の画像のように、時間の粒度を「1 分」と選択することで、1 分あたりの入出力トークンの合計を算出することが出来ます。<br>先ほどの「集計」で「合計」を選択したため、1 分あたりのトークン数の合計値が、グラフに描画されています。</p>
+<img src="https://jpaiblog.github.io/images/AzureOpenAIService-Metric-TPM/step4.png" width=600px>
+
+<p>以上の手順で、メトリック　エクスプローラーで 1 分あたりの入出力トークン数をグラフに描画することができました。</p>
+<h1 id="関連ドキュメント"><a href="#関連ドキュメント" class="headerlink" title="関連ドキュメント"></a>関連ドキュメント</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/overview">Azure OpenAI Service とは - Azure AI services | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/quota?tabs=rest">Azure OpenAI Service のクォータを管理する - Azure AI services | Microsoft Learn</a><br>-<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/quotas-limits">Azure OpenAI Service のクォータと制限 - Azure AI services | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/tutorial-metrics">Azure リソースのメトリックを分析する - Azure Monitor | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/monitoring#azure-openai-metrics">Azure OpenAI Service の監視 - Azure AI services | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/metrics-aggregation-explained">Azure Monitor メトリックによる集計と表示の説明 - Azure Monitor | Microsoft Learn</a></li>
+</ul>
+<hr>
+<p><code>変更履歴</code><br><code>2024/07/25 created by naokatayama</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/blog/tags/Azure-OpenAI/">Azure OpenAI</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/" rel="prev"  title="Azure OpenAI Service の Provisioned デプロイについて">
+						Azure OpenAI Service の Provisioned デプロイについて 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2023/12/29/AzureOpenAIService-error-codes/" rel="next"  title="Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードについて">
+						Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードについて
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'メトリック エクスプローラーを用いてAzure OpenAI の トークン使用量を確認する方法',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+<!--  -->
+<img class='avatar waves-image' src="https://jpaiblog.github.io/blog/favicon/mstile-150x150.png">
+<div class='header'>jpaiblog</div>
+<div class='content'>
+<div class='desc'>
+    このサイトはマイクロソフトの Azure Cognitive Services サポート チームによって運営されております。</br></br>
+    Powered by: 祝田、津田、ジェシー、中神、上原、カイル</br></br>
+    Web master: 望月
+</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://jpaiblog.github.io/blog/">
+            <div class='name'>Japan Cognitive Service Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpiotblog.github.io/blog/">
+            <div class='name'>Japan IoT Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpmlblog.github.io/blog/">
+            <div class='name'>Japan Machine Learning Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpwdkblog.github.io/blog/">
+            <div class='name'>Japan WDK Support Blog</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>8</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>12</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Speech-Services/"><div class='name'>Speech Services</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Translator-Text-API/"><div class='name'>Translator Text API</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"><div class='name'>セキュリティ</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Azure-OpenAI/" style="font-size: 20px; color: #000">Azure OpenAI</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 18px; color: #2b2b2b">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 14px; color: #808080">LUIS</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 16px; color: #555">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 16px; color: #555">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/damochiz" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+
+<script src="/blog/js/jquery.fitvids.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/blog/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+
+<script src="/blog/js/search.js"></script>
+
+
+<script src="/blog/js/app.js"></script>
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

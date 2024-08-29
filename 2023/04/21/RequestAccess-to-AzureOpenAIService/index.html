@@ -27,9 +27,8 @@
 <meta property="og:description" content="Azure OpenAI 関連の申請について、以下にご説明します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://jpaiblog.github.io/images/RequestAccess-to-AzureOpenAIService/contentFiltering-01.png">
-<meta property="og:image" content="https://jpaiblog.github.io/images/RequestAccess-to-AzureOpenAIService/models-01.png">
 <meta property="article:published_time" content="2023-04-20T15:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-05T01:31:24.077Z">
+<meta property="article:modified_time" content="2024-08-29T04:12:35.026Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
@@ -147,7 +146,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-OpenAI-Service-%E3%81%AE%E5%88%A9%E7%94%A8%E9%96%8B%E5%A7%8B%E6%99%82%E3%81%AB%E8%A1%8C%E3%81%86%E7%94%B3%E8%AB%8B"><span class="toc-number">1.</span> <span class="toc-text">Azure OpenAI Service の利用開始時に行う申請</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94%E3%81%AB%E5%BF%9C%E3%81%98%E3%81%A6%E8%A1%8C%E3%81%86%E7%94%B3%E8%AB%8B"><span class="toc-number">2.</span> <span class="toc-text">用途に応じて行う申請</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E5%8A%A0%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B9-%E3%82%B1%E3%83%BC%E3%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">追加のユース ケース</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AA%E3%83%97%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88"><span class="toc-number">2.2.</span> <span class="toc-text">オプトアウト</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E5%BC%95%E3%81%8D%E4%B8%8A%E3%81%92"><span class="toc-number">2.3.</span> <span class="toc-text">クォータの引き上げ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GPT-4-%E3%83%A2%E3%83%87%E3%83%AB"><span class="toc-number">2.4.</span> <span class="toc-text">GPT-4 モデル</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%A8%AE%E3%83%A2%E3%83%87%E3%83%AB"><span class="toc-number">2.5.</span> <span class="toc-text">各種モデル</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Azure-OpenAI-on-your-data-%E3%81%AE%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88-%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="toc-number">2.6.</span> <span class="toc-text">Azure OpenAI on your data のプライベート ネットワークのサポート</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%A2%E9%80%A3%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"><span class="toc-number">3.</span> <span class="toc-text">関連ドキュメント</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Azure-OpenAI-Service-%E3%81%AE%E5%88%A9%E7%94%A8%E9%96%8B%E5%A7%8B%E6%99%82%E3%81%AB%E8%A1%8C%E3%81%86%E7%94%B3%E8%AB%8B"><span class="toc-number">1.</span> <span class="toc-text">Azure OpenAI Service の利用開始時に行う申請</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%80%94%E3%81%AB%E5%BF%9C%E3%81%98%E3%81%A6%E8%A1%8C%E3%81%86%E7%94%B3%E8%AB%8B"><span class="toc-number">2.</span> <span class="toc-text">用途に応じて行う申請</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E5%8A%A0%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B9-%E3%82%B1%E3%83%BC%E3%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">追加のユース ケース</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AA%E3%83%97%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88"><span class="toc-number">2.2.</span> <span class="toc-text">オプトアウト</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E5%BC%95%E3%81%8D%E4%B8%8A%E3%81%92"><span class="toc-number">2.3.</span> <span class="toc-text">クォータの引き上げ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GPT-4-%E3%83%A2%E3%83%87%E3%83%AB"><span class="toc-number">2.4.</span> <span class="toc-text">GPT-4 モデル</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Azure-OpenAI-on-your-data-%E3%81%AE%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88-%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="toc-number">2.5.</span> <span class="toc-text">Azure OpenAI on your data のプライベート ネットワークのサポート</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%A2%E9%80%A3%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"><span class="toc-number">3.</span> <span class="toc-text">関連ドキュメント</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -157,7 +156,7 @@
 
 <hr>
 <h2 id="Azure-OpenAI-Service-の利用開始時に行う申請"><a href="#Azure-OpenAI-Service-の利用開始時に行う申請" class="headerlink" title="Azure OpenAI Service の利用開始時に行う申請"></a>Azure OpenAI Service の利用開始時に行う申請</h2><p>Azure OpenAI Service は申請フォーム 「<a target="_blank" rel="noopener" href="https://aka.ms/oai/access">Request Access to Azure OpenAI Service</a>」 より必要事項を入力して送信、承認されたサブスクリプションにて利用が可能になります。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/legal/cognitive-services/openai/limited-access">[1]</a>  </p>
-<p>申請状況に関する確認はメールアドレス <a href="mailto:&#99;&#115;&#103;&#x61;&#x74;&#x65;&#x40;&#x6d;&#105;&#99;&#x72;&#111;&#115;&#x6f;&#102;&#116;&#46;&#99;&#x6f;&#109;">&#99;&#115;&#103;&#x61;&#x74;&#x65;&#x40;&#x6d;&#105;&#99;&#x72;&#111;&#115;&#x6f;&#102;&#116;&#46;&#99;&#x6f;&#109;</a> にて受け付けています。 この宛先は Azure OpenAI Service の利用申請を管理・レビューしている米国本社内の専用部門となり、公平性と独立性のために、技術サポート部門を含めた各国の他の部門はレビュープロセスに直接介入できません。 そのため、当該メールでのご質問は <strong>英語のみ</strong> となる点にご留意ください。  </p>
+<p>申請状況に関する確認はメールアドレス <a href="mailto:&#99;&#115;&#103;&#x61;&#x74;&#x65;&#x40;&#109;&#105;&#99;&#114;&#111;&#x73;&#x6f;&#x66;&#116;&#x2e;&#x63;&#x6f;&#109;">&#99;&#115;&#103;&#x61;&#x74;&#x65;&#x40;&#109;&#105;&#99;&#114;&#111;&#x73;&#x6f;&#x66;&#116;&#x2e;&#x63;&#x6f;&#109;</a> にて受け付けています。 この宛先は Azure OpenAI Service の利用申請を管理・レビューしている米国本社内の専用部門となり、公平性と独立性のために、技術サポート部門を含めた各国の他の部門はレビュープロセスに直接介入できません。 そのため、当該メールでのご質問は <strong>英語のみ</strong> となる点にご留意ください。  </p>
 <br>
 
 <hr>
@@ -174,7 +173,7 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="クォータの引き上げ"><a href="#クォータの引き上げ" class="headerlink" title="クォータの引き上げ"></a>クォータの引き上げ</h3><p>Azure OpenAI には、適用されるクォータによる制限があります。 この引き上げを希望する場合、Azure AI Studio の [管理 &gt; クォータ &gt; Request quota] の申請フォーム 「<a target="_blank" rel="noopener" href="https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4xPXO648sJKt4GoXAed-0pURVJWRU4yRTMxRkszU0NXRFFTTEhaT1g1NyQlQCN0PWcu">Azure OpenAI Service: Request for Quota Increase</a>」 より必要事項を入力して送信ください。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/quota?tabs=rest#view-and-request-quota">[3]</a>  </p>
+<h3 id="クォータの引き上げ"><a href="#クォータの引き上げ" class="headerlink" title="クォータの引き上げ"></a>クォータの引き上げ</h3><p>Azure OpenAI には、適用されるクォータによる制限があります。 この引き上げを希望する場合、Azure OpenAI Studio の [管理 &gt; クォータ &gt; クォータの要求] の申請フォーム 「<a target="_blank" rel="noopener" href="https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4xPXO648sJKt4GoXAed-0pUMFE1Rk9CU084RjA0TUlVSUlMWEQzVkJDNCQlQCN0PWcu">Azure OpenAI Service: Request for Quota Increase</a>」 より必要事項を入力して送信ください。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/quota?tabs=rest#view-and-request-quota">[3]</a>  </p>
 <ul>
 <li><p>2023&#x2F;05&#x2F;23現在の状況    </p>
 <blockquote>
@@ -188,18 +187,6 @@
 </li>
 </ul>
 <h3 id="GPT-4-モデル"><a href="#GPT-4-モデル" class="headerlink" title="GPT-4 モデル"></a>GPT-4 モデル</h3><p>以前は、GPT-4モデルを利用するためには申請が必要でしたが、2023年10月19日現在、申請は不要となりました。しかし、GPT-4モデルへの高い需要のため、Azure OpenAI Serviceが利用できるすべてのリージョンでGPT-4モデルが利用可能なわけではなく、利用できるリージョンは限られています<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models">[4]</a> 。使用中のリージョンでGPT-4が表示されない場合は、時間を置いて再度確認をお願いします。</p>
-<h3 id="各種モデル"><a href="#各種モデル" class="headerlink" title="各種モデル"></a>各種モデル</h3><p>以下のモデルを利用する場合には、申請フォーム「<a target="_blank" rel="noopener" href="https://aka.ms/oai/access">Request Access to Azure OpenAI Service</a>」 で Azure OpenAI Service 利用を申請する際、明示的に各モデルの利用を選択して送信ください。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/legal/cognitive-services/openai/limited-access">[1]</a></p>
-<ul>
-<li><p>GPT-4 Turbo with Vision モデル</p>
-</li>
-<li><p>DALL-E モデル</p>
-</li>
-<li><p>Whisper モデル</p>
-<p><img src="https://jpaiblog.github.io/images/RequestAccess-to-AzureOpenAIService/models-01.png" alt="models-01" title="models-01"></p>
-</li>
-</ul>
-<p>なお、これらモデルを利用できるリージョン（可用性）については、以下のドキュメントを参照してください。</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models">Azure OpenAI Service モデル</a></p>
 <h3 id="Azure-OpenAI-on-your-data-のプライベート-ネットワークのサポート"><a href="#Azure-OpenAI-on-your-data-のプライベート-ネットワークのサポート" class="headerlink" title="Azure OpenAI on your data のプライベート ネットワークのサポート"></a>Azure OpenAI on your data のプライベート ネットワークのサポート</h3><p>Azure OpenAI on your dataにてプライベートネットワークの利用を可能にする場合、申請フォーム 「<a target="_blank" rel="noopener" href="https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRw_T3EIZ1KNCuv_1duLJBgpUMUcwV1Y5QjI3UTVTMkhSVUo3R09NNVQxSyQlQCN0PWcu">Apply Azure AI Search Private Endpoint Request for Azure OpenAI on Your Data</a>  」 より必要事項を入力して送信ください。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/use-your-data-securely#inbound-security-networking-1">[7]</a>  </p>
 <br>
 
@@ -310,15 +297,15 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>6</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>8</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
     
-        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>13</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>12</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
     
-        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>3</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>2</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Speech-Services/"><div class='name'>Speech Services</div><div class='badget'>1</div></a></li>
     
@@ -335,7 +322,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Azure-OpenAI/" style="font-size: 20px; color: #000">Azure OpenAI</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 18px; color: #2b2b2b">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 16px; color: #555">LUIS</a> <a href="/blog/tags/QNA-Maker/" style="font-size: 14px; color: #808080">QNA Maker</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 16px; color: #555">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 16px; color: #555">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Azure-OpenAI/" style="font-size: 20px; color: #000">Azure OpenAI</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 18px; color: #2b2b2b">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 14px; color: #808080">LUIS</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 16px; color: #555">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 16px; color: #555">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
     </div>
 </div>
 
