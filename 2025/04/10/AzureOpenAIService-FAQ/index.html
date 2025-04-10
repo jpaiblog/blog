@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Azure OpenAI Service に関する FAQ | Japan Cognitive Services Support Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="https://jpaiblog.github.io/blog/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jpaiblog.github.io/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jpaiblog.github.io/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jpaiblog.github.io/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://jpaiblog.github.io/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="この記事では、Azure OpenAI Service に関して Azure サポート によくお問い合わせいただくご質問と回答 (FAQ) をまとめています。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure OpenAI Service に関する FAQ">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/index.html">
+<meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="この記事では、Azure OpenAI Service に関して Azure サポート によくお問い合わせいただくご質問と回答 (FAQ) をまとめています。">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2025-04-09T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-10T16:57:36.856Z">
+<meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Azure OpenAI">
+<meta name="twitter:card" content="summary">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  
+<link rel="stylesheet" href="/blog/style.css">
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/blog/' >
+				Japan Cognitive Services Support Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/blog/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/blog/archives'>
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/blog/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/blog/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-AzureOpenAIService-FAQ"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2025/04/10/AzureOpenAIService-FAQ/">
+    	Azure OpenAI Service に関する FAQ
+    </a>
+  </h2>
+	<time>
+	  4月 10, 2025
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%88%B6%E9%99%90%E4%BB%98%E3%81%8D%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9-Limited-Access-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.</span> <span class="toc-text">(1) 制限付きアクセス (Limited Access) について</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-number">1.1.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q"><span class="toc-number">1.1.1.</span> <span class="toc-text">Q:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E7%94%B3%E8%AB%8B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">2.</span> <span class="toc-text">(2) クォータ申請について</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A-1"><span class="toc-number">2.1.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Azure-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB-TPM-x2F-RPM-%E3%81%AE%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E5%BC%95%E3%81%8D%E4%B8%8A%E3%81%92%E3%82%92%E4%BE%9D%E9%A0%BC%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">2.1.1.</span> <span class="toc-text">Q. Azure サポートに TPM &#x2F; RPM のクォータ引き上げを依頼したい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E7%94%B3%E8%AB%8B%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%8A%E9%99%90%E3%82%92%E7%9F%A5%E3%82%8A%E3%81%9F%E3%81%84%E3%80%82%E6%89%BF%E8%AA%8D%E3%81%95%E3%82%8C%E3%82%8B%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E4%BA%8B%E5%89%8D%E3%81%AB%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">2.1.2.</span> <span class="toc-text">Q. 申請できるクォータの上限を知りたい。承認されるかどうか事前に確認したい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E7%94%B3%E8%AB%8B%E3%81%8C%E5%8F%97%E7%90%86%E3%83%BB%E6%89%BF%E8%AA%8D%E3%81%95%E3%82%8C%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE%E6%99%82%E9%96%93%E3%81%AE%E7%9B%AE%E5%AE%89%E3%82%92%E7%9F%A5%E3%82%8A%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">2.1.3.</span> <span class="toc-text">Q. クォータの申請が受理・承認されるまでの時間の目安を知りたい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E5%BC%95%E3%81%8D%E4%B8%8A%E3%81%92%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%81%8C%E5%BF%9C%E7%AD%94%E3%81%8C%E7%84%A1%E3%81%84%E3%81%9F%E3%82%81%E7%8A%B6%E6%B3%81%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">2.1.4.</span> <span class="toc-text">Q. クォータの引き上げをリクエストしたが応答が無いため状況を確認したい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E5%BC%95%E3%81%8D%E4%B8%8A%E3%81%92%E3%81%AE%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%8C%E6%8B%92%E5%90%A6%E3%81%95%E3%82%8C%E3%81%9F%E3%80%82"><span class="toc-number">2.1.5.</span> <span class="toc-text">Q. クォータ引き上げのリクエストが拒否された。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Provisioned-%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%A7-1000-%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%82%92%E8%B6%85%E3%81%88%E3%82%8B%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">2.1.6.</span> <span class="toc-text">Q. Provisioned のデプロイで 1000 ユニットを超えるクォータをリクエストしたい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-TPM-x2F-RPM-%E3%81%AE%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E5%A4%89%E6%9B%B4%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E3%81%8C%E3%82%AF%E3%82%A9%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%8A%E9%99%90%E3%81%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%81%9F%E3%80%82"><span class="toc-number">2.1.7.</span> <span class="toc-text">Q. TPM &#x2F; RPM のクォータ変更をリクエストをしていないがクォータの上限が変更された。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE-Web-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">3.</span> <span class="toc-text">(3) サンプルの Web アプリについて</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A-2"><span class="toc-number">3.1.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%81%95%E3%82%8C%E3%81%9F-Web-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%80%82"><span class="toc-number">3.1.1.</span> <span class="toc-text">Q. デプロイされた Web アプリにアクセスできない。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Web-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A7%E6%93%8D%E4%BD%9C-%E4%BE%8B-%E3%83%81%E3%83%A3%E3%83%83%E3%83%88%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E9%80%81%E4%BF%A1-%E3%82%92%E8%A1%8C%E3%81%86%E3%81%A8%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E3%81%AA%E3%82%8B%E3%80%82"><span class="toc-number">3.1.2.</span> <span class="toc-text">Q. Web アプリで操作 (例. チャットのメッセージ送信) を行うとエラーになる。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E3%81%8C%E6%9C%9F%E5%BE%85%E3%81%99%E3%82%8B%E5%8B%95%E4%BD%9C%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E3%80%82"><span class="toc-number">3.1.3.</span> <span class="toc-text">Q. 環境変数を変更したが期待する動作にならない。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E4%BB%AE%E6%83%B3%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AB%E7%B5%B1%E5%90%88%E3%81%97%E3%81%A6%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88-%E3%82%A8%E3%83%B3%E3%83%89%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E7%B5%8C%E7%94%B1%E3%81%A7%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">3.1.4.</span> <span class="toc-text">Q. 仮想ネットワークに統合してプライベート エンドポイント経由でアクセスできるようにしたい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AE-Web-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A7%E5%8F%AF%E8%83%BD%E3%81%93%E3%81%A8%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">3.1.5.</span> <span class="toc-text">Q. サンプルの Web アプリで可能ことを確認したい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Web-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%9F%E3%81%84%E3%83%BB%E6%A9%9F%E8%83%BD%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%9F%E3%81%84%E3%80%82"><span class="toc-number">3.1.6.</span> <span class="toc-text">Q. Web アプリの表示を変更したい・機能を追加したい。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%96%B0%E3%81%97%E3%81%84%E3%83%A2%E3%83%87%E3%83%AB%E3%83%BB%E6%A9%9F%E8%83%BD%E3%82%84%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E5%88%A9%E7%94%A8%E5%8F%AF%E5%90%A6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">4.</span> <span class="toc-text">(4) 新しいモデル・機能やリージョンの利用可否について</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A-3"><span class="toc-number">4.1.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">Q:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%9C%E8%B6%B3-%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B4%E6%96%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">4.1.2.</span> <span class="toc-text">補足: ドキュメントの更新について</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%88%A9%E7%94%A8%E5%A5%91%E7%B4%84%E3%82%84%E9%96%A2%E9%80%A3%E6%B3%95%E8%A6%8F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">5.</span> <span class="toc-text">(5) 利用契約や関連法規について</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A-4"><span class="toc-number">5.1.</span> <span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E7%8F%BE%E5%9C%A8%E6%83%B3%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BD%BF%E3%81%84%E6%96%B9%E3%81%AF%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84%E3%81%AE%E8%A6%B3%E7%82%B9%E3%81%8B%E3%82%89%E5%95%8F%E9%A1%8C%E7%84%A1%E3%81%84%E3%81%8B%E3%80%82"><span class="toc-number">5.1.1.</span> <span class="toc-text">Q. 現在想定している使い方は利用規約の観点から問題無いか。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Azure-OpenAI-Service-%E3%81%AE%E6%BA%96%E6%8B%A0%E6%B3%95%E3%83%BB%E7%AE%A1%E8%BD%84%E8%A3%81%E5%88%A4%E6%89%80%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E6%95%99%E3%81%88%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84%E3%80%82"><span class="toc-number">5.1.2.</span> <span class="toc-text">Q. Azure OpenAI Service の準拠法・管轄裁判所について教えてほしい。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Azure-OpenAI-Service-%E3%81%A7%E6%97%A5%E6%9C%AC%E5%9B%BD%E5%A4%96%E3%81%AE%E3%83%AA%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%80%81%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E6%B3%95%E3%81%A7%E8%A6%8F%E5%AE%9A%E3%81%95%E3%82%8C%E3%81%9F%E7%AC%AC%E4%B8%89%E8%80%85%E6%8F%90%E4%BE%9B%E3%81%AB%E5%BD%93%E3%81%9F%E3%82%8B%E3%81%AE%E3%81%8B%E3%80%82"><span class="toc-number">5.1.3.</span> <span class="toc-text">Q. Azure OpenAI Service で日本国外のリージョンを使用する場合、個人情報保護法で規定された第三者提供に当たるのか。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Azure-OpenAI-Service-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E7%94%9F%E6%88%90%E3%81%95%E3%82%8C%E3%81%9F%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%84%E7%94%BB%E5%83%8F%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%88%A9%E7%94%A8%E8%80%85%E3%81%AB%E5%B8%B0%E5%B1%9E%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8B%E3%80%82"><span class="toc-number">5.1.4.</span> <span class="toc-text">Q. Azure OpenAI Service を使用して生成されたテキストや画像の著作権はサービスの利用者に帰属するのか。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Customer-Copyright-Commitment-CCC-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E9%81%A9%E7%94%A8%E6%9D%A1%E4%BB%B6%E3%82%92%E6%BA%80%E3%81%9F%E3%81%99%E3%81%9F%E3%82%81%E3%81%AB%E5%8D%81%E5%88%86%E3%81%A8%E8%A8%80%E3%81%88%E3%82%8B%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E6%96%AD%E3%81%97%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84%E3%80%82"><span class="toc-number">5.1.5.</span> <span class="toc-text">Q. Customer Copyright Commitment (CCC) について適用条件を満たすために十分と言えるかどうか判断してほしい。</span></a></li></ol></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>この記事では、Azure OpenAI Service に関して <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request">Azure サポート</a> によくお問い合わせいただくご質問と回答 (FAQ) をまとめています。</p>
+<span id="more"></span>
+<br>
+
+<hr>
+<h1 id="1-制限付きアクセス-Limited-Access-について"><a href="#1-制限付きアクセス-Limited-Access-について" class="headerlink" title="(1) 制限付きアクセス (Limited Access) について"></a>(1) 制限付きアクセス (Limited Access) について</h1><p>Azure OpenAI Service には制限付きアクセス (<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/legal/cognitive-services/openai/limited-access">Limited Access</a>) のため、利用に事前の申請が必要なケースがあります。例:</p>
+<ul>
+<li>新しくリリースされた制限付きアクセスのモデル (例: computer-use-preview) の利用</li>
+<li>Modified Content Filtering の有効化</li>
+<li>Modified Abuse Monitoring の有効化</li>
+</ul>
+<p>Limited Access の申請・審査のプロセスは、マイクロソフト本社の特別な部門が管理しています。そのため Azure ポータルからのお問い合わせでは回答できません。申請フォームに記載のメールアドレス <strong><a href="mailto:&#99;&#115;&#103;&#97;&#x74;&#x65;&#64;&#109;&#x69;&#99;&#x72;&#x6f;&#x73;&#x6f;&#x66;&#x74;&#46;&#99;&#111;&#109;">&#99;&#115;&#103;&#97;&#x74;&#x65;&#64;&#109;&#x69;&#99;&#x72;&#x6f;&#x73;&#x6f;&#x66;&#x74;&#46;&#99;&#111;&#109;</a></strong> にご連絡ください。<br>また <strong><a href="mailto:&#x63;&#115;&#x67;&#97;&#x74;&#x65;&#64;&#x6d;&#x69;&#x63;&#x72;&#x6f;&#115;&#x6f;&#x66;&#116;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#115;&#x67;&#97;&#x74;&#x65;&#64;&#x6d;&#x69;&#x63;&#x72;&#x6f;&#115;&#x6f;&#x66;&#116;&#46;&#x63;&#x6f;&#x6d;</a></strong> へのお問い合わせは <strong>英語のみ</strong> での対応となりますのでご留意ください。</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q"><a href="#Q" class="headerlink" title="Q:"></a>Q:</h3><ul>
+<li>申請フォームに記載するべき内容について確認したい。</li>
+<li>申請が受理・承認されるまでの時間の目安を知りたい。</li>
+<li>申請フォームからアクセスをリクエストしたが応答が無いため状況を確認したい。</li>
+<li>申請が拒否されたのでその理由を知りたい・再審査を要求したい。</li>
+<li>Content Filtering &#x2F; Abuse Monitoring について “オプトアウト” をリクエストしたい。 (注: マイクロソフトのドキュメントでは “オプトアウト” という単語は使用していません)</li>
+</ul>
+<p>A. 申請フォームに記載のメールアドレス <strong><a href="mailto:&#x63;&#115;&#103;&#97;&#116;&#x65;&#x40;&#109;&#105;&#x63;&#x72;&#x6f;&#x73;&#111;&#102;&#116;&#x2e;&#x63;&#x6f;&#109;">&#x63;&#115;&#103;&#97;&#116;&#x65;&#x40;&#109;&#105;&#x63;&#x72;&#x6f;&#x73;&#111;&#102;&#116;&#x2e;&#x63;&#x6f;&#109;</a></strong> にご連絡ください。Azure ポータルからのお問い合わせでは回答できません。</p>
+<br>
+
+<hr>
+<h1 id="2-クォータ申請について"><a href="#2-クォータ申請について" class="headerlink" title="(2) クォータ申請について"></a>(2) クォータ申請について</h1><p>Azure OpenAI Service では多くのお客様にご利用いただけるよう、利用量の上限 (<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/quota">クォータ</a>) が設けられています。TPM &#x2F; RPM やユニット数に関する既定のクォータが不足する場合は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/quotas-limits#how-to-request-quota-increases">専用のフォームから引き上げをリクエスト</a>することができます。</p>
+<h2 id="Q-amp-A-1"><a href="#Q-amp-A-1" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-Azure-サポートに-TPM-x2F-RPM-のクォータ引き上げを依頼したい。"><a href="#Q-Azure-サポートに-TPM-x2F-RPM-のクォータ引き上げを依頼したい。" class="headerlink" title="Q. Azure サポートに TPM &#x2F; RPM のクォータ引き上げを依頼したい。"></a>Q. Azure サポートに TPM &#x2F; RPM のクォータ引き上げを依頼したい。</h3><p>A. Azure サポートを通じたクォータ引き上げリクエストはお承りしておりません。上記の通り専用のフォームからリクエストいただけます。</p>
+<h3 id="Q-申請できるクォータの上限を知りたい。承認されるかどうか事前に確認したい。"><a href="#Q-申請できるクォータの上限を知りたい。承認されるかどうか事前に確認したい。" class="headerlink" title="Q. 申請できるクォータの上限を知りたい。承認されるかどうか事前に確認したい。"></a>Q. 申請できるクォータの上限を知りたい。承認されるかどうか事前に確認したい。</h3><p>A. Azure サポートでは承認可否を事前に確認することはできません。実際に必要なクォータをフォームからリクエストいただくことをご検討ください。申請フォームでリクエスト可能な数量を超える場合、マイクロソフトのアカウント担当者 (以下、”アカウント チーム”) にお問い合わせください。</p>
+<h3 id="Q-クォータの申請が受理・承認されるまでの時間の目安を知りたい。"><a href="#Q-クォータの申請が受理・承認されるまでの時間の目安を知りたい。" class="headerlink" title="Q. クォータの申請が受理・承認されるまでの時間の目安を知りたい。"></a>Q. クォータの申請が受理・承認されるまでの時間の目安を知りたい。</h3><p>A. クォータの引き上げ申請は Azure サポートではなく、専門の部署 (<a href="mailto:&#109;&#x73;&#97;&#122;&#x75;&#x72;&#101;&#x6f;&#112;&#x65;&#x6e;&#x61;&#x69;&#x40;&#x6d;&#x69;&#x63;&#114;&#x6f;&#115;&#x6f;&#x66;&#116;&#46;&#x63;&#x6f;&#109;">&#109;&#x73;&#97;&#122;&#x75;&#x72;&#101;&#x6f;&#112;&#x65;&#x6e;&#x61;&#x69;&#x40;&#x6d;&#x69;&#x63;&#114;&#x6f;&#115;&#x6f;&#x66;&#116;&#46;&#x63;&#x6f;&#109;</a>) で審査されています。申請は受け付けた順に処理されます。リードタイムに関する保証はありません。</p>
+<h3 id="Q-クォータの引き上げをリクエストしたが応答が無いため状況を確認したい。"><a href="#Q-クォータの引き上げをリクエストしたが応答が無いため状況を確認したい。" class="headerlink" title="Q. クォータの引き上げをリクエストしたが応答が無いため状況を確認したい。"></a>Q. クォータの引き上げをリクエストしたが応答が無いため状況を確認したい。</h3><p>A. Azure サポートでは申請の状況を確認したり、加速したりすることはできません。申請受領の応答メールにある担当部門の連絡先 (<a href="mailto:&#109;&#115;&#x61;&#122;&#117;&#x72;&#101;&#111;&#x70;&#x65;&#x6e;&#97;&#x69;&#64;&#x6d;&#x69;&#99;&#x72;&#111;&#x73;&#x6f;&#x66;&#116;&#x2e;&#x63;&#111;&#x6d;">&#109;&#115;&#x61;&#122;&#117;&#x72;&#101;&#111;&#x70;&#x65;&#x6e;&#97;&#x69;&#64;&#x6d;&#x69;&#99;&#x72;&#111;&#x73;&#x6f;&#x66;&#116;&#x2e;&#x63;&#111;&#x6d;</a>, 英語のみ) にお問い合わせいただくことをご検討ください。<br>また個別の審査状況についてビジネス面からの優先対応をご要望の場合はアカウント チームへご相談ください。</p>
+<h3 id="Q-クォータ引き上げのリクエストが拒否された。"><a href="#Q-クォータ引き上げのリクエストが拒否された。" class="headerlink" title="Q. クォータ引き上げのリクエストが拒否された。"></a>Q. クォータ引き上げのリクエストが拒否された。</h3><p>A. Azure OpenAI Service は世界中から需要があるため、リクエストされた内容 (リージョン・デプロイの種類・数量) によってはお承りできない場合があります。リクエスト内容を変更して再度申請いただくことをご検討ください。Azure サポートでは具体的な理由の説明や再審査のリクエストは受付できません。もし同じ内容での再審査をご希望の場合はアカウント チームへご相談ください。</p>
+<h3 id="Q-Provisioned-のデプロイで-1000-ユニットを超えるクォータをリクエストしたい。"><a href="#Q-Provisioned-のデプロイで-1000-ユニットを超えるクォータをリクエストしたい。" class="headerlink" title="Q. Provisioned のデプロイで 1000 ユニットを超えるクォータをリクエストしたい。"></a>Q. Provisioned のデプロイで 1000 ユニットを超えるクォータをリクエストしたい。</h3><p>A. 申請フォームでリクエスト可能な数量を超える場合、アカウント チームにお問い合わせください。</p>
+<h3 id="Q-TPM-x2F-RPM-のクォータ変更をリクエストをしていないがクォータの上限が変更された。"><a href="#Q-TPM-x2F-RPM-のクォータ変更をリクエストをしていないがクォータの上限が変更された。" class="headerlink" title="Q. TPM &#x2F; RPM のクォータ変更をリクエストをしていないがクォータの上限が変更された。"></a>Q. TPM &#x2F; RPM のクォータ変更をリクエストをしていないがクォータの上限が変更された。</h3><p>A. クォータの上限は変更される可能性があります。変更後のクォータで不足する場合は上記の通り専用のフォームからリクエストいただけます。</p>
+<ul>
+<li>参考: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/quota?tabs=rest#assign-quota">Manage Azure OpenAI Service quota</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Important</span><br><span class="line">Quotas and limits are subject to change, for the most up-date-information consult our quotas and limits article.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<hr>
+<h1 id="3-サンプルの-Web-アプリについて"><a href="#3-サンプルの-Web-アプリについて" class="headerlink" title="(3) サンプルの Web アプリについて"></a>(3) サンプルの Web アプリについて</h1><p><a target="_blank" rel="noopener" href="https://oai.azure.com/">Azure OpenAI Studio</a> や <a target="_blank" rel="noopener" href="https://ai.azure.com/">Azure AI Foundry</a> のチャット プレイグランドでは、 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/use-web-app">サンプルの Web アプリ</a>をデプロイすることができます。この Web アプリはサンプルであり、マイクロソフトが動作を保証するものではありません。お客様ご自身が独自に開発されたアプリケーションと同じ扱いになります。このサンプルのサポートについては <a target="_blank" rel="noopener" href="https://github.com/microsoft/sample-app-aoai-chatGPT/blob/main/SUPPORT.md">GitHub</a> に記載されています。</p>
+<h2 id="Q-amp-A-2"><a href="#Q-amp-A-2" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-デプロイされた-Web-アプリにアクセスできない。"><a href="#Q-デプロイされた-Web-アプリにアクセスできない。" class="headerlink" title="Q. デプロイされた Web アプリにアクセスできない。"></a>Q. デプロイされた Web アプリにアクセスできない。</h3><p>A. Web アプリケーションのどこで問題が発生しているのか (例. Entra ID 認証がエラーになる) についてはお客様側で切り分けが必要です。ソースコードは <a target="_blank" rel="noopener" href="https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main">GitHub</a> でご確認いただけます。</p>
+<h3 id="Q-Web-アプリで操作-例-チャットのメッセージ送信-を行うとエラーになる。"><a href="#Q-Web-アプリで操作-例-チャットのメッセージ送信-を行うとエラーになる。" class="headerlink" title="Q. Web アプリで操作 (例. チャットのメッセージ送信) を行うとエラーになる。"></a>Q. Web アプリで操作 (例. チャットのメッセージ送信) を行うとエラーになる。</h3><p>A. お客様側で Web アプリの実装に依存しないことが切り分けされている (例. curl で呼び出した場合でも再現することを確認している) 場合は、具体的にエラーになっているサービス・API について Azure サポートで調査を支援することは可能です。</p>
+<h3 id="Q-環境変数を変更したが期待する動作にならない。"><a href="#Q-環境変数を変更したが期待する動作にならない。" class="headerlink" title="Q. 環境変数を変更したが期待する動作にならない。"></a>Q. 環境変数を変更したが期待する動作にならない。</h3><p>A. サンプルコードの問題は <a target="_blank" rel="noopener" href="https://github.com/microsoft/sample-app-aoai-chatGPT/blob/main/SUPPORT.md">GitHub</a> の Issues で報告いただけます。サンプルコードの調査・デバッグは Azure サポートの対応範囲外です。</p>
+<h3 id="Q-仮想ネットワークに統合してプライベート-エンドポイント経由でアクセスできるようにしたい。"><a href="#Q-仮想ネットワークに統合してプライベート-エンドポイント経由でアクセスできるようにしたい。" class="headerlink" title="Q. 仮想ネットワークに統合してプライベート エンドポイント経由でアクセスできるようにしたい。"></a>Q. 仮想ネットワークに統合してプライベート エンドポイント経由でアクセスできるようにしたい。</h3><p>A. 各サービスのネットワークに関連した機能についてそれぞれご確認ください。このサンプルを前提とした手順や構成例は用意されていません。</p>
+<p>Azure OpenAI Service、特に On-Your-Data をご利用の場合に、ネットワークを制限 (いわゆる “閉域化”) を行う方法については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/on-your-data-configuration">ドキュメント</a>が用意されています。それぞれの製品 (例. <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/app-service/overview-vnet-integration">App Service の仮想ネットワーク統合</a>) の具体的な設定に関するお問い合わせは対象のサービス・リソースを選択して Azure ポータルからご起票ください。</p>
+<h3 id="Q-サンプルの-Web-アプリで可能ことを確認したい。"><a href="#Q-サンプルの-Web-アプリで可能ことを確認したい。" class="headerlink" title="Q. サンプルの Web アプリで可能ことを確認したい。"></a>Q. サンプルの Web アプリで可能ことを確認したい。</h3><p>A. Web アプリの実装や機能に関する解説は Azure サポートでは行っておりません。具体的な実装は <a target="_blank" rel="noopener" href="https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main">GitHub</a> をご確認ください。</p>
+<h3 id="Q-Web-アプリの表示を変更したい・機能を追加したい。"><a href="#Q-Web-アプリの表示を変更したい・機能を追加したい。" class="headerlink" title="Q. Web アプリの表示を変更したい・機能を追加したい。"></a>Q. Web アプリの表示を変更したい・機能を追加したい。</h3><p>A. お客様個別のご要件に応じた設定のアドバイスや、カスタマイズされたコードの提供は Azure サポートでは行っておりません。<a target="_blank" rel="noopener" href="https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main">GitHub</a> のソースコードを元に必要な変更を行ってください。</p>
+<br>
+
+<hr>
+<h1 id="4-新しいモデル・機能やリージョンの利用可否について"><a href="#4-新しいモデル・機能やリージョンの利用可否について" class="headerlink" title="(4) 新しいモデル・機能やリージョンの利用可否について"></a>(4) 新しいモデル・機能やリージョンの利用可否について</h1><p>将来のリリース予定については、一般に公開 (マイクロソフト公式のドキュメントやブログで広くアナウンス) されていない限り、ビジネス上の機密情報に当たるため、Azure サポートでは回答できません。</p>
+<h2 id="Q-amp-A-3"><a href="#Q-amp-A-3" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-1"><a href="#Q-1" class="headerlink" title="Q:"></a>Q:</h3><ul>
+<li>OpenAI が発表した新機能が Azure OpenAI Service でいつ利用できるようになるのか。</li>
+<li>OpenAI の新しいモデルを Azure で利用したいが提供予定を教えてほしい。</li>
+<li>あるリージョン (例. 東日本) で特定のモデル・バージョンが利用できるようになる時期を知りたい。</li>
+<li><a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/explore/global-infrastructure/data-residency/">データの所在地</a>に要件があるため <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/deployment-types#standard">Standard のデプロイ</a>で利用したい。Standard のデプロイで利用できるようになる予定はあるか。</li>
+</ul>
+<p>A. 公開情報でのアナウンスをお待ちください。</p>
+<p>Azure OpenAI Service や Azure AI Foundry のリリース情報は<a target="_blank" rel="noopener" href="https://azure.microsoft.com/en-us/blog/category/ai-machine-learning/">製品開発部門のブログ</a>でもご確認いただけます。</p>
+<h3 id="補足-ドキュメントの更新について"><a href="#補足-ドキュメントの更新について" class="headerlink" title="補足: ドキュメントの更新について"></a>補足: ドキュメントの更新について</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models">リージョンやモデルの利用可否を列挙している公開ドキュメント</a>は手動で更新されており、最新の状況が反映されていない場合があります。また Limited Access のため一部のサブスクリプションに限定して提供されている場合もあります。</p>
+<p>そのため実際に利用可能なモデル・バージョン・リージョン・デプロイの種類に関する最新の情報は、ご利用の Azure サブスクリプションで <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/aiservices/accountmanagement/model-capacities/list?view=rest-aiservices-accountmanagement-2024-10-01&tabs=HTTP">Model Capacities - List</a> の API を使用してご確認いただくことが推奨されます。</p>
+<ul>
+<li>Azure CLI での実行例:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ az rest --method get --url &quot;/subscriptions/&lt;YOUR SUB ID&gt;/providers/Microsoft.CognitiveServices/modelCapacities?api-version=2024-04-01-preview&amp;modelFormat=OpenAI&amp;modelName=gpt-4o&amp;modelVersion=2024-11-20&quot;</span><br><span class="line"> </span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line">    &#123;</span><br><span class="line">     &quot;id&quot;: &quot;/subscriptions//&lt;YOUR SUB ID&gt;/providers/Microsoft.CognitiveServices/locations/japaneast/models/OpenAI.gpt-4o.2024-11-20/skuCapacities/Standard&quot;,</span><br><span class="line">      &quot;location&quot;: &quot;japaneast&quot;,</span><br><span class="line">      &quot;name&quot;: &quot;Standard&quot;,</span><br><span class="line">     &quot;properties&quot;: &#123;</span><br><span class="line">       &quot;availableCapacity&quot;: 50,</span><br><span class="line">       &quot;model&quot;: &#123;</span><br><span class="line">         &quot;format&quot;: &quot;OpenAI&quot;,</span><br><span class="line">         &quot;name&quot;: &quot;gpt-4o&quot;,</span><br><span class="line">         &quot;version&quot;: &quot;2024-11-20&quot;</span><br><span class="line">       &#125;,</span><br><span class="line">       &quot;skuName&quot;: &quot;Standard&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">     &quot;type&quot;: &quot;Microsoft.CognitiveServices/locations/models/skuCapacities&quot;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Azure CLI については Azure ポータルの <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/cloud-shell/overview">Cloud Shell</a> でも利用できます。</p>
+<br>
+
+<hr>
+<h1 id="5-利用契約や関連法規について"><a href="#5-利用契約や関連法規について" class="headerlink" title="(5) 利用契約や関連法規について"></a>(5) 利用契約や関連法規について</h1><p>Azure の <strong>技術 (テクニカル)</strong> サポートは API 呼び出し時のエラーなど、何らか技術的な問題が発生した際のトラブルシューティングや修正 (break fix) を支援するものです。 Azure サポートでは利用規約や法規に関するご質問、例えば法律的な解釈や法務的なアドバイスを差し上げることはできません。</p>
+<h2 id="Q-amp-A-4"><a href="#Q-amp-A-4" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-現在想定している使い方は利用規約の観点から問題無いか。"><a href="#Q-現在想定している使い方は利用規約の観点から問題無いか。" class="headerlink" title="Q. 現在想定している使い方は利用規約の観点から問題無いか。"></a>Q. 現在想定している使い方は利用規約の観点から問題無いか。</h3><p>A. Azure サポートでは個別の利用シナリオについて可否を判断することはできません。関連する利用規約や法規に照らした場合に問題無いかどうかは、必要に応じて専門家 (法務部門や顧問弁護士など) を交えて、ユーザー側の責任でご判断いただく必要があります。</p>
+<h3 id="Q-Azure-OpenAI-Service-の準拠法・管轄裁判所について教えてほしい。"><a href="#Q-Azure-OpenAI-Service-の準拠法・管轄裁判所について教えてほしい。" class="headerlink" title="Q. Azure OpenAI Service の準拠法・管轄裁判所について教えてほしい。"></a>Q. Azure OpenAI Service の準拠法・管轄裁判所について教えてほしい。</h3><p>A. Azure OpenAI Service は <a target="_blank" rel="noopener" href="https://azure.microsoft.com/ja-jp/support/legal/">Azure サブスクリプションの契約</a>に基づいて提供されます。準拠法や管轄裁判所は Azure OpenAI Service 固有ではなく、Azure サブスクリプションの契約で規定されているため、契約内容をご確認ください。</p>
+<h3 id="Q-Azure-OpenAI-Service-で日本国外のリージョンを使用する場合、個人情報保護法で規定された第三者提供に当たるのか。"><a href="#Q-Azure-OpenAI-Service-で日本国外のリージョンを使用する場合、個人情報保護法で規定された第三者提供に当たるのか。" class="headerlink" title="Q. Azure OpenAI Service で日本国外のリージョンを使用する場合、個人情報保護法で規定された第三者提供に当たるのか。"></a>Q. Azure OpenAI Service で日本国外のリージョンを使用する場合、個人情報保護法で規定された第三者提供に当たるのか。</h3><p>A. 関連する利用規約やドキュメントを元にユーザー側でご判断ください。</p>
+<ul>
+<li>Azure OpenAI Service に限らず、多くの Azure サービスにおける顧客情報の取り扱いについては、サブスクリプションの利用開始時に同意されている<a href="(https://azure.microsoft.com/ja-jp/support/legal/)">契約条項</a>が適用されます。</li>
+<li>顧客情報の取り扱い (例. EU の GDPR への準拠等) については、<a target="_blank" rel="noopener" href="https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA">“Microsoft 製品およびサービス データ保護補遺” (Microsoft Products and Services Data Protection Addendum , DPA)</a> に規定されています。</li>
+<li>Azure OpenAI Service については製品固有の利用条件 (<a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?linkid=2185110">Product Terms</a>) があり、例えば <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/abuse-monitoring">Abuse Monitoring</a> について規定されています。</li>
+<li>具体的な Azure OpenAI Service における顧客情報の取り扱いについては <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy">Data, privacy, and security for Azure OpenAI Service</a> でも説明されています。</li>
+</ul>
+<p>これらに照らした場合に、想定されている利用方法が日本の個人情報保護法の観点で問題があるかどうかについては、Azure サポートでは回答できません。必要に応じて専門家 (法務部門や顧問弁護士など) にご相談ください。</p>
+<p>また公開情報に記載が無い、製品の内部仕様については回答できません。内部仕様は予告無く変更される可能性があるため、法務的な判断に利用することは推奨できかねます。</p>
+<h3 id="Q-Azure-OpenAI-Service-を使用して生成されたテキストや画像の著作権はサービスの利用者に帰属するのか。"><a href="#Q-Azure-OpenAI-Service-を使用して生成されたテキストや画像の著作権はサービスの利用者に帰属するのか。" class="headerlink" title="Q. Azure OpenAI Service を使用して生成されたテキストや画像の著作権はサービスの利用者に帰属するのか。"></a>Q. Azure OpenAI Service を使用して生成されたテキストや画像の著作権はサービスの利用者に帰属するのか。</h3><p>A. ユーザーが Azure OpenAI Service を利用して生成したテキストや画像は顧客データです。一方これは生成物の知的財産権 (例.著作権) がユーザーに帰属することをマイクロソフトが約束するものではありません。</p>
+<p>「AI が生成したものに著作権が認められるのかどうか？」は各国や地域の法律、また具体的な事例によっても判断が異なっています。例えば日本では文化庁が<a target="_blank" rel="noopener" href="https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html">生成 AI と著作権に関するガイドライン (外部リンク)</a>を公開しています。</p>
+<p>想定されている利用方法で知的財産権に関する問題が無いかどうかは、必要に応じて専門家 (例. 著作権を専門とする弁護士) にご相談ください。</p>
+<p>補足として、Customer Copyright Commitment (CCC) は「知的財産権 (intellectual property) に限って、もし第三者から権利侵害の申し立てがあった場合に、一定の要件を満たせば、マイクロソフトがお客様に代わって防御 (defend) する」という規定です。知的財産権の帰属を担保するものではありません。</p>
+<ul>
+<li><p>製品条項 (Product Terms) の規定より抜粋:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Customer Copyright Commitment</span><br><span class="line">Microsoft’s obligation to defend Customer against third-party intellectual property claims under Customer’s volume licensing agreement will apply to Customer’s use or distribution of Output Content of a Covered Product if all the following additional conditions are met:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/licensing/docs/customeragreement">Microsoft Customer Agreement</a> の日本語ドキュメントより抜粋:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第三者からの申し立てに対する防御</span><br><span class="line"> </span><br><span class="line">両当事者は、本条に規定する第三者からの申し立てについて、他方当事者を防御し、敗訴の確定判決または他方当事者が承認した和解によって生じた金員を支払うものとします。ただし、防御を行う当事者が、当該申し立てについて速やかに書面で通知を受け、その防御および和解を管理する決定権を与えられた場合に限ります。防御される当事者は、防御を行う当事者に対し、要請されたすべての支援、情報および権限を提供しなければなりません。防御を行う当事者は、他方当事者が支援の提供のために現実に支出した合理的な経費を補償します。本条は、かかる申し立てにおける両当事者の唯一の権利および全責任について規定するものです。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Q-Customer-Copyright-Commitment-CCC-について適用条件を満たすために十分と言えるかどうか判断してほしい。"><a href="#Q-Customer-Copyright-Commitment-CCC-について適用条件を満たすために十分と言えるかどうか判断してほしい。" class="headerlink" title="Q. Customer Copyright Commitment (CCC) について適用条件を満たすために十分と言えるかどうか判断してほしい。"></a>Q. Customer Copyright Commitment (CCC) について<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/legal/cognitive-services/openai/customer-copyright-commitment">適用条件</a>を満たすために十分と言えるかどうか判断してほしい。</h3><p>A. 条件に準拠していることはユーザー自身が判断して示す必要があります。</p>
+<p>例えば “Testing and Evaluation Report” の項目について、現在実施している内容が十分かどうかは関連するドキュメントに照らしてユーザーが判断する必要があります。</p>
+<p>もしコンテンツ フィルターなどの技術的な設定で問題がある場合は Azure サポートで対応できます。</p>
+<ul>
+<li>参考: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/faq">Azure OpenAI Service に関してよく寄せられる質問</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Customer Copyright Commitment に基づくカバレッジを取得するにはどうすればよいですか?</span><br><span class="line">Customer Copyright Commitment は、2023 年 12 月 1 日の Microsoft の製品条項に含まれる規定であり、出力コンテンツに関連する特定のサードパーティの知的財産権に関するクレームから顧客を保護するための Microsoft の義務を説明するものです。 クレームの対象が Azure OpenAI Service (または顧客が安全システムを構成できる他の対象製品) から生成された出力コンテンツである場合は、カバレッジを受けるために、顧客は出力コンテンツを提供するオファリングで Azure OpenAI Service ドキュメントで必要とされるすべての軽減策を実装している必要があります。 必要な軽減策については、こちらに記載されており、継続的に更新されています。 新しいサービス、機能、モデル、またはユース ケースの場合、新しい CCC 要件が投稿され、そのようなサービス、機能、モデル、またはユース ケースの開始時または開始後に有効になります。 それ以外の場合、CCC のカバレッジを維持するために、顧客は公開から 6 か月以内に新しい軽減策を実装することになります。 顧客がクレームを申し立てる場合、その顧客は関連する要件への準拠を示す必要があります。 これらの軽減策は、Azure OpenAI Service を含め、顧客が安全システムを構成できる対象製品に必要です。他の対象製品を使っている顧客のカバレッジには影響しません。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<hr>
+<p><code>変更履歴</code><br><code>2025/04/10 created by Nakagami</code>  </p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/blog/tags/Azure-OpenAI/">Azure OpenAI</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2025/04/11/SECURITY/" rel="prev"  title="">
+						 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/" rel="next"  title="Azure OpenAI Service の Provisioned デプロイについて">
+						Azure OpenAI Service の Provisioned デプロイについて
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Azure OpenAI Service に関する FAQ',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+<!--  -->
+<img class='avatar waves-image' src="https://jpaiblog.github.io/blog/favicon/mstile-150x150.png">
+<div class='header'>jpaiblog</div>
+<div class='content'>
+<div class='desc'>
+    このサイトはマイクロソフトの Azure Cognitive Services サポート チームによって運営されております。</br></br>
+    Powered by: 祝田、津田、ジェシー、中神、上原、カイル</br></br>
+    Web master: 望月
+</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://jpaiblog.github.io/blog/">
+            <div class='name'>Japan Cognitive Service Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpiotblog.github.io/blog/">
+            <div class='name'>Japan IoT Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpmlblog.github.io/blog/">
+            <div class='name'>Japan Machine Learning Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpwdkblog.github.io/blog/">
+            <div class='name'>Japan WDK Support Blog</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>9</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>12</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Speech-Services/"><div class='name'>Speech Services</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Translator-Text-API/"><div class='name'>Translator Text API</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"><div class='name'>セキュリティ</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Azure-OpenAI/" style="font-size: 20px; color: #000">Azure OpenAI</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 14px; color: #808080">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 18px; color: #2b2b2b">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/LUIS/" style="font-size: 14px; color: #808080">LUIS</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 14px; color: #808080">Speech SDK</a> <a href="/blog/tags/Speech-Services/" style="font-size: 16px; color: #555">Speech Services</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 16px; color: #555">Translator Text API</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 14px; color: #808080">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/damochiz" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+
+<script src="/blog/js/jquery.fitvids.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/blog/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+
+<script src="/blog/js/search.js"></script>
+
+
+<script src="/blog/js/app.js"></script>
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
