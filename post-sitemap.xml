@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/</loc>
-        <lastmod>2025-04-10T16:57:37.267Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.535Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/</loc>
-        <lastmod>2025-04-10T16:57:37.259Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/04/30/test-APIs/</loc>
-        <lastmod>2025-04-10T16:57:37.248Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.492Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2021/04/30/support-request-for-bing-search-apis/</loc>
-        <lastmod>2025-04-10T16:57:37.232Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.474Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +41,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/</loc>
-        <lastmod>2025-04-10T16:57:37.214Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,15 +49,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/</loc>
-        <lastmod>2025-04-10T16:57:37.194Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://jpaiblog.github.io/blog/2025/04/11/SECURITY/</loc>
-        <lastmod>2025-04-10T16:57:37.175Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.436Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +57,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/04/21/RequestAccess-to-AzureOpenAIService/</loc>
-        <lastmod>2025-04-10T16:57:37.160Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.419Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,7 +65,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/</loc>
-        <lastmod>2025-04-10T16:57:37.125Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.393Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -81,7 +73,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/03/03/QNA-management-service/</loc>
-        <lastmod>2025-04-10T16:57:37.113Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +81,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2021/02/03/QnA-Maker-Import-Excel/</loc>
-        <lastmod>2025-04-10T16:57:37.096Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.346Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +89,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/01/12/past-blog/</loc>
-        <lastmod>2025-04-10T16:57:37.078Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.329Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -105,7 +97,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/11/11/not-expected-display-on-the-webbrowser/</loc>
-        <lastmod>2025-04-10T16:57:37.063Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.314Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -113,7 +105,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/</loc>
-        <lastmod>2025-04-10T16:57:37.047Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.300Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,7 +113,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/</loc>
-        <lastmod>2025-04-10T16:57:37.031Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.283Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -129,7 +121,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/</loc>
-        <lastmod>2025-04-10T16:57:37.015Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.265Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -137,7 +129,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/03/07/error-AADSTS650051/</loc>
-        <lastmod>2025-04-10T16:57:36.999Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.248Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -145,7 +137,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2021/12/08/enhance-security-check/</loc>
-        <lastmod>2025-04-10T16:57:36.983Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -153,7 +145,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/</loc>
-        <lastmod>2025-04-10T16:57:36.967Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.212Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -161,7 +153,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/05/14/cognitive-portal-sub-not-found/</loc>
-        <lastmod>2025-04-10T16:57:36.956Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.196Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -169,7 +161,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/07/19/AzureOpenAIService-TokenLimit/</loc>
-        <lastmod>2025-04-10T16:57:36.944Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.175Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -177,7 +169,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/</loc>
-        <lastmod>2025-04-10T16:57:36.929Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.167Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -185,7 +177,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/</loc>
-        <lastmod>2025-04-10T16:57:36.904Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -193,7 +185,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/07/28/AzureOpenAIService-NetworkLimit/</loc>
-        <lastmod>2025-04-10T16:57:36.902Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.129Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -201,7 +193,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/</loc>
-        <lastmod>2025-04-10T16:57:36.888Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.113Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -209,7 +201,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/</loc>
-        <lastmod>2025-04-10T16:57:36.874Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.095Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -217,7 +209,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/</loc>
-        <lastmod>2025-04-10T16:57:36.856Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.076Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -225,7 +217,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/</loc>
-        <lastmod>2025-04-10T16:57:36.841Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -233,7 +225,7 @@
 
     <url>
         <loc>https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/</loc>
-        <lastmod>2025-04-10T16:57:36.811Z</lastmod>
+        <lastmod>2025-04-15T00:13:31.014Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
