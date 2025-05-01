@@ -27,7 +27,7 @@
 <meta property="og:description" content="この記事では、Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードの内容や原因、解決策についてご紹介します。">
 <meta property="og:locale" content="ja_JP">
 <meta property="article:published_time" content="2023-12-28T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-04-25T06:37:16.133Z">
+<meta property="article:modified_time" content="2025-05-01T14:17:53.094Z">
 <meta property="article:author" content="jpaiblog">
 <meta property="article:tag" content="Azure OpenAI">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-400-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Bad-Request"><span class="toc-number">1.</span> <span class="toc-text">HTTP 400 エラー &#x2F; Bad Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-401-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Unauthorized"><span class="toc-number">2.</span> <span class="toc-text">HTTP 401 エラー &#x2F; Unauthorized</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-403-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Forbidden"><span class="toc-number">3.</span> <span class="toc-text">HTTP 403 エラー &#x2F; Forbidden</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-404-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Not-Found"><span class="toc-number">4.</span> <span class="toc-text">HTTP 404 エラー &#x2F; Not Found</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-408-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Request-Timeout"><span class="toc-number">5.</span> <span class="toc-text">HTTP 408 エラー &#x2F; Request Timeout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-429-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Too-Many-Requests"><span class="toc-number">6.</span> <span class="toc-text">HTTP 429 エラー &#x2F; Too Many Requests</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-400-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Bad-Request"><span class="toc-number">1.</span> <span class="toc-text">HTTP 400 エラー &#x2F; Bad Request</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-401-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Unauthorized"><span class="toc-number">2.</span> <span class="toc-text">HTTP 401 エラー &#x2F; Unauthorized</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-403-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Forbidden"><span class="toc-number">3.</span> <span class="toc-text">HTTP 403 エラー &#x2F; Forbidden</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-404-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Not-Found"><span class="toc-number">4.</span> <span class="toc-text">HTTP 404 エラー &#x2F; Not Found</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-408-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Request-Timeout"><span class="toc-number">5.</span> <span class="toc-text">HTTP 408 エラー &#x2F; Request Timeout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-429-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Too-Many-Requests"><span class="toc-number">6.</span> <span class="toc-text">HTTP 429 エラー &#x2F; Too Many Requests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-500-x2F-503-%E3%82%A8%E3%83%A9%E3%83%BC-x2F-Service-Unavailable"><span class="toc-number">7.</span> <span class="toc-text">HTTP 500 &#x2F; 503 エラー &#x2F; Service Unavailable</span></a></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
@@ -223,8 +223,21 @@
 <li><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/quota?tabs=rest#rate-limit-best-practices">レート制限のベスト プラクティス</a>  </p>
 <br></li>
 </ul>
+<h2 id="HTTP-500-x2F-503-エラー-x2F-Service-Unavailable"><a href="#HTTP-500-x2F-503-エラー-x2F-Service-Unavailable" class="headerlink" title="HTTP 500 &#x2F; 503 エラー &#x2F; Service Unavailable"></a>HTTP 500 &#x2F; 503 エラー &#x2F; Service Unavailable</h2><p>このエラーは、サーバー側で問題が発生したことを表しており、以下のようなメッセージと共に応答されることがあります。<br /></p>
+<blockquote>
+<p>“Service Unavailable”</p>
+</blockquote>
+<blockquote>
+<p>“The server had an error while processing your request.”</p>
+</blockquote>
+<p>多くの場合、これは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/architecture/best-practices/transient-faults">一時的な (一過性の) 事象</a>です。Azure OpenAI Service では、多くのユーザーが同じ処理基盤を共有しており、一時的なリソースのひっ迫や処理の失敗により、これらのエラーが応答されることがあります。<br /><br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/deployment-types">デプロイの種類</a>によらず、<a target="_blank" rel="noopener" href="https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1">サービスの可用性</a>は 100% ではないため、この種のエラーの発生頻度をゼロにすることはできません。</p>
+<p><strong>対処方法：</strong> </p>
+<ul>
+<li>時間を空けて API 呼び出し (HTTP リクエスト) をリトライ (再試行) します。再試行が短時間に集中しないよう、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/architecture/best-practices/transient-faults#determine-an-appropriate-retry-count-and-interval">試行間隔の無作為化や指数バックオフ</a>を組み込むことが推奨されます。</li>
+<li>再試行を繰り返しても失敗する状況が長時間継続している場合は、既知の問題の有無を<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/service-health/overview">サービス正常性</a>で確認します。<br></li>
+</ul>
 <hr>
-<p><code>変更履歴</code><br><code>2023-12-29 created by Uehara</code>   </p>
+<p><code>変更履歴</code><br><code>2025-04-30 updated by Nakagami</code><br><code>2023-12-29 created by Uehara</code>   </p>
 <p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
 
   	</div>
@@ -307,7 +320,7 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>9</div></a></li>
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>10</div></a></li>
     
         <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
     
