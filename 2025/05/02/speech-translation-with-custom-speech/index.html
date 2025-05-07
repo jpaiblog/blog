@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Translator Text API の翻訳文字数の確認方法 | Japan Cognitive Services Support Blog</title>
+  <title>Custom Speech で作成したモデルを Speech Translation で使用する方法 | Japan Cognitive Services Support Blog</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -19,25 +19,20 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。  翻訳文字数データの確認手順 翻訳文字数データをファイルとしてダウンロードする手順 （参考情報）文字数カウント方法に関する公開ドキュメント">
+  <meta name="description" content="Custom Speech で作成したモデルを Speech Translation で使用する方法をご紹介します。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Translator Text API の翻訳文字数の確認方法">
-<meta property="og:url" content="https://jpaiblog.github.io/blog/2020/05/28/TranslatorTextAPI-char-translated/index.html">
+<meta property="og:title" content="Custom Speech で作成したモデルを Speech Translation で使用する方法">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2025/05/02/speech-translation-with-custom-speech/index.html">
 <meta property="og:site_name" content="Japan Cognitive Services Support Blog">
-<meta property="og:description" content="Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。  翻訳文字数データの確認手順 翻訳文字数データをファイルとしてダウンロードする手順 （参考情報）文字数カウント方法に関する公開ドキュメント">
+<meta property="og:description" content="Custom Speech で作成したモデルを Speech Translation で使用する方法をご紹介します。">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-4.jpg">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-5.jpg">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-6.jpg">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-2.jpg">
-<meta property="og:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-3.jpg">
-<meta property="article:published_time" content="2020-05-27T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-07T07:14:00.834Z">
+<meta property="article:published_time" content="2025-05-01T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-07T07:14:00.768Z">
 <meta property="article:author" content="jpaiblog">
-<meta property="article:tag" content="Translator Text API">
+<meta property="article:tag" content="Speech Services">
+<meta property="article:tag" content="Custom Translator">
+<meta property="article:tag" content="Speech SDK">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -131,68 +126,72 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-TranslatorTextAPI-char-translated"
+        <article id="post-speech-translation-with-custom-speech"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/blog/2020/05/28/TranslatorTextAPI-char-translated/">
-    	Translator Text API の翻訳文字数の確認方法
+  	<a href="/blog/2025/05/02/speech-translation-with-custom-speech/">
+    	Custom Speech で作成したモデルを Speech Translation で使用する方法
     </a>
   </h2>
 	<time>
-	  5月 28, 2020
+	  5月 2, 2025
 	</time>
 	
     
     <div class='cats'>
-        <a href="/blog/categories/Translator-Text-API/">Translator Text API</a>
+        <a href="/blog/categories/Speech-Services/">Speech Services</a>
     </div>
 
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%89%8B%E9%A0%86"><span class="toc-number">1.</span> <span class="toc-text">翻訳文字数データの確認手順</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%97%E3%81%A6%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86"><span class="toc-number">2.</span> <span class="toc-text">翻訳文字数データをファイルとしてダウンロードする手順</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EF%BC%88%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1%EF%BC%89%E6%96%87%E5%AD%97%E6%95%B0%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E6%96%B9%E6%B3%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%85%AC%E9%96%8B%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"><span class="toc-number">3.</span> <span class="toc-text">（参考情報）文字数カウント方法に関する公開ドキュメント</span></a></li></ol></section>
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Custom-Speech-%E3%81%A7%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9F%E3%83%A2%E3%83%87%E3%83%AB%E3%82%92-Speech-Translation-%E3%81%A7%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Custom Speech で作成したモデルを Speech Translation で使用する方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-NET-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">C# (.NET) を使用する場合のコード例:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">JavaScript を使用する場合のコード例:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A3%9C%E8%B6%B3"><span class="toc-number">1.2.1.</span> <span class="toc-text">補足</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%BB%E8%A8%B3%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><span class="toc-number">1.3.</span> <span class="toc-text">翻訳のカスタマイズについて</span></a></li></ol></li></ol></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>Translator Text API の翻訳文字数の確認方法と、参考情報をご紹介します。</p>
-<ol>
-<li><a href="#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%89%8B%E9%A0%86">翻訳文字数データの確認手順</a></li>
-<li><a href="#%E7%BF%BB%E8%A8%B3%E6%96%87%E5%AD%97%E6%95%B0%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%81%97%E3%81%A6%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86">翻訳文字数データをファイルとしてダウンロードする手順</a></li>
-<li><a href="#%EF%BC%88%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1%EF%BC%89%E6%96%87%E5%AD%97%E6%95%B0%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E6%96%B9%E6%B3%95%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%85%AC%E9%96%8B%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88">（参考情報）文字数カウント方法に関する公開ドキュメント</a> <span id="more"></span>
-<br></li>
-</ol>
+    	<p>Custom Speech で作成したモデルを Speech Translation で使用する方法をご紹介します。</p>
+<span id="more"></span>
+<br>
+
 <hr>
-<h1 id="翻訳文字数データの確認手順"><a href="#翻訳文字数データの確認手順" class="headerlink" title="翻訳文字数データの確認手順"></a>翻訳文字数データの確認手順</h1><p>(1) Azure Portal 上で、対象のTranslator Text API のリソースを選択します。<br>(2) [監視] ブレードの [メトリック] をクリックします。<br>(3) 表示された、画面中央の [メトリック] から [Text Characters Translated] または、カスタム翻訳を行った文字数の確認に関しては [Text Custom Characters Translated] を選択します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-3.jpg" alt="char-translated-1-3" title="char-translated-1-3">  </p>
-<p>(4) 画面右上にある [現地時刻: 過去 24 時間 (自動)] をクリックし、表示されたポップアップから希望の時間範囲と粒度を設定します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-4.jpg" alt="char-translated-1-4" title="char-translated-1-4">  </p>
-<p>(5) グラフ上に指定した期間の翻訳文字数が表示されます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-5.jpg" alt="char-translated-1-5" title="char-translated-1-5">  </p>
-<p>(6) グラフの中で確認したい時点にカーソルをあてると、その時間帯（指定した時間の粒度単位）に絞って、翻訳文字数を表示することができます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char1-6.jpg" alt="char-translated-1-6" title="char-translated-1-6">  </p>
-<p>翻訳文字数のグラフを表示する際に設定したメトリック [Text Characters Translated] の説明は、下記の公開ドキュメントを参照ください。  </p>
+<h1 id="Custom-Speech-で作成したモデルを-Speech-Translation-で使用する方法"><a href="#Custom-Speech-で作成したモデルを-Speech-Translation-で使用する方法" class="headerlink" title="Custom Speech で作成したモデルを Speech Translation で使用する方法"></a>Custom Speech で作成したモデルを Speech Translation で使用する方法</h1><p>Speech Services の音声翻訳 (Speech Translation) は、まず Speech-to-Text で文字起こしされた結果を元に Text Translation で翻訳を行います。</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-cognitiveservices-accounts-metrics">Supported metrics for Microsoft.CognitiveServices&#x2F;accounts</a><blockquote>
-<p>Text Characters Translated</p>
-<blockquote>
-<p>Number of characters in incoming text translation request.</p>
-</blockquote>
-</blockquote>
-</li>
+<li><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/translator/business/machine-translation/#howspeech">How does speech translation work?</a></li>
 </ul>
-<hr>
-<h1 id="翻訳文字数データをファイルとしてダウンロードする手順"><a href="#翻訳文字数データをファイルとしてダウンロードする手順" class="headerlink" title="翻訳文字数データをファイルとしてダウンロードする手順"></a>翻訳文字数データをファイルとしてダウンロードする手順</h1><p>(1) “１．翻訳文字数データの確認手順” に沿って、翻訳文字数のグラフを表示します。<br>(2) 表示された翻訳文字数のグラフ上部の　[共有] プルダウンから [Excelへのダウンロード] を選択します。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-2.jpg" alt="char-translated-2-2" title="char-translated-2-2">  </p>
-<p>(3) 翻訳文字数のグラフを表示する際に設定した “メトリック”, “時間の範囲および粒度” のデータのExcelファイルがダウンロードされます。<br><img src="https://jpaiblog.github.io/images/TranslatorTextAPI-char-translated/char2-3.jpg" alt="char-translated-2-3" title="char-translated-2-3">  </p>
-<hr>
-<h1 id="（参考情報）文字数カウント方法に関する公開ドキュメント"><a href="#（参考情報）文字数カウント方法に関する公開ドキュメント" class="headerlink" title="（参考情報）文字数カウント方法に関する公開ドキュメント"></a>（参考情報）文字数カウント方法に関する公開ドキュメント</h1><p>どのようにAPIが呼び出されるかによって、カウントされる文字数は変わります。<br>例えば、1文字入力の場合でも、その後ろに空白が付与されたままの状態のテキストがAPIに渡された場合、空白も含めた文字数がカウントされます。‘A’ のような状態では、1文字とカウントされますが、後ろに3つ空白を付与した ‘A   ’ のような状態の場合は、4文字とカウントされます。空白の他にも、カウントされる対象がございますので、文字数カウント方法に関する詳細は、下記の公開ドキュメントをご確認ください。  </p>
+<p>この時、Speech-to-Text の処理で使用される音声認識モデルは Custom Speech でカスタマイズすることができます。</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/translator/translator-faq">よく寄せられる質問 - Translator API：Translator では文字をどのようにカウントしますか。</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/cognitive-services/speech-service/custom-speech-overview">Custom Speech</a></li>
 </ul>
+<h2 id="C-NET-を使用する場合のコード例"><a href="#C-NET-を使用する場合のコード例" class="headerlink" title="C# (.NET) を使用する場合のコード例:"></a>C# (.NET) を使用する場合のコード例:</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.cognitiveservices.speech.speechtranslationconfig?view=azure-dotnet">SpeechTranslationConfig</a> のプロパティ <code>EndpointId</code> にモデルのエンドポイント ID を指定します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SpeechTranslationConfig config = SpeechTranslationConfig.FromSubscription(SubscriptionKey, Region);</span><br><span class="line"></span><br><span class="line">// Custom Speech のモデル指定</span><br><span class="line">// 例: エンドポイント ID が 51747863-4b1a-4efa-a1cb-84be48ae50d7 の場合</span><br><span class="line"></span><br><span class="line">config.EndpointId = &quot;51747863-4b1a-4efa-a1cb-84be48ae50d7&quot;;</span><br><span class="line"></span><br><span class="line">// 以降の音声認識・翻訳は通常と同じ</span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript-を使用する場合のコード例"><a href="#JavaScript-を使用する場合のコード例" class="headerlink" title="JavaScript を使用する場合のコード例:"></a>JavaScript を使用する場合のコード例:</h2><p>Speech SDK for JavaScript の場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest">Speech to Text</a> では endpointId を使用していますが、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?view=azure-node-latest">Speech Translation</a> では endpointId のプロパティは参照されません。<br>そのため、エンドポイントの URL パラメーター <code>cid</code> として指定する必要があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// リージョンが Japan East, エンドポイント ID が 51747863-4b1a-4efa-a1cb-84be48ae50d7 の場合</span><br><span class="line"></span><br><span class="line">speechConfig = SpeechSDK.SpeechTranslationConfig.fromEndpoint(new URL(&quot;wss://japaneast.s2s.speech.microsoft.com/speech/translation/cognitiveservices/v1?cid=51747863-4b1a-4efa-a1cb-84be48ae50d7&quot;),settings.subscriptionKey);</span><br><span class="line"></span><br><span class="line">// 以降の音声認識・翻訳は通常と同じ</span><br></pre></td></tr></table></figure>
+
+<p>エンドポイントの URL を確認する方法については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/speech-service/speech-services-private-link?tabs=portal#construct-endpoint-url">こちらのドキュメント</a>の “エンドポイント URL の構築” をご参照ください。</p>
+<h3 id="補足"><a href="#補足" class="headerlink" title="補足"></a>補足</h3><p>Speech Translation の場合に endpointId が参照されないことは <a target="_blank" rel="noopener" href="https://github.com/microsoft/cognitive-services-speech-sdk-js/tree/master">GitHub で公開されているソースコード</a>からご確認いただけます。</p>
+<p><strong>Speech to Text の場合:</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/cognitive-services-speech-sdk-js/blob/master/src/common.speech/TranscriberConnectionFactory.ts">TranscriberConnectionFactory.ts</a> より抜粋:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public setQueryParams(queryParams: IStringDictionary&lt;string&gt;, config: RecognizerConfig, endpointUrl: string): void &#123;</span><br><span class="line"></span><br><span class="line">    const endpointId: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_EndpointId, undefined);</span><br></pre></td></tr></table></figure>
+
+<p><strong>Speech Translation の場合:</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/cognitive-services-speech-sdk-js/blob/master/src/common.speech/TranslationConnectionFactory.ts">TranslationConnectionFactory.ts</a> より抜粋:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public setQueryParams(queryParams: IStringDictionary&lt;string&gt;, config: RecognizerConfig, endpointUrl: string): void &#123;</span><br><span class="line">    // Common parameters for both V1 and V2 endpoints</span><br><span class="line">    queryParams.from = config.parameters.getProperty(PropertyId.SpeechServiceConnection_RecoLanguage);</span><br><span class="line">    queryParams.to = config.parameters.getProperty(PropertyId.SpeechServiceConnection_TranslationToLanguages);</span><br><span class="line">    queryParams.scenario = config.recognitionMode === RecognitionMode.Interactive ? &quot;interactive&quot; :</span><br><span class="line">        config.recognitionMode === RecognitionMode.Conversation ? &quot;conversation&quot; : &quot;&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="翻訳のカスタマイズについて"><a href="#翻訳のカスタマイズについて" class="headerlink" title="翻訳のカスタマイズについて"></a>翻訳のカスタマイズについて</h2><p>Custom Translator で作成した翻訳モデルも同時に使用する場合は<a href="https://jpaiblog.github.io/blog/2021/05/17/speech-translation-with-custom-translator/">こちらのブログ</a>をご参照ください。</p>
 <hr>
-<p><code>変更履歴</code><br><code>2020/05/28 created by Uehara</code><br><code>2022/01/25 modified by Uehara</code><br><code>2023/02/14 modified by Uehara</code><br><code>2024/05/20 modified by Uehara</code></p>
+<p><code>変更履歴</code><br><code>2025/05/02 created by Nakagami</code>  </p>
 
   	</div>
 	  
 	  <div class="article-tags tags">
       
-        <a href="/blog/tags/Translator-Text-API/">Translator Text API</a>
+        <a href="/blog/tags/Speech-Services/">Speech Services</a>
+      
+        <a href="/blog/tags/Custom-Translator/">Custom Translator</a>
+      
+        <a href="/blog/tags/Speech-SDK/">Speech SDK</a>
       
 	  </div>
     
@@ -200,13 +199,9 @@
 	
 		<div class="art-item-footer">
 				
-					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/blog/2020/11/11/not-expected-display-on-the-webbrowser/" rel="prev"  title="Webポータル画面が期待通りに表示されない場合の確認方法">
-						Webポータル画面が期待通りに表示されない場合の確認方法 
-					</a></span>
 				
-				
-					<span class="art-item-right">next：<a href="/blog/2020/05/14/cognitive-portal-sub-not-found/" rel="next"  title="Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策">
-						Azure の関連ポータル サイトで一部の Azure サブスクリプションやリソースが表示されない事象の原因と対処策
+					<span class="art-item-right">next：<a href="/blog/2025/05/01/AzureOpenAIService-Monitor-Response/" rel="next"  title="Azure OpenAI Service のレスポンスを確認する方法">
+						Azure OpenAI Service のレスポンスを確認する方法
 					</a><i class="icon icon-chevron-thin-right"></i></span>
 				
 		</div>
@@ -216,7 +211,7 @@
 </article>
 <script>
 	window.subData = {
-		title: 'Translator Text API の翻訳文字数の確認方法',
+		title: 'Custom Speech で作成したモデルを Speech Translation で使用する方法',
 		tools: true
 	}
 </script>
