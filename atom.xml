@@ -6,7 +6,7 @@
   <link href="https://jpaiblog.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpaiblog.github.io/blog/"/>
-  <updated>2025-05-28T00:43:16.572Z</updated>
+  <updated>2025-08-15T04:19:07.113Z</updated>
   <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://jpaiblog.github.io/blog/2025/05/20/about-support/"/>
     <id>https://jpaiblog.github.io/blog/2025/05/20/about-support/</id>
     <published>2025-05-19T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.572Z</updated>
+    <updated>2025-08-15T04:19:07.113Z</updated>
     
     
     <summary type="html">&lt;p&gt;テクニカルサポートチームでは、お客様のお役に立てるよう日々努めていますが、お客様の協力があって初めてご支援が可能となることも多くあります。調査を迅速に開始し、コミュニケーションを円滑に進めるため、以下の点にご協力ください。&lt;/p&gt;</summary>
@@ -40,7 +40,7 @@
     <link href="https://jpaiblog.github.io/blog/2025/05/02/speech-translation-with-custom-speech/"/>
     <id>https://jpaiblog.github.io/blog/2025/05/02/speech-translation-with-custom-speech/</id>
     <published>2025-05-01T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:17.011Z</updated>
+    <updated>2025-08-15T04:19:07.741Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Speech で作成したモデルを Speech Translation で使用する方法をご紹介します。&lt;/p&gt;</summary>
@@ -63,7 +63,7 @@
     <link href="https://jpaiblog.github.io/blog/2025/05/01/AzureOpenAIService-Monitor-Response/"/>
     <id>https://jpaiblog.github.io/blog/2025/05/01/AzureOpenAIService-Monitor-Response/</id>
     <published>2025-04-30T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.668Z</updated>
+    <updated>2025-08-15T04:19:07.251Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service のレスポンスを Azure サービス側で確認する方法をご紹介します。&lt;/p&gt;</summary>
@@ -82,7 +82,7 @@
     <link href="https://jpaiblog.github.io/blog/2025/04/21/speech-how-to-call-API-with-Entra-ID-auth/"/>
     <id>https://jpaiblog.github.io/blog/2025/04/21/speech-how-to-call-API-with-Entra-ID-auth/</id>
     <published>2025-04-20T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.988Z</updated>
+    <updated>2025-08-15T04:19:07.708Z</updated>
     
     
     <summary type="html">&lt;p&gt;Speech Service の API、特に Text to Speech の API を Entra ID 認証で呼び出す方法について、Azure VM と curl を使用した場合の具体的な手順例をご紹介します。&lt;/p&gt;</summary>
@@ -105,7 +105,7 @@
     <link href="https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/"/>
     <id>https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/</id>
     <published>2025-04-09T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.625Z</updated>
+    <updated>2025-08-15T04:19:07.185Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service に関して &lt;a href=&quot;https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request&quot;&gt;Azure サポート&lt;/a&gt; によくお問い合わせいただくご質問と回答 (FAQ) をまとめています。&lt;/p&gt;</summary>
@@ -124,7 +124,7 @@
     <link href="https://jpaiblog.github.io/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/"/>
     <id>https://jpaiblog.github.io/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/</id>
     <published>2024-08-28T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.710Z</updated>
+    <updated>2025-08-15T04:19:07.327Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事では、 Azure OpenAI Service のデプロイの種類のひとつである Provisioned (プロビジョニング済み) について説明します。&lt;/p&gt;</summary>
@@ -143,7 +143,7 @@
     <link href="https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/"/>
     <id>https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/</id>
     <published>2024-07-24T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.654Z</updated>
+    <updated>2025-08-15T04:19:07.227Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事はAzure Portal 上で使用できるメトリック エクスプローラーを用いて、トークン使用量の推移をグラフで表示させる方法についてご紹介します。&lt;/p&gt;</summary>
@@ -162,7 +162,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/"/>
     <id>https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/</id>
     <published>2023-12-28T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.600Z</updated>
+    <updated>2025-08-15T04:19:07.149Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードの内容や原因、解決策についてご紹介します。 &lt;/p&gt;</summary>
@@ -181,7 +181,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/"/>
     <id>https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/</id>
     <published>2023-10-18T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.697Z</updated>
+    <updated>2025-08-15T04:19:07.302Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事は、 Azure OpenAI の公式ドキュメント上に記載がある openai-python ライブラリについてご紹介します。&lt;/p&gt;</summary>
@@ -200,7 +200,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/07/28/AzureOpenAIService-NetworkLimit/"/>
     <id>https://jpaiblog.github.io/blog/2023/07/28/AzureOpenAIService-NetworkLimit/</id>
     <published>2023-07-27T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.682Z</updated>
+    <updated>2025-08-15T04:19:07.271Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service に対するアクセス制御についてご紹介します。&lt;/p&gt;</summary>
@@ -219,7 +219,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/07/19/AzureOpenAIService-TokenLimit/"/>
     <id>https://jpaiblog.github.io/blog/2023/07/19/AzureOpenAIService-TokenLimit/</id>
     <published>2023-07-18T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.725Z</updated>
+    <updated>2025-08-15T04:19:07.353Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service のトークン数の上限についてご紹介します。&lt;/p&gt;</summary>
@@ -238,7 +238,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/"/>
     <id>https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/</id>
     <published>2023-07-17T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.639Z</updated>
+    <updated>2025-08-15T04:19:07.207Z</updated>
     
     
     <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。&lt;/p&gt;</summary>
@@ -257,7 +257,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/04/21/RequestAccess-to-AzureOpenAIService/"/>
     <id>https://jpaiblog.github.io/blog/2023/04/21/RequestAccess-to-AzureOpenAIService/</id>
     <published>2023-04-20T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.968Z</updated>
+    <updated>2025-08-15T04:19:07.673Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;※以下は2024年1月時点の情報です。最新の状況については &lt;a href=&quot;https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/&quot;&gt;Azure OpenAI Service のよくあるご質問と回答(FAQ)に関するブログ記事&lt;/a&gt;も併せてご参照ください。&lt;/strong&gt;&lt;/p&gt;
@@ -277,7 +277,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/"/>
     <id>https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/</id>
     <published>2023-03-13T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.930Z</updated>
+    <updated>2025-08-15T04:19:07.639Z</updated>
     
     
     <summary type="html">&lt;p&gt;Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。&lt;/p&gt;</summary>
@@ -296,7 +296,7 @@
     <link href="https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/"/>
     <id>https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/</id>
     <published>2023-02-27T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.803Z</updated>
+    <updated>2025-08-15T04:19:07.467Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Vision モデルのドメイン変更方法をご紹介します。&lt;/p&gt;</summary>
@@ -315,7 +315,7 @@
     <link href="https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/"/>
     <id>https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/</id>
     <published>2022-04-12T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:17.095Z</updated>
+    <updated>2025-08-15T04:19:07.861Z</updated>
     
     
     <summary type="html">&lt;p&gt;Translator Text API の呼び出しを特定の VNET やプライベート エンドポイント経由に限定する方法について紹介します。&lt;/p&gt;</summary>
@@ -334,7 +334,7 @@
     <link href="https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/"/>
     <id>https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/</id>
     <published>2022-04-07T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:17.005Z</updated>
+    <updated>2025-08-15T04:19:07.732Z</updated>
     
     
     <summary type="html">&lt;p&gt;Speech to Text のコンテナーに関する FAQ をまとめました。&lt;/p&gt;
@@ -354,7 +354,7 @@
     <link href="https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/"/>
     <id>https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/</id>
     <published>2022-03-30T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.835Z</updated>
+    <updated>2025-08-15T04:19:07.514Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Vision の Advanced Training の利用方法をご紹介します。&lt;/p&gt;</summary>
@@ -373,7 +373,7 @@
     <link href="https://jpaiblog.github.io/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/"/>
     <id>https://jpaiblog.github.io/blog/2022/03/25/how-to-troubleshoot-custom-vision-training-issue/</id>
     <published>2022-03-24T15:00:00.000Z</published>
-    <updated>2025-05-28T00:43:16.819Z</updated>
+    <updated>2025-08-15T04:19:07.492Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Vision のトレーニングが失敗した場合の調査に必要な情報をまとめました。&lt;/p&gt;</summary>
@@ -392,7 +392,7 @@
     <link href="https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/"/>
     <id>https://jpaiblog.github.io/blog/2022/02/21/custom-vision-exported-onnx-format/</id>
     <published>2022-02-21T01:30:00.000Z</published>
-    <updated>2025-05-28T00:43:16.759Z</updated>
+    <updated>2025-08-15T04:19:07.386Z</updated>
     
     
     <summary type="html">&lt;p&gt;Custom Vision において ONNX 形式でエクスポートされたモデルを使用する方法と参考情報を紹介します。&lt;/p&gt;</summary>
