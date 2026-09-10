@@ -1,435 +1,418 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Japan WDK Support Blog</title>
-  <icon>https://jpwdkblog.github.io/blog/icon.png</icon>
+  <title>Japan Cognitive Services Support Blog</title>
+  <icon>https://jpaiblog.github.io/blog/icon.png</icon>
   
-  <link href="https://jpwdkblog.github.io/blog/atom.xml" rel="self"/>
+  <link href="https://jpaiblog.github.io/blog/atom.xml" rel="self"/>
   
-  <link href="https://jpwdkblog.github.io/blog/"/>
-  <updated>2026-08-31T04:59:22.562Z</updated>
-  <id>https://jpwdkblog.github.io/blog/</id>
+  <link href="https://jpaiblog.github.io/blog/"/>
+  <updated>2026-09-10T12:34:48.454Z</updated>
+  <id>https://jpaiblog.github.io/blog/</id>
   
   <author>
-    <name>jpwdkblog</name>
+    <name>jpaiblog</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Windows 11 26H1 ARM64 環境で ExtEscape の出力バッファを使用すると印刷に失敗する場合がある</title>
-    <link href="https://jpwdkblog.github.io/blog/2026/08/31/w11_26h1_arm64_extescape_output_buffer_issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2026/08/31/w11_26h1_arm64_extescape_output_buffer_issue/</id>
-    <published>2026-08-30T15:00:00.000Z</published>
-    <updated>2026-08-31T04:59:22.562Z</updated>
+    <title>Foundry Agent Service のネットワーク分離構成を正しく削除する方法 (InUseSubnetCannotBeDeleted への対処)</title>
+    <link href="https://jpaiblog.github.io/blog/2026/09/10/foundry-agent-network-injection-delete-order/"/>
+    <id>https://jpaiblog.github.io/blog/2026/09/10/foundry-agent-network-injection-delete-order/</id>
+    <published>2026-09-09T15:00:00.000Z</published>
+    <updated>2026-09-10T12:34:48.454Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Windows 11 26H1 の ARM64 環境において、x86、x64、または ARM64EC アプリケーションから v3 プリンター ドライバーの &lt;code&gt;ExtEscape&lt;/code&gt; を呼び出した際、出力バッファを使用する呼び出しがエラーとなり、印刷に失敗する場合がある問題について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;仮想ネットワーク挿入 (network injection) を構成した Microsoft Foundry リソースを削除した後、エージェント用サブネットが &lt;code&gt;InUseSubnetCannotBeDeleted&lt;/code&gt; で削除できなくなることがあります。この記事では、その原因と正しい削除順序、同じ名前で再作成できない場合の対処、および設計段階での回避方法について、公開ドキュメントに基づいてご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
+    
+    <category term="Microsoft Foundry" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/Microsoft-Foundry/"/>
     
     
-    <category term="bug" scheme="https://jpwdkblog.github.io/blog/tags/bug/"/>
+    <category term="Microsoft Foundry" scheme="https://jpaiblog.github.io/blog/tags/Microsoft-Foundry/"/>
     
-    <category term="ExtEscape" scheme="https://jpwdkblog.github.io/blog/tags/ExtEscape/"/>
+    <category term="Foundry Agent Service" scheme="https://jpaiblog.github.io/blog/tags/Foundry-Agent-Service/"/>
     
-    <category term="printer driver" scheme="https://jpwdkblog.github.io/blog/tags/printer-driver/"/>
-    
-    <category term="Windows 11 26H1" scheme="https://jpwdkblog.github.io/blog/tags/Windows-11-26H1/"/>
-    
-    <category term="ARM64" scheme="https://jpwdkblog.github.io/blog/tags/ARM64/"/>
+    <category term="Virtual Network" scheme="https://jpaiblog.github.io/blog/tags/Virtual-Network/"/>
     
   </entry>
   
   <entry>
-    <title>PSA - Virtual Printer のチェックリスト</title>
-    <link href="https://jpwdkblog.github.io/blog/2026/04/08/psa-virtualprinter-checklist/"/>
-    <id>https://jpwdkblog.github.io/blog/2026/04/08/psa-virtualprinter-checklist/</id>
-    <published>2026-04-07T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Models sold by Azure in Microsoft Foundry のデータ保存について</title>
+    <link href="https://jpaiblog.github.io/blog/2026/08/04/AzureOpenAIService-DataStorage/"/>
+    <id>https://jpaiblog.github.io/blog/2026/08/04/AzureOpenAIService-DataStorage/</id>
+    <published>2026-08-03T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Print Support App (PSA) で仮想プリンターを作成するときに記述する Package.appxmanifest が適切な内容かどうかのチェック項目を紹介します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
-    
-    
-    <category term="Printer" scheme="https://jpwdkblog.github.io/blog/tags/printer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第2回：WFP カーネルコールアウトドライバー実装 ― 最小コードから動作確認まで</title>
-    <link href="https://jpwdkblog.github.io/blog/2026/04/02/wfp_calloutr_driver_part2/"/>
-    <id>https://jpwdkblog.github.io/blog/2026/04/02/wfp_calloutr_driver_part2/</id>
-    <published>2026-04-01T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;第1回では、Windows Filtering Platform (WFP) の全体像や、コールアウトドライバー実装に必要な考え方、ALE レイヤの位置づけについて整理しました。  &lt;/p&gt;
-&lt;p&gt;第2回では、いよいよ 実装に踏み出します。&lt;br&gt;ここでのゴールは、最小構成のカーネルモードのコールアウトドライバーを作成します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事では、Models sold by Azure in Microsoft Foundry (Azure OpenAI Service を含む) の利用時に保存 (store) されるデータについて、公開ドキュメントの内容を補足して説明します。最新の正確な情報は公開ドキュメントを参照してください。&lt;/p&gt;</summary>
     
     
     
-    <category term="Development" scheme="https://jpwdkblog.github.io/blog/categories/Development/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
+    
+    <category term="Microsoft Foundry" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/Microsoft-Foundry/"/>
     
     
-    <category term="Network" scheme="https://jpwdkblog.github.io/blog/tags/Network/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
-    <category term="WFP" scheme="https://jpwdkblog.github.io/blog/tags/WFP/"/>
-    
-    <category term="Driver" scheme="https://jpwdkblog.github.io/blog/tags/Driver/"/>
+    <category term="Microsoft Foundry" scheme="https://jpaiblog.github.io/blog/tags/Microsoft-Foundry/"/>
     
   </entry>
   
   <entry>
-    <title>第1回：WFP を理解する ― カーネルコールアウトドライバー実装の土台</title>
-    <link href="https://jpwdkblog.github.io/blog/2026/02/05/wfp_calloutr_driver_part1/"/>
-    <id>https://jpwdkblog.github.io/blog/2026/02/05/wfp_calloutr_driver_part1/</id>
-    <published>2026-02-04T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>お問い合わせ時の留意事項</title>
+    <link href="https://jpaiblog.github.io/blog/2025/05/20/about-support/"/>
+    <id>https://jpaiblog.github.io/blog/2025/05/20/about-support/</id>
+    <published>2025-05-19T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Windows Filtering Platform (WFP) のカーネルコールアウトドライバー実装に初めて取り組む開発者向けに、理解すべき土台と構造を “迷わず” 把握できるよう整理します。単なる API 羅列ではなく、なぜその設計が必要なのか／実装者はどの位置に立つのかをクリアにすることを目的としています。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;テクニカルサポートチームでは、お客様のお役に立てるよう日々努めていますが、お客様の協力があって初めてご支援が可能となることも多くあります。調査を迅速に開始し、コミュニケーションを円滑に進めるため、以下の点にご協力ください。&lt;/p&gt;</summary>
     
     
     
-    <category term="Development" scheme="https://jpwdkblog.github.io/blog/categories/Development/"/>
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
     
     
-    <category term="Network" scheme="https://jpwdkblog.github.io/blog/tags/Network/"/>
-    
-    <category term="WFP" scheme="https://jpwdkblog.github.io/blog/tags/WFP/"/>
+    <category term="はじめに" scheme="https://jpaiblog.github.io/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"/>
     
   </entry>
   
   <entry>
-    <title>Print Support App (PSA) 仮想プリンターで、Job UI ウィンドウが印刷を行ったアプリの背面に表示されてしまう</title>
-    <link href="https://jpwdkblog.github.io/blog/2026/01/09/virtualprinter-z-order-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2026/01/09/virtualprinter-z-order-issue/</id>
-    <published>2026-01-08T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Custom Speech で作成したモデルを Speech Translation で使用する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2025/05/02/speech-translation-with-custom-speech/"/>
+    <id>https://jpaiblog.github.io/blog/2025/05/02/speech-translation-with-custom-speech/</id>
+    <published>2025-05-01T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では Print Support App の仮想プリンターで発生する問題について説明します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
-    
-    
-    <category term="printer" scheme="https://jpwdkblog.github.io/blog/tags/printer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Visual Studio で User Mode Driver をリモート デバッグする方法 (パート 3 - ドライバーロード時のデバッガー アタッチ)</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/10/02/umdf_remote_debug_part3/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/10/02/umdf_remote_debug_part3/</id>
-    <published>2025-10-01T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事では、Visual Studio と Remote Tools for Visual Studio を使用した User Mode Driver のリモート デバッグ方法について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Custom Speech で作成したモデルを Speech Translation で使用する方法をご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/categories/Debug/"/>
+    <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/categories/Speech-Services/"/>
     
     
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/tags/Debug/"/>
+    <category term="Speech Services" scheme="https://jpaiblog.github.io/blog/tags/Speech-Services/"/>
     
-    <category term="UMDF" scheme="https://jpwdkblog.github.io/blog/tags/UMDF/"/>
+    <category term="Custom Translator" scheme="https://jpaiblog.github.io/blog/tags/Custom-Translator/"/>
     
-    <category term="Visual Studio" scheme="https://jpwdkblog.github.io/blog/tags/Visual-Studio/"/>
+    <category term="Speech SDK" scheme="https://jpaiblog.github.io/blog/tags/Speech-SDK/"/>
     
   </entry>
   
   <entry>
-    <title>Windows 11 24H2 の WIA ドライバーのインストールにおいて ICM Profile が適用されない</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/10/02/w11_24h2_icmprofile_issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/10/02/w11_24h2_icmprofile_issue/</id>
-    <published>2025-10-01T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Azure OpenAI Service のレスポンスを確認する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2025/05/01/AzureOpenAIService-Monitor-Response/"/>
+    <id>https://jpaiblog.github.io/blog/2025/05/01/AzureOpenAIService-Monitor-Response/</id>
+    <published>2025-04-30T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Windows 11 24H2 における WIA デバイス の INF ファイルに指定されているベンダー指定のカラー プロファイル (Image Color Matching Profile) が適用されない問題について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service のレスポンスを Azure サービス側で確認する方法をご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="Windows 11 24H2" scheme="https://jpwdkblog.github.io/blog/tags/Windows-11-24H2/"/>
-    
-    <category term="bug" scheme="https://jpwdkblog.github.io/blog/tags/bug/"/>
-    
-    <category term="WIA" scheme="https://jpwdkblog.github.io/blog/tags/WIA/"/>
-    
-    <category term="install" scheme="https://jpwdkblog.github.io/blog/tags/install/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>Visual Studio で User Mode Driver をリモート デバッグする方法 (パート 2 - デバッガーの接続とデバッグ)</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/10/01/umdf_remote_debug_part2/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/10/01/umdf_remote_debug_part2/</id>
-    <published>2025-09-30T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Text to Speech の API を Entra ID 認証で呼び出す方法</title>
+    <link href="https://jpaiblog.github.io/blog/2025/04/21/speech-how-to-call-API-with-Entra-ID-auth/"/>
+    <id>https://jpaiblog.github.io/blog/2025/04/21/speech-how-to-call-API-with-Entra-ID-auth/</id>
+    <published>2025-04-20T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Visual Studio と Remote Tools for Visual Studio を使用した User Mode Driver のリモート デバッグ方法について説明します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/categories/Debug/"/>
-    
-    
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/tags/Debug/"/>
-    
-    <category term="UMDF" scheme="https://jpwdkblog.github.io/blog/tags/UMDF/"/>
-    
-    <category term="Visual Studio" scheme="https://jpwdkblog.github.io/blog/tags/Visual-Studio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Visual Studio で User Mode Driver をリモート デバッグする方法 (パート 1 - ドライバーのビルドとインストール)</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/09/30/umdf_remote_debug_part1/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/09/30/umdf_remote_debug_part1/</id>
-    <published>2025-09-29T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事では、Visual Studio と Remote Tools for Visual Studio を使用した User Mode Driver のリモート デバッグ方法について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Speech Service の API、特に Text to Speech の API を Entra ID 認証で呼び出す方法について、Azure VM と curl を使用した場合の具体的な手順例をご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/categories/Debug/"/>
+    <category term="Speech Service" scheme="https://jpaiblog.github.io/blog/categories/Speech-Service/"/>
     
     
-    <category term="Debug" scheme="https://jpwdkblog.github.io/blog/tags/Debug/"/>
+    <category term="Speech Service" scheme="https://jpaiblog.github.io/blog/tags/Speech-Service/"/>
     
-    <category term="UMDF" scheme="https://jpwdkblog.github.io/blog/tags/UMDF/"/>
+    <category term="Text-to-Speech" scheme="https://jpaiblog.github.io/blog/tags/Text-to-Speech/"/>
     
-    <category term="Visual Studio" scheme="https://jpwdkblog.github.io/blog/tags/Visual-Studio/"/>
+    <category term="Synthesis" scheme="https://jpaiblog.github.io/blog/tags/Synthesis/"/>
     
   </entry>
   
   <entry>
-    <title>HLK のテストが失敗した場合のトラブルシューティング手順</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/07/10/howto-troubleshoot-hlk-test-fail/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/07/10/howto-troubleshoot-hlk-test-fail/</id>
-    <published>2025-07-09T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Azure OpenAI Service に関する FAQ</title>
+    <link href="https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/"/>
+    <id>https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/</id>
+    <published>2025-04-09T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Hardware Lab Kit (HLK) のテストで FAIL が発生した時の一般的なトラブルシューティング方法をご案内いたします。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="hlk" scheme="https://jpwdkblog.github.io/blog/categories/hlk/"/>
-    
-    
-    <category term="test" scheme="https://jpwdkblog.github.io/blog/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 11 24H2 で印刷を行うとメモリリークが発生することがある</title>
-    <link href="https://jpwdkblog.github.io/blog/2025/07/09/printing-causes-memory-leak/"/>
-    <id>https://jpwdkblog.github.io/blog/2025/07/09/printing-causes-memory-leak/</id>
-    <published>2025-07-09T08:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事では、Windows 11 24H2 および Windows Server 2025 上での印刷処理において発生するメモリリークについて説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service に関して &lt;a href=&quot;https://learn.microsoft.com/ja-jp/azure/azure-portal/supportability/how-to-create-azure-support-request&quot;&gt;Azure サポート&lt;/a&gt; によくお問い合わせいただくご質問と回答 (FAQ) をまとめています。&lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="print" scheme="https://jpwdkblog.github.io/blog/tags/print/"/>
-    
-    <category term="Windows 11 24H2" scheme="https://jpwdkblog.github.io/blog/tags/Windows-11-24H2/"/>
-    
-    <category term="Windows Server 2025" scheme="https://jpwdkblog.github.io/blog/tags/Windows-Server-2025/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>Print Support App (PSA) にて用紙の設定が既定の値にならない</title>
-    <link href="https://jpwdkblog.github.io/blog/2024/08/23/psa-default-value-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2024/08/23/psa-default-value-issue/</id>
-    <published>2024-08-22T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Azure OpenAI Service の Provisioned デプロイについて</title>
+    <link href="https://jpaiblog.github.io/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/"/>
+    <id>https://jpaiblog.github.io/blog/2024/08/29/AzureOpenAIService-Provisioned-Deployment/</id>
+    <published>2024-08-28T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では Print Support App で発生する問題について説明します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
-    
-    
-    <category term="printer" scheme="https://jpwdkblog.github.io/blog/tags/printer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Print Support App (PSA) の初回起動時、[設定] ウィンドウの背面に表示されてしまう</title>
-    <link href="https://jpwdkblog.github.io/blog/2024/08/15/psa-z-order-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2024/08/15/psa-z-order-issue/</id>
-    <published>2024-08-14T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事では Print Support App で発生する問題について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事では、 Azure OpenAI Service のデプロイの種類のひとつである Provisioned (プロビジョニング済み) について説明します。&lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="printer" scheme="https://jpwdkblog.github.io/blog/tags/printer/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>CPrintDialog を利用したアプリケーションから印刷できない</title>
-    <link href="https://jpwdkblog.github.io/blog/2023/06/05/printer-CPrintDialog-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2023/06/05/printer-CPrintDialog-issue/</id>
-    <published>2023-06-04T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>メトリック エクスプローラーを用いてAzure OpenAI の トークン使用量を確認する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/"/>
+    <id>https://jpaiblog.github.io/blog/2024/07/25/AzureOpenAIService-Metric-TPM/</id>
+    <published>2024-07-24T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事は、CPrintDialog を利用したアプリケーションから印刷した際に発生する問題について説明します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
-    
-    
-    <category term="CPrintDialog" scheme="https://jpwdkblog.github.io/blog/tags/CPrintDialog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>プリンタ― ドライバ―のアップデートを行った際に DEVMODE 情報が更新されない</title>
-    <link href="https://jpwdkblog.github.io/blog/2022/09/20/printer-devmode-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2022/09/20/printer-devmode-issue/</id>
-    <published>2022-09-19T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事は、プリンタードライバーのアップデートを行った際に発生する問題について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事はAzure Portal 上で使用できるメトリック エクスプローラーを用いて、トークン使用量の推移をグラフで表示させる方法についてご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="devmode" scheme="https://jpwdkblog.github.io/blog/tags/devmode/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>UWP アプリから nul ポートが指定されているプリンターに印刷できない</title>
-    <link href="https://jpwdkblog.github.io/blog/2022/03/10/printer-null-port-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2022/03/10/printer-null-port-issue/</id>
-    <published>2022-03-10T08:30:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードについて</title>
+    <link href="https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/"/>
+    <id>https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/</id>
+    <published>2023-12-28T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;この記事では、Windows 10 における印刷における問題について説明します。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
-    
-    
-    <category term="Windows 10" scheme="https://jpwdkblog.github.io/blog/tags/Windows-10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 11 における USB スキャナーで発生する問題について</title>
-    <link href="https://jpwdkblog.github.io/blog/2021/12/28/win11-usbscan-issue/"/>
-    <id>https://jpwdkblog.github.io/blog/2021/12/28/win11-usbscan-issue/</id>
-    <published>2021-12-28T00:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;この記事では、Windows 11 に USB スキャナーを接続した問題について説明します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事では、Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードの内容や原因、解決策についてご紹介します。 &lt;/p&gt;</summary>
     
     
     
-    <category term="printscan" scheme="https://jpwdkblog.github.io/blog/categories/printscan/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="Windows 11" scheme="https://jpwdkblog.github.io/blog/tags/Windows-11/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>Windows 11 及び Server 2022 用 HLK の Create project のダイアログの &quot;Is Windows Driver Project?&quot; にチェックは入れないでください</title>
-    <link href="https://jpwdkblog.github.io/blog/2021/07/13/HLK-create-project/"/>
-    <id>https://jpwdkblog.github.io/blog/2021/07/13/HLK-create-project/</id>
-    <published>2021-07-12T15:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>openai-python ライブラリについて</title>
+    <link href="https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/"/>
+    <id>https://jpaiblog.github.io/blog/2023/10/19/AzureOpenAIService-OpenaiPythonLibrary/</id>
+    <published>2023-10-18T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Windows 11 及び Server 2022 用 HLK の Create project を実行する際の、”Is Windows Driver Project?” チェックボックスについて注意点を紹介いたします。  &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Hardware Lab Kit" scheme="https://jpwdkblog.github.io/blog/categories/Hardware-Lab-Kit/"/>
-    
-    
-    <category term="Windows 11 HLK" scheme="https://jpwdkblog.github.io/blog/tags/Windows-11-HLK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows PE 用ドライバの開発において参考になる公開ドキュメントについて</title>
-    <link href="https://jpwdkblog.github.io/blog/2020/08/11/winpe-reference-websites/"/>
-    <id>https://jpwdkblog.github.io/blog/2020/08/11/winpe-reference-websites/</id>
-    <published>2020-08-11T03:00:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Windows PE で動作するドライバを開発していただくにあたり、ご参照いただける公開ドキュメントをこちらにまとめてご紹介をいたします。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事は、 Azure OpenAI の公式ドキュメント上に記載がある openai-python ライブラリについてご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="Windows PE" scheme="https://jpwdkblog.github.io/blog/categories/Windows-PE/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="参考情報" scheme="https://jpwdkblog.github.io/blog/tags/%E5%8F%82%E8%80%83%E6%83%85%E5%A0%B1/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
     
   </entry>
   
   <entry>
-    <title>Windows PE で IOCTL サンプルを動作させる方法について</title>
-    <link href="https://jpwdkblog.github.io/blog/2020/07/29/IOCTL-sample/"/>
-    <id>https://jpwdkblog.github.io/blog/2020/07/29/IOCTL-sample/</id>
-    <published>2020-07-29T08:30:00.000Z</published>
-    <updated>2026-08-05T05:14:21.000Z</updated>
+    <title>Azure OpenAI Service に対するアクセス制御について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/07/28/AzureOpenAIService-NetworkLimit/"/>
+    <id>https://jpaiblog.github.io/blog/2023/07/28/AzureOpenAIService-NetworkLimit/</id>
+    <published>2023-07-27T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Windows PE で IOCTL サンプルを動作させる方法についてご紹介します。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service に対するアクセス制御についてご紹介します。&lt;/p&gt;</summary>
     
     
     
-    <category term="Windows PE" scheme="https://jpwdkblog.github.io/blog/categories/Windows-PE/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
     
     
-    <category term="IOCTL" scheme="https://jpwdkblog.github.io/blog/tags/IOCTL/"/>
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure OpenAI Service のトークン数の上限について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/07/19/AzureOpenAIService-TokenLimit/"/>
+    <id>https://jpaiblog.github.io/blog/2023/07/19/AzureOpenAIService-TokenLimit/</id>
+    <published>2023-07-18T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service のトークン数の上限についてご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure OpenAI Service の Fine-tuning について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/"/>
+    <id>https://jpaiblog.github.io/blog/2023/07/18/AzureOpenAIService-Fine-tuning/</id>
+    <published>2023-07-17T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;この記事は、Azure OpenAI Service で実施可能である Fine-tuning の 2023 年 7 月 14 日現在の状況についてご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure OpenAI 関連の申請について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/04/21/RequestAccess-to-AzureOpenAIService/"/>
+    <id>https://jpaiblog.github.io/blog/2023/04/21/RequestAccess-to-AzureOpenAIService/</id>
+    <published>2023-04-20T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;※以下は2024年1月時点の情報です。最新の状況については &lt;a href=&quot;https://jpaiblog.github.io/blog/2025/04/10/AzureOpenAIService-FAQ/&quot;&gt;Azure OpenAI Service のよくあるご質問と回答(FAQ)に関するブログ記事&lt;/a&gt;も併せてご参照ください。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Azure OpenAI 関連の申請について、以下にご説明します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/categories/Azure-OpenAI/"/>
+    
+    
+    <category term="Azure OpenAI" scheme="https://jpaiblog.github.io/blog/tags/Azure-OpenAI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Azure Face API 顔認識機能の制限および利用申請について</title>
+    <link href="https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/"/>
+    <id>https://jpaiblog.github.io/blog/2023/03/14/Register-for-LimitedAccessfeatures-of-FaceAPI/</id>
+    <published>2023-03-13T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Azure Face API 顔認識機能の制限および、利用申請について、以下にご説明します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Face API" scheme="https://jpaiblog.github.io/blog/categories/Face-API/"/>
+    
+    
+    <category term="Face API Recognition Identify" scheme="https://jpaiblog.github.io/blog/tags/Face-API-Recognition-Identify/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision モデルのドメイン変更方法</title>
+    <link href="https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/"/>
+    <id>https://jpaiblog.github.io/blog/2023/02/28/how-to-convert-the-domain-of-an-existing-cvmodel/</id>
+    <published>2023-02-27T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision モデルのドメイン変更方法をご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Translator Text API へのアクセスを VNET やプライベート エンドポイントに限定する方法</title>
+    <link href="https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/"/>
+    <id>https://jpaiblog.github.io/blog/2022/04/13/TranslatorTextAPI-VNET-and-PrivateEndpoint/</id>
+    <published>2022-04-12T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Translator Text API の呼び出しを特定の VNET やプライベート エンドポイント経由に限定する方法について紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/categories/Translator-Text-API/"/>
+    
+    
+    <category term="Translator Text API" scheme="https://jpaiblog.github.io/blog/tags/Translator-Text-API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Speech to Text のコンテナーに関する FAQ</title>
+    <link href="https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/"/>
+    <id>https://jpaiblog.github.io/blog/2022/04/08/Speech-to-Text-Conatiner-FAQ/</id>
+    <published>2022-04-07T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Speech to Text のコンテナーに関する FAQ をまとめました。&lt;/p&gt;
+&lt;p&gt;主にベースライン (標準) モデルのコンテナーに関する内容となります。カスタム モデルの場合は異なることがあります。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Speech" scheme="https://jpaiblog.github.io/blog/tags/Speech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom Vision の Advanced トレーニングの利用方法</title>
+    <link href="https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/"/>
+    <id>https://jpaiblog.github.io/blog/2022/03/31/how-to-use-advanced-training/</id>
+    <published>2022-03-30T15:00:00.000Z</published>
+    <updated>2026-08-05T05:12:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Custom Vision の Advanced Training の利用方法をご紹介します。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cognitive Services" scheme="https://jpaiblog.github.io/blog/categories/Cognitive-Services/"/>
+    
+    
+    <category term="Custom Vision" scheme="https://jpaiblog.github.io/blog/tags/Custom-Vision/"/>
     
   </entry>
   

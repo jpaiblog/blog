@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Foundry Agent Service のネットワーク分離構成を正しく削除する方法 (InUseSubnetCannotBeDeleted への対処) | Japan Cognitive Services Support Blog</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="https://jpaiblog.github.io/blog/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://jpaiblog.github.io/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://jpaiblog.github.io/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://jpaiblog.github.io/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://jpaiblog.github.io/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://jpaiblog.github.io/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="alternate" href="/blog/atom.xml" title="Japan Cognitive Services Support Blog" type="application/atom+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="仮想ネットワーク挿入 (network injection) を構成した Microsoft Foundry リソースを削除した後、エージェント用サブネットが InUseSubnetCannotBeDeleted で削除できなくなることがあります。この記事では、その原因と正しい削除順序、同じ名前で再作成できない場合の対処、および設計段階での回避方法について、公開ドキュメントに基づいてご紹介します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foundry Agent Service のネットワーク分離構成を正しく削除する方法 (InUseSubnetCannotBeDeleted への対処)">
+<meta property="og:url" content="https://jpaiblog.github.io/blog/2026/09/10/foundry-agent-network-injection-delete-order/index.html">
+<meta property="og:site_name" content="Japan Cognitive Services Support Blog">
+<meta property="og:description" content="仮想ネットワーク挿入 (network injection) を構成した Microsoft Foundry リソースを削除した後、エージェント用サブネットが InUseSubnetCannotBeDeleted で削除できなくなることがあります。この記事では、その原因と正しい削除順序、同じ名前で再作成できない場合の対処、および設計段階での回避方法について、公開ドキュメントに基づいてご紹介します。">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-09-09T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-10T12:34:48.454Z">
+<meta property="article:author" content="jpaiblog">
+<meta property="article:tag" content="Microsoft Foundry">
+<meta property="article:tag" content="Foundry Agent Service">
+<meta property="article:tag" content="Virtual Network">
+<meta name="twitter:card" content="summary">
+    
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.css' integrity="sha384-ckDmEDvQUsNyHnS8/myY7d25amEgu2t11KCsKttB2bMX8k5tCj/j7UBLm7fEp7zV" crossorigin="anonymous" rel='stylesheet'>
+  
+<link rel="stylesheet" href="/blog/style.css">
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+  <meta name="google-site-verification" content="pWQqMJ7gh1mrMlGHKKrGh0r1IqaWrJc1dWnZowSZW-c" />
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/blog/' >
+				Japan Cognitive Services Support Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/blog/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/blog/archives'>
+								Archives
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/blog/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/blog/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-foundry-agent-network-injection-delete-order"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/blog/2026/09/10/foundry-agent-network-injection-delete-order/">
+    	Foundry Agent Service のネットワーク分離構成を正しく削除する方法 (InUseSubnetCannotBeDeleted への対処)
+    </a>
+  </h2>
+	<time>
+	  9月 10, 2026
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/blog/categories/Azure-OpenAI/">Azure OpenAI</a>, <a href="/blog/categories/Azure-OpenAI/Microsoft-Foundry/">Microsoft Foundry</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%95%E3%81%8C%E8%B5%B7%E3%81%8D%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%8B"><span class="toc-number">1.</span> <span class="toc-text">何が起きているのか</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E3%81%97%E3%81%84%E5%89%8A%E9%99%A4%E9%A0%86%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">正しい削除順序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#capability-host-%E3%82%92%E5%89%8A%E9%99%A4%E3%81%99%E3%82%8B"><span class="toc-number">3.</span> <span class="toc-text">capability host を削除する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E5%8E%BB-purge-%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B"><span class="toc-number">4.</span> <span class="toc-text">消去 (purge) を実行する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SAL-%E3%81%AE%E8%A7%A3%E6%94%BE%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B"><span class="toc-number">5.</span> <span class="toc-text">SAL の解放を確認する</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E3%81%98%E5%90%8D%E5%89%8D%E3%81%A7%E5%86%8D%E4%BD%9C%E6%88%90%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E5%A0%B4%E5%90%88"><span class="toc-number">6.</span> <span class="toc-text">同じ名前で再作成できない場合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%AD%E8%A8%88%E3%81%A7%E5%9B%9E%E9%81%BF%E3%81%99%E3%82%8B"><span class="toc-number">7.</span> <span class="toc-text">設計で回避する</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>仮想ネットワーク挿入 (network injection) を構成した Microsoft Foundry リソースを削除した後、エージェント用サブネットが <code>InUseSubnetCannotBeDeleted</code> で削除できなくなることがあります。この記事では、その原因と正しい削除順序、同じ名前で再作成できない場合の対処、および設計段階での回避方法について、公開ドキュメントに基づいてご紹介します。</p>
+<span id="more"></span>
+<br>
+
+<hr>
+<h2 id="何が起きているのか"><a href="#何が起きているのか" class="headerlink" title="何が起きているのか"></a>何が起きているのか</h2><p>次のどちらかのエラーに遭遇した場合、原因は同じです。</p>
+<p>サブネットまたは仮想ネットワークを削除しようとしたとき:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(InUseSubnetCannotBeDeleted) Subnet &lt;agent-subnet&gt; is in use by /subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-name&gt;/subnets/&lt;agent-subnet&gt;/serviceAssociationLinks/legionservicelink and cannot be deleted.</span><br></pre></td></tr></table></figure>
+
+<p>同じサブネットに新しい Foundry リソースを再デプロイしようとしたとき (こちらは公式ドキュメントのトラブルシューティング ガイドにも掲載されています):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Subnet requires any of the following delegation(s) [Microsoft.App/environments] to reference service association link /subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-name&gt;/subnets/&lt;agent-subnet&gt;/serviceAssociationLinks/legionservicelink.</span><br></pre></td></tr></table></figure>
+
+<p>仮想ネットワーク挿入では、エージェント用サブネットを <code>Microsoft.App/environments</code> に委任し、プラットフォーム側から <strong>サービス関連付けリンク (service association link、以下 SAL)</strong> が張られます。Foundry Agent Service の場合、この SAL の名前が <code>legionservicelink</code> です。SAL が残っている限り、そのサブネットは使用中として扱われ、削除も再利用もできません。</p>
+<p>登場するリソースの関係は次のとおりです。<strong>capability host</strong> は、ネットワーク挿入を構成すると Foundry アカウントに自動的に作成される、エージェントの実行基盤です。利用者が明示的に作成しなくても存在するため、削除時に見落とされがちなポイントです。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[Foundry 側]</span><br><span class="line"></span><br><span class="line">  Foundry アカウント (Microsoft.CognitiveServices/accounts)</span><br><span class="line">   |</span><br><span class="line">   +-- プロジェクト</span><br><span class="line">   |     +-- capability host (プロジェクト側)</span><br><span class="line">   |</span><br><span class="line">   +-- capability host (アカウント側)</span><br><span class="line">         既定名: &lt;accountName&gt;@aml_aiagentservice</span><br><span class="line">         |</span><br><span class="line">         | networkInjections.scenario=&#x27;agent&#x27; により、</span><br><span class="line">         | 下のサブネット上に Azure Container Apps 環境を作成</span><br><span class="line">         v</span><br><span class="line"></span><br><span class="line">[ネットワーク側]</span><br><span class="line"></span><br><span class="line">  仮想ネットワーク</span><br><span class="line">   |</span><br><span class="line">   +-- エージェント サブネット</span><br><span class="line">         Microsoft.App/environments に委任</span><br><span class="line">         |</span><br><span class="line">         +-- serviceAssociationLinks/legionservicelink</span><br><span class="line">               Container Apps 環境がこのサブネットを掴んでいる印。</span><br><span class="line">               これが残っている間は削除も再利用もできない。</span><br></pre></td></tr></table></figure>
+
+<p>片付ける向きは、この図の上から下です。<strong>上にある capability host を解放すると、下の SAL が外れ、サブネットを削除できるようになります。</strong> 逆に、下のサブネットから先に消そうとしても失敗します。</p>
+<p>サブネットの委任そのものについても、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-network/subnet-delegation-overview">Azure Virtual Network でのサブネット委任</a> に次の記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">サブネットまたは仮想ネットワークを削除する前に、委任を削除する必要がある。</span><br></pre></td></tr></table></figure>
+
+<p>ここで重要なのは、<strong>この SAL を利用者側から直接削除する手段がない</strong> ことです。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/virtualnetwork/service-association-links?view=rest-virtualnetwork-2025-07-01">Service Association Links の REST API リファレンス</a> を見ても、用意されている操作は <code>List</code> のみです。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Operations</span><br><span class="line">List — Gets a list of service association links for a subnet.</span><br></pre></td></tr></table></figure>
+
+<p>つまり SAL は消しに行くものではなく、<strong>リンク元である Foundry リソース側を正しく片付けることで、プラットフォームが非同期に解放する</strong> ものです。</p>
+<p>ご自身の状況に応じて、読むべき節は次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>現在の状況</th>
+<th>読む節</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>これから環境を削除する</td>
+<td>「正しい削除順序」</td>
+</tr>
+<tr>
+<td>削除したのにサブネットが削除できない</td>
+<td>「消去 (purge) を実行する」の後に「SAL の解放を確認する」</td>
+</tr>
+<tr>
+<td>同じ名前で作り直せない</td>
+<td>「同じ名前で再作成できない場合」</td>
+</tr>
+<tr>
+<td>アカウントは残して作り直したい</td>
+<td>「capability host を削除する」</td>
+</tr>
+<tr>
+<td>これから構築する &#x2F; 作り直しを繰り返す</td>
+<td>「設計で回避する」</td>
+</tr>
+</tbody></table>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/virtual-network/subnet-delegation-overview">Azure Virtual Network でのサブネット委任</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/virtualnetwork/service-association-links?view=rest-virtualnetwork-2025-07-01">Service Association Links - REST API (Azure Virtual Networks)</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="正しい削除順序"><a href="#正しい削除順序" class="headerlink" title="正しい削除順序"></a>正しい削除順序</h2><table>
+<thead>
+<tr>
+<th>順序</th>
+<th>操作</th>
+<th>補足</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>プロジェクトの capability host を削除</td>
+<td>アカウント側より先に削除します</td>
+</tr>
+<tr>
+<td>2</td>
+<td>アカウントの capability host を削除</td>
+<td>既定名は <code>&lt;accountName&gt;@aml_aiagentservice</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>プロジェクトを削除</td>
+<td>入れ子のプロジェクトが残っているとアカウントを削除できません</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Foundry リソースを削除 (delete)</td>
+<td>この時点ではまだソフト削除の状態です</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Foundry リソースを消去 (purge)</td>
+<td>ここまで実施して初めて後片付けが走ります</td>
+</tr>
+<tr>
+<td>6</td>
+<td>SAL の解放を待つ</td>
+<td>サブネットから <code>legionservicelink</code> が消えるまで待ちます</td>
+</tr>
+<tr>
+<td>7</td>
+<td>サブネット &#x2F; 仮想ネットワークを削除</td>
+<td>最後に削除します</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a> の「制限」にも、この順序が明記されています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ネットワーク挿入の削除: Foundry リソースと Standard Agent をセキュリティで保護されたネットワーク セットアップで削除する場合は、</span><br><span class="line">Foundry リソースと仮想ネットワークを最後に削除します。仮想ネットワークを削除する前に、Foundry リソースを削除して消去します。</span><br></pre></td></tr></table></figure>
+
+<p>順序を守らずに削除してしまった場合の復旧方法も、同ドキュメントのトラブルシューティング ガイドに記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 つの解決策は、Azure ポータルで Foundry リソース ページに移動し、削除されたリソースの管理を選択することです。</span><br><span class="line">そこから、エージェントがこの仮想ネットワークに関連付けられたリソースを消去します。</span><br></pre></td></tr></table></figure>
+
+<p>公開されている <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup/cleanup.ps1">クリーンアップ スクリプト (cleanup.ps1)</a> の README には、この順序が必要な理由が 3 点にまとめられています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Deleting a Foundry private network deployment is not as simple as az group delete.</span><br><span class="line"></span><br><span class="line">- Capability hosts must be deleted in order - project-level first, then account-level. Deleting in the wrong order can leave the</span><br><span class="line">  account in a failed state.</span><br><span class="line">- SALs block subnet reuse - subnets with active SALs cannot be re-delegated or deleted. SAL cleanup happens asynchronously after</span><br><span class="line">  caphost deletion and can take up to 24 hours.</span><br><span class="line">- Soft-deleted accounts block redeployment - Cognitive Services accounts are soft-deleted for 48 hours. A new deployment with the</span><br><span class="line">  same name will fail unless the old account is purged.</span><br></pre></td></tr></table></figure>
+
+<p>なお、<strong>環境ごと破棄する場合は capability host を手動で削除する必要はありません</strong>。消去 (purge) が capability host の削除を連鎖させるためです。<a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup">Bicep サンプル</a> の README に次の記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To completely remove an account, you must delete and purge the account. Simply deleting the account is not sufficient, you must purge</span><br><span class="line">so that deletion of the associated capability host is triggered. The service will automatically handle the removal of the capability</span><br><span class="line">host and any linked resources in the background.</span><br></pre></td></tr></table></figure>
+
+<p>用途別に整理すると次のようになります。</p>
+<ul>
+<li><strong>環境ごと破棄する</strong>: 削除 (delete) と消去 (purge) を実施すれば、上記の手順 1 から 3 はプラットフォーム側で処理されます。</li>
+<li><strong>アカウントは残して capability host だけ作り直す</strong>: 手順 1 と 2 を手動で実施します。次節のコマンド例、またはサンプルに同梱の <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup/deleteCapHost.sh">deleteCapHost.sh</a> を使います。</li>
+<li><strong>検証環境の作り直しを繰り返す</strong>: <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup/cleanup.ps1">cleanup.ps1</a> が順序と待機を自動化してくれるため、手作業より確実です。実行時は <code>-DryRun</code> で検出結果を確認してから本実行します。</li>
+</ul>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup">Foundry Private Network Cleanup (foundry-samples)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup">Standard Agent Setup with E2E Network Isolation (foundry-samples)</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="capability-host-を削除する"><a href="#capability-host-を削除する" class="headerlink" title="capability host を削除する"></a>capability host を削除する</h2><p>アカウントを残したまま capability host だけを作り直す場合の手順です。環境ごと破棄する場合は、この節を飛ばして次の消去 (purge) に進んで構いません。</p>
+<p>capability host の一覧取得と削除は ARM の REST API で行います。アカウント側とプロジェクト側で別の操作グループとして公開されており、本記事では API バージョン <code>2025-06-01</code> を使用します (公開サンプルの <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup/deleteCapHost.sh">deleteCapHost.sh</a> と <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup/cleanup.ps1">cleanup.ps1</a> は <code>2025-04-01-preview</code> を使用しています)。</p>
+<p>以下のコマンド例は <code>az rest</code> を使います。ログイン中の資格情報でトークンが自動付与されます。URL が長くなるため、先に共通部分を変数にしておきます。書き換えるのはこの 3 行だけです。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SUB=&lt;subscription-id&gt;</span><br><span class="line">RG=&lt;foundry-rg&gt;</span><br><span class="line">ACC=&lt;foundry-account-name&gt;</span><br><span class="line"></span><br><span class="line">API=2025-06-01</span><br><span class="line">BASE=<span class="string">&quot;https://management.azure.com/subscriptions/<span class="variable">$SUB</span>/resourceGroups/<span class="variable">$RG</span>/providers/Microsoft.CognitiveServices/accounts/<span class="variable">$ACC</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>URL に <code>?</code> が含まれるため、<code>--url</code> の値は必ずクォートで囲んでください。</p>
+<p><strong>1. 削除対象を洗い出す</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># アカウント配下のプロジェクト一覧</span></span><br><span class="line">az cognitiveservices account project list \</span><br><span class="line">  --name <span class="string">&quot;<span class="variable">$ACC</span>&quot;</span> --resource-group <span class="string">&quot;<span class="variable">$RG</span>&quot;</span> --query <span class="string">&quot;[].name&quot;</span> -o tsv</span><br><span class="line"></span><br><span class="line"><span class="comment"># プロジェクトの capability host</span></span><br><span class="line">az rest --method GET --url <span class="string">&quot;<span class="variable">$BASE</span>/projects/&lt;project-name&gt;/capabilityHosts?api-version=<span class="variable">$API</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># アカウントの capability host</span></span><br><span class="line">az rest --method GET --url <span class="string">&quot;<span class="variable">$BASE</span>/capabilityHosts?api-version=<span class="variable">$API</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>アカウント側の応答には <code>properties.customerSubnet</code> が含まれ、どのサブネットに紐づいているかをその場で確認できます。後で SAL の解放を確認する対象はこのサブネットです。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;account-caphost-name&gt;&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Microsoft.CognitiveServices/accounts/capabilityHosts&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;properties&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;customerSubnet&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;vnet-rg&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vnet-name&gt;/subnets/&lt;agent-subnet&gt;&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;provisioningState&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Succeeded&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. プロジェクトの capability host を削除する</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az rest --method DELETE --url <span class="string">&quot;<span class="variable">$BASE</span>/projects/&lt;project-name&gt;/capabilityHosts/&lt;project-caphost-name&gt;?api-version=<span class="variable">$API</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3. アカウントの capability host を削除する</strong></p>
+<p>プロジェクト側をすべて削除してから実行します。自動作成されたアカウント側の既定名は <code>&lt;accountName&gt;@aml_aiagentservice</code> です。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">az rest --method DELETE --url <span class="string">&quot;<span class="variable">$BASE</span>/capabilityHosts/&lt;account-caphost-name&gt;?api-version=<span class="variable">$API</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 応答を確認する</strong></p>
+<p>削除要求に対して返るステータスと、その後にすべきことは次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>ステータス</th>
+<th>意味</th>
+<th>次にすること</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>204 No Content</code></td>
+<td>同期的に削除が完了しました。</td>
+<td>次の手順に進みます。</td>
+</tr>
+<tr>
+<td><code>202 Accepted</code></td>
+<td>非同期で受け付けられました。削除はまだ進行中です。</td>
+<td>進行状況を確認します (下記)。</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>対象の capability host が存在しません。</td>
+<td>すでに削除済みです。次の手順に進んで問題ありません。</td>
+</tr>
+<tr>
+<td><code>409 Conflict</code></td>
+<td>競合しています。</td>
+<td>capability host が失敗状態になっている可能性があります。プロジェクト側が残っていないかを先に確認します。</td>
+</tr>
+</tbody></table>
+<p><code>202</code> が返った場合の進行状況は、削除した capability host を GET して確認するのが簡単です。<code>provisioningState</code> は削除中は <code>Deleting</code> を返し、削除が完了すると対象が見つからない状態になります。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">az rest --method GET --url <span class="string">&quot;<span class="variable">$BASE</span>/capabilityHosts/&lt;account-caphost-name&gt;?api-version=<span class="variable">$API</span>&quot;</span> \</span><br><span class="line">  --query <span class="string">&quot;properties.provisioningState&quot;</span> -o tsv</span><br></pre></td></tr></table></figure>
+
+<p><code>provisioningState</code> が取り得る値は <code>Succeeded</code> &#x2F; <code>Failed</code> &#x2F; <code>Canceled</code> &#x2F; <code>Creating</code> &#x2F; <code>Updating</code> &#x2F; <code>Deleting</code> です。生の HTTP を扱う場合は、<a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup/deleteCapHost.sh">deleteCapHost.sh</a> と同様に応答の <code>Azure-AsyncOperation</code> ヘッダーの URL をポーリングする方法もあります。</p>
+<p>アカウント側の削除は時間がかかります。<a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup/cleanup.ps1">cleanup.ps1</a> のポーリング上限にも目安がコメントされています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$maxPolls = 60  # 30 min max (account caphosts can take 15-20 min)</span><br></pre></td></tr></table></figure>
+
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/microsoftfoundry/accountmanagement/account-capability-hosts">Account Capability Hosts - REST API (Microsoft Foundry)</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/microsoftfoundry/accountmanagement/project-capability-hosts">Project Capability Hosts - REST API (Microsoft Foundry)</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/cli/azure/cognitiveservices/account?view=azure-cli-latest">az cognitiveservices account</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup">Foundry Private Network Cleanup (foundry-samples)</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="消去-purge-を実行する"><a href="#消去-purge-を実行する" class="headerlink" title="消去 (purge) を実行する"></a>消去 (purge) を実行する</h2><p>削除 (delete) はリソースを即座に完全消滅させるものではなく、48 時間はソフト削除の状態で保持されます。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/recover-purge-resources">削除された Microsoft Foundry リソースを回復または消去する</a> に次の記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">リソースを削除すると、同じ名前のリソースを 48 時間作成することはできません。同じ名前のリソースを作成するには、削除したリソースを消去する必要があります。</span><br></pre></td></tr></table></figure>
+
+<p>課金の観点でも消去 (purge) は重要です。同ドキュメントには次の記載もあります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">削除されたリソースでプロビジョニングされたデプロイの料金は、リソースが消去されるまで続行されます。</span><br></pre></td></tr></table></figure>
+
+<p><strong>Azure ポータルの場合</strong>: Foundry のリソース ページから「削除されたリソースの管理 (Manage deleted resources)」を開き、対象のサブスクリプションを選択して「消去 (Purge)」を実行します。</p>
+<p><strong>Azure CLI の場合</strong>: ポータルの一覧から探すよりも確実です。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># サブスクリプション内のソフト削除状態のリソースを一覧表示する</span></span><br><span class="line">az cognitiveservices account list-deleted -o table</span><br><span class="line"></span><br><span class="line"><span class="comment"># 消去 (purge) を実行する</span></span><br><span class="line">az cognitiveservices account purge \</span><br><span class="line">  --name &lt;foundry-account-name&gt; \</span><br><span class="line">  --resource-group &lt;foundry-rg&gt; \</span><br><span class="line">  --location &lt;region&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 消去できたことを確認する (対象が見つからない状態になれば完了)</span></span><br><span class="line">az cognitiveservices account show-deleted \</span><br><span class="line">  --name &lt;foundry-account-name&gt; \</span><br><span class="line">  --resource-group &lt;foundry-rg&gt; \</span><br><span class="line">  --location &lt;region&gt;</span><br></pre></td></tr></table></figure>
+
+<p>REST API を直接呼び出す場合のエンドポイントも、同ドキュメントに記載されています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE https://management.azure.com/subscriptions/&#123;subscriptionID&#125;/providers/Microsoft.CognitiveServices/locations/&#123;location&#125;/resourceGroups/&#123;resourceGroup&#125;/deletedAccounts/&#123;resourceName&#125;?Api-Version=2021-04-30</span><br></pre></td></tr></table></figure>
+
+<p>消去は元に戻せない操作です。実行するとリソースに関連付けられたすべてのデータとキーが失われます。</p>
+<p><strong>対象が「削除されたリソースの管理」に表示されない場合</strong></p>
+<p>削除したはずのリソースが一覧に出てこない、というご相談をいただくことがあります。まず確認していただきたいのは、操作しているアカウントの <strong>ロール割り当てスコープ</strong> です。同ドキュメントに次の記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Contributor を使用してリソースを消去する場合、ロールはサブスクリプション レベルで割り当てる必要があります。</span><br><span class="line">ロールの割り当てがリソースまたはリソース グループ レベルでのみ存在する場合は、消去機能にアクセスできません。</span><br></pre></td></tr></table></figure>
+
+<p>リソース グループ レベルで共同作成者 (Contributor) を持っていても、消去機能にはアクセスできません。<strong>サブスクリプション スコープ</strong> で Contributor もしくは Cognitive Services Contributor が割り当てられている必要があります。CLI では見えているのにポータルでは見えない場合は、この権限スコープか、ポータルで選択しているサブスクリプションのどちらかが原因であることがほとんどです。</p>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/ai-services/recover-purge-resources">削除された Microsoft Foundry リソースを回復または消去する</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-purge">az cognitiveservices account purge</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-list-deleted">az cognitiveservices account list-deleted</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="SAL-の解放を確認する"><a href="#SAL-の解放を確認する" class="headerlink" title="SAL の解放を確認する"></a>SAL の解放を確認する</h2><p>消去 (purge) を実行しても、SAL はその瞬間に消えるわけではありません。サブネットの <code>serviceAssociationLinks</code> プロパティを次のコマンドで確認し、出力が空になればサブネットの削除・再利用が可能な状態です。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">az network vnet subnet show \</span><br><span class="line">  --resource-group &lt;vnet-rg&gt; \</span><br><span class="line">  --vnet-name &lt;vnet-name&gt; \</span><br><span class="line">  --name &lt;agent-subnet-name&gt; \</span><br><span class="line">  --query <span class="string">&quot;serviceAssociationLinks[].name&quot;</span> -o tsv</span><br></pre></td></tr></table></figure>
+
+<p>待ち時間の目安は、<a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup">クリーンアップ スクリプト</a> の README の記述が参考になります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Waits for service association links to be removed from subnets (up to 20 min). SAL removal happens asynchronously after caphost</span><br><span class="line">deletion. If SALs are still present after 20 minutes, the script warns you to check again later - backend cleanup can take up to 24 hours.</span><br></pre></td></tr></table></figure>
+
+<p>まず 20 分ほど待ち、それでも残っている場合はバックエンドのクリーンアップ待ちとして最大 24 時間を見込みます。20 分経過した時点で SAL が残っていても、それだけでは不具合とは限りません。</p>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show">az network vnet subnet show</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/rest/api/virtualnetwork/service-association-links?view=rest-virtualnetwork-2025-07-01">Service Association Links - REST API (Azure Virtual Networks)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/deployment-tools/cleanup">Foundry Private Network Cleanup (foundry-samples)</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="同じ名前で再作成できない場合"><a href="#同じ名前で再作成できない場合" class="headerlink" title="同じ名前で再作成できない場合"></a>同じ名前で再作成できない場合</h2><p><strong>「消去 (purge) してから 48 時間待てば同じ名前で作成できる」わけではありません。</strong> 48 時間は削除 (delete) を起点としたソフト削除の保持期間であり、消去を実施した時点で名前の予約は解放されます。逆に、消去していなければ 48 時間の経過を待っても同じ名前では作成できません。前述の公式ドキュメントの記載も、待つことではなく消去することを条件としています。</p>
+<p>それでも同じ名前での作成が失敗する場合は、作成が途中で失敗したときの capability host がアカウント側に残っている可能性があります。とくに <code>Microsoft.App</code> と <code>Microsoft.ContainerService</code> のリソース プロバイダーが未登録のまま作成した場合、アカウントの作成要求はいったん受け付けられた後に失敗します。<a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup">Bicep サンプル</a> の README に次の警告があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Microsoft.App and Microsoft.ContainerService are mandatory for network injection. When networkInjections.scenario=&#x27;agent&#x27; is used,</span><br><span class="line">the capability host is created on the agent subnet&#x27;s Azure Container Apps environment. If either provider is in NotRegistered, the</span><br><span class="line">failure surfaces after the Foundry account resource is already accepted - the account reaches provisioningState: Failed ... and must</span><br><span class="line">be cleaned up before retrying.</span><br></pre></td></tr></table></figure>
+
+<p>この状態で残ったリソースの解放も非同期に進むため、いつ同じ名前で作成できるようになるかを事前に見積もることはできません。<strong>作成を急ぐ場合は、別のアカウント名で作り直すのが最短です。</strong> 元の名前は、残存リソースが解放されてから改めてご利用ください。</p>
+<p>リソース プロバイダーは、作成前に登録しておきます。登録が必要なプロバイダーの全一覧は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a> の前提条件に記載されています。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">az provider register --namespace <span class="string">&#x27;Microsoft.App&#x27;</span></span><br><span class="line">az provider register --namespace <span class="string">&#x27;Microsoft.ContainerService&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>デプロイ前の preflight チェック</strong></p>
+<p>同じ失敗を繰り返さないための <a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/deployment-tools/preflight/preflight-check.ps1">preflight チェック スクリプト (preflight-check.ps1)</a> も公開されています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ARM template deployments can fail 10-20 minutes in with opaque error messages. By that point resources may be partially created,</span><br><span class="line">leaving your environment in an inconsistent state that requires manual cleanup.</span><br></pre></td></tr></table></figure>
+
+<p>検査項目には、この記事で扱ってきた内容がそのまま含まれています。</p>
+<ul>
+<li>リソース プロバイダーの登録状態 (<code>Microsoft.App</code> &#x2F; <code>Microsoft.ContainerService</code> を含む)</li>
+<li>ソフト削除状態の Cognitive Services アカウント</li>
+<li>サブネットに残っている SAL</li>
+<li>エージェント サブネットの <code>Microsoft.App/environments</code> への委任</li>
+</ul>
+<p>README の検査項目表には、本記事の主題に直結する項目が次のように記載されています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Soft-deleted Cognitive Services accounts | Name collision failures when a new deployment tries to create an account with the same</span><br><span class="line">name as a soft-deleted one</span><br><span class="line"></span><br><span class="line">No Service Association Links (SALs) on subnets | Deployment will fail - the platform cannot inject into a subnet already owned by</span><br><span class="line">another resource</span><br></pre></td></tr></table></figure>
+
+<p>作り直しの前に一度実行しておくと、10 分から 20 分かけてデプロイしたうえで失敗する、という事態を避けられます。</p>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/deployment-tools/preflight">Preflight Check for Foundry Private Network Deployments (foundry-samples)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft-foundry/foundry-samples/tree/main/infrastructure/infrastructure-setup-bicep/15-private-network-standard-agent-setup">Standard Agent Setup with E2E Network Isolation (foundry-samples)</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="設計で回避する"><a href="#設計で回避する" class="headerlink" title="設計で回避する"></a>設計で回避する</h2><p>この事象は、いったん発生すると待つ以外の選択肢がほとんどありません。作り直しを繰り返す検証環境ほど、設計側で回避しておく価値があります。</p>
+<p><strong>1. 仮想ネットワークを Foundry とは別のリソース グループに置く</strong></p>
+<p>同一リソース グループである必要はないことが、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a> の FAQ に明記されています。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">仮想ネットワークは Foundry リソースと同じリソース グループに存在する必要がありますか?</span><br><span class="line"></span><br><span class="line">いいえ。仮想ネットワークと Foundry リソースは同じリソース グループ内に存在する必要はありませんが、同じリージョンに存在する必要があります。</span><br></pre></td></tr></table></figure>
+
+<p>仮想ネットワークを常設のリソース グループに分離しておけば、Foundry 側のリソース グループを一括削除しても仮想ネットワークには一切触れないため、<code>InUseSubnetCannotBeDeleted</code> でリソース グループの削除自体が失敗する事態を避けられます。</p>
+<p><strong>2. エージェント サブネットを共有しない</strong></p>
+<p>同ドキュメントの「制限」にも記載があります。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">エージェント サブネットの排他性: エージェント サブネットを複数の Foundry リソースで共有することはできません。</span><br><span class="line">各 Foundry リソースでは、専用エージェント サブネットを使用する必要があります。</span><br></pre></td></tr></table></figure>
+
+<p>仮想ネットワークは複数の Foundry リソースで共有できますが、エージェント サブネットは共有できません。作成時の最小要件は &#x2F;27 以上、推奨サイズは &#x2F;24 です。</p>
+<p><strong>3. 予備のエージェント サブネットを用意しておく</strong></p>
+<p>SAL の解放を待てない状況で再デプロイしたい場合は、あらかじめ用意しておいた別のサブネット (たとえば <code>snet-agent-01</code> と <code>snet-agent-02</code>) に切り替えるのが最も速い回避策です。前のサブネットの SAL はバックエンドで解放されるまで放置し、解放を確認してから片付けます。</p>
+<p>なお、サブネットを再利用する場合、<code>Microsoft.App/environments</code> への委任はそのまま残して構いません。新しい Foundry リソースでも同じ委任が必要になるためです。委任の削除が必要になるのは、サブネット自体を削除する場合のみです。</p>
+<p>参考ドキュメント:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/azure/foundry/agents/how-to/virtual-networks">Foundry Agent Service のプライベート ネットワークを設定する</a></li>
+</ul>
+<br>
+
+<hr>
+<p><code>変更履歴</code><br><code>2026/09/10 created by KazuyaOnuki</code></p>
+<p>※ 本記事は 「<a href="https://jpaiblog.github.io/blog/2020/01/01/about-jpaiblog/">jpaiblog について</a>」 の留意事項に準じます。<br>※ 併せて 「<a href="https://jpaiblog.github.io/blog/">ホームページ</a>」 および 「<a href="https://jpaiblog.github.io/blog/archives/">記事一覧</a>」 もご参照いただければ幸いです。  </p>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/blog/tags/Microsoft-Foundry/">Microsoft Foundry</a>
+      
+        <a href="/blog/tags/Foundry-Agent-Service/">Foundry Agent Service</a>
+      
+        <a href="/blog/tags/Virtual-Network/">Virtual Network</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/blog/2026/08/04/AzureOpenAIService-DataStorage/" rel="next"  title="Models sold by Azure in Microsoft Foundry のデータ保存について">
+						Models sold by Azure in Microsoft Foundry のデータ保存について
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Foundry Agent Service のネットワーク分離構成を正しく削除する方法 (InUseSubnetCannotBeDeleted への対処)',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+<img class='avatar waves-image' src="https://jpaiblog.github.io/blog/favicon/mstile-150x150.png" alt="">
+
+<div class='header'>jpaiblog</div>
+
+<div class='content'>
+<div class='desc'>
+    このサイトはマイクロソフトの Azure Cognitive Services サポート チームによって運営されております。</br></br>
+    Powered by: Azure AI サポート チーム (中神、ジェシー、工藤)</br></br>
+    Web master: 望月
+</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://jpaiblog.github.io/blog/">
+            <div class='name'>Japan Cognitive Service Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpiotblog.github.io/blog/">
+            <div class='name'>Japan IoT Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpmlblog.github.io/blog/">
+            <div class='name'>Japan Machine Learning Support Blog</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://jpwdkblog.github.io/blog/">
+            <div class='name'>Japan WDK Support Blog</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/"><div class='name'>Azure OpenAI</div><div class='badget'>12</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/Bing-Search-API/"><div class='name'>Bing Search API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Cognitive-Services/"><div class='name'>Cognitive Services</div><div class='badget'>13</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Face-API/"><div class='name'>Face API</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Azure-OpenAI/Microsoft-Foundry/"><div class='name'>Microsoft Foundry</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/QNA-Maker/"><div class='name'>QNA Maker</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Speech-Service/"><div class='name'>Speech Service</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Speech-Services/"><div class='name'>Speech Services</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/Translator-Text-API/"><div class='name'>Translator Text API</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/blog/categories/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"><div class='name'>セキュリティ</div><div class='badget'>1</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/blog/tags/AADSTS650051/" style="font-size: 14px; color: #808080">AADSTS650051</a> <a href="/blog/tags/API/" style="font-size: 14px; color: #808080">API</a> <a href="/blog/tags/Azure/" style="font-size: 14px; color: #808080">Azure</a> <a href="/blog/tags/Azure-OpenAI/" style="font-size: 20px; color: #000">Azure OpenAI</a> <a href="/blog/tags/Bing-Search-API/" style="font-size: 14px; color: #808080">Bing Search API</a> <a href="/blog/tags/Cognitive-Services/" style="font-size: 14px; color: #808080">Cognitive Services</a> <a href="/blog/tags/Custom-Translator/" style="font-size: 15.5px; color: #606060">Custom Translator</a> <a href="/blog/tags/Custom-Vision/" style="font-size: 18.5px; color: #202020">Custom Vision</a> <a href="/blog/tags/Excel-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/" style="font-size: 14px; color: #808080">Excel ファイル</a> <a href="/blog/tags/Face-API-Recognition-Identify/" style="font-size: 14px; color: #808080">Face API Recognition Identify</a> <a href="/blog/tags/Foundry-Agent-Service/" style="font-size: 14px; color: #808080">Foundry Agent Service</a> <a href="/blog/tags/LUIS/" style="font-size: 14px; color: #808080">LUIS</a> <a href="/blog/tags/Microsoft-Foundry/" style="font-size: 15.5px; color: #606060">Microsoft Foundry</a> <a href="/blog/tags/QnA-Maker/" style="font-size: 14px; color: #808080">QnA Maker</a> <a href="/blog/tags/QnA-%E3%83%9A%E3%82%A2%E3%81%AE%E8%BF%BD%E5%8A%A0/" style="font-size: 14px; color: #808080">QnA ペアの追加</a> <a href="/blog/tags/Speech/" style="font-size: 14px; color: #808080">Speech</a> <a href="/blog/tags/Speech-SDK/" style="font-size: 15.5px; color: #606060">Speech SDK</a> <a href="/blog/tags/Speech-Service/" style="font-size: 14px; color: #808080">Speech Service</a> <a href="/blog/tags/Speech-Services/" style="font-size: 17px; color: #404040">Speech Services</a> <a href="/blog/tags/Synthesis/" style="font-size: 14px; color: #808080">Synthesis</a> <a href="/blog/tags/Text-to-Speech/" style="font-size: 14px; color: #808080">Text-to-Speech</a> <a href="/blog/tags/Translator-Text-API/" style="font-size: 15.5px; color: #606060">Translator Text API</a> <a href="/blog/tags/Virtual-Network/" style="font-size: 14px; color: #808080">Virtual Network</a> <a href="/blog/tags/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/" style="font-size: 15.5px; color: #606060">はじめに</a> <a href="/blog/tags/%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/" style="font-size: 14px; color: #808080">管理サービス</a> <a href="/blog/tags/%E9%81%8E%E5%8E%BB%E3%83%96%E3%83%AD%E3%82%B0/" style="font-size: 14px; color: #808080">過去ブログ</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/damochiz" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a target="_blank" rel="noopener" href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+
+<script src="/blog/js/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js" integrity="sha384-XbLjzrg2VXJ9e4DTElYj8v75vQtVcSO3C7P9cYnD4HSDQ65tOR6CGDNnkaLKaK44" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.2/scrollreveal.min.js" integrity="sha384-2V3lU9nRprCnbWaJj3LPxSPdOMVMx8ESFqsyr9nsgBh3WYPwGUuCLMwK3Rt0f21A" crossorigin="anonymous"></script>
+
+<script src="/blog/js/jquery.fitvids.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/blog/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+
+<script src="/blog/js/search.js"></script>
+
+
+<script src="/blog/js/app.js"></script>
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
